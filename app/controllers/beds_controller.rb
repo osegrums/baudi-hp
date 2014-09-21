@@ -5,6 +5,6 @@ class BedsController < ApplicationController
   end
 
   def show
-    @bed = Bed.find(params[:id])
+    @bed = Bed.where(code: params[:id]).first
   end
 end
