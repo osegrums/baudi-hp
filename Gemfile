@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.1.0'
+
 gem 'rails', '4.1.6'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
@@ -13,7 +14,9 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'devise-i18n'
 gem 'high_voltage'
-gem 'mysql2'
+
+# Database
+gem 'pg'
 
 gem 'annotate', '~> 2.6.5'
 
@@ -31,4 +34,5 @@ group :development, :test do
 end
 group :production do
   gem 'puma'
+  gem 'rails_12factor'
 end
