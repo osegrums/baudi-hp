@@ -15,6 +15,7 @@ rake db:create
 
 ```bash
 $ git push heroku master
+$ heroku run rake db:migrate
 ```
 
 This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
