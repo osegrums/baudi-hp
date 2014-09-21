@@ -1,5 +1,6 @@
 class Bed < ActiveRecord::Base
   has_many :colors, as: :itemable
+  has_many :dimensions, as: :itemable
 
   validates :code, uniqueness: true
   validates :name, :code, presence: true

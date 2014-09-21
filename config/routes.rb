@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   root to: 'visitors#index'
   devise_for :users
   resources :beds, only: [:index, :show]
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
   namespace :back_end do
     resources :beds, only: [:index, :new, :create, :edit, :update, :show] do
       resources :colors
+      resources :dimensions
     end
   end
 end

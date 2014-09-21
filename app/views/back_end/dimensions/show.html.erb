@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @dimension.name %>
+</p>
+
+<%= link_to 'Edit', polymorphic_path([:edit, :back_end, @itemable, @dimension]) %> |
+<%= link_to 'Back', polymorphic_path([:back_end, @itemable, :dimensions]) %>

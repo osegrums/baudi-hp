@@ -42,4 +42,5 @@
 
 <%= link_to 'Edit', edit_back_end_bed_path(@bed) %> |
 <%= link_to "Colors (#{@bed.colors.count})", back_end_bed_colors_path(@bed) %> |
+<%= link_to "Dimensions (#{@bed.dimensions.count})", back_end_bed_dimensions_path(@bed) %> |
 <%= link_to 'Back', back_end_beds_path %>
