@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @bed.code %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @bed.name %>
+</p>
+
+<p>
+  <strong>Sequence:</strong>
+  <%= @bed.sequence %>
+</p>
+
+<p>
+  <strong>Has decoration:</strong>
+  <%= @bed.has_decoration %>
+</p>
+
+<p>
+  <strong>Has rack:</strong>
+  <%= @bed.has_rack %>
+</p>
+
+<p>
+  <strong>Description lv:</strong>
+  <%= @bed.description_lv %>
+</p>
+
+<p>
+  <strong>Description ru:</strong>
+  <%= @bed.description_ru %>
+</p>
+
+<p>
+  <strong>Description en:</strong>
+  <%= @bed.description_en %>
+</p>
+
+<%= link_to 'Edit', edit_back_end_bed_path(@bed) %> |
+<%= link_to 'Back', back_end_beds_path %>

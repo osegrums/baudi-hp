@@ -1,0 +1,49 @@
+<%= form_for @bed, url: url do |f| %>
+  <% if @bed.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bed.errors.count, "error") %> prohibited this bed from being saved:</h2>
+
+      <ul>
+      <% @bed.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :code %><br>
+    <%= f.text_field :code %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :sequence %><br>
+    <%= f.number_field :sequence %>
+  </div>
+  <div class="field">
+    <%= f.label :has_decoration %><br>
+    <%= f.check_box :has_decoration %>
+  </div>
+  <div class="field">
+    <%= f.label :has_rack %><br>
+    <%= f.check_box :has_rack %>
+  </div>
+  <div class="field">
+    <%= f.label :description_lv %><br>
+    <%= f.text_area :description_lv %>
+  </div>
+  <div class="field">
+    <%= f.label :description_ru %><br>
+    <%= f.text_area :description_ru %>
+  </div>
+  <div class="field">
+    <%= f.label :description_en %><br>
+    <%= f.text_area :description_en %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

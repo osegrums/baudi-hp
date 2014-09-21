@@ -1,0 +1,38 @@
+<h1>Listing beds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Sequence</th>
+      <th>Has decoration</th>
+      <th>Has rack</th>
+      <th>Description lv</th>
+      <th>Description ru</th>
+      <th>Description en</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @beds.each do |bed| %>
+      <tr>
+        <td><%= bed.code %></td>
+        <td><%= bed.name %></td>
+        <td><%= bed.sequence %></td>
+        <td><%= bed.has_decoration %></td>
+        <td><%= bed.has_rack %></td>
+        <td><%= bed.description_lv %></td>
+        <td><%= bed.description_ru %></td>
+        <td><%= bed.description_en %></td>
+        <td><%= link_to 'Show', back_end_bed_path(bed) %></td>
+        <td><%= link_to 'Edit', edit_back_end_bed_path(bed) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bed', new_back_end_bed_path %>
