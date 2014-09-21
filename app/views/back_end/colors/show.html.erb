@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name lv:</strong>
+  <%= @color.name_lv %>
+</p>
+
+<p>
+  <strong>Name en:</strong>
+  <%= @color.name_en %>
+</p>
+
+<p>
+  <strong>Name ru:</strong>
+  <%= @color.name_ru %>
+</p>
+
+<%= link_to 'Edit', edit_back_end_bed_color_path(@itemable, @color) %> |
+<%= link_to 'Back', back_end_bed_colors_path(@itemable) %>

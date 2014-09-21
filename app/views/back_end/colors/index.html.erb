@@ -1,0 +1,30 @@
+<h1>Listing colors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name lv</th>
+      <th>Name en</th>
+      <th>Name ru</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @colors.each do |color| %>
+      <tr>
+        <td><%= color.name_lv %></td>
+        <td><%= color.name_en %></td>
+        <td><%= color.name_ru %></td>
+        <td><%= link_to 'Show', back_end_bed_color_path(@itemable, color) %></td>
+        <td><%= link_to 'Edit', edit_back_end_bed_color_path(@itemable, color) %></td>
+        <td><%= link_to 'Destroy', back_end_bed_color_path(@itemable, color), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Color', new_back_end_bed_color_path(@itemable) %> |
+<%= link_to "Back to master", polymorphic_path([:back_end, @itemable]) %>

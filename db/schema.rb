@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140921111515) do
+ActiveRecord::Schema.define(version: 20140921134546) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 20140921111515) do
     t.text     "description_lv"
     t.text     "description_ru"
     t.text     "description_en"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "colors", force: true do |t|
+    t.integer  "itemable_id"
+    t.string   "itemable_type"
+    t.string   "name_lv"
+    t.string   "name_en"
+    t.string   "name_ru"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
