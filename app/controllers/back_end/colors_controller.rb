@@ -47,15 +47,16 @@ class BackEnd::ColorsController < BackEndController
   end
 
   private
-    def set_color
-      @color = @itemable.colors.find(params[:id])
-    end
 
-    def set_itemable
-      @itemable = Bed.find(params[:bed_id])
-    end
+  def set_color
+    @color = @itemable.colors.find(params[:id])
+  end
 
-    def color_params
-      params.require(:color).permit(:name_lv, :name_en, :name_ru)
-    end
+  def set_itemable
+    @itemable = Bed.find(params[:bed_id])
+  end
+
+  def color_params
+    params.require(:color).permit(:name_lv, :name_en, :name_ru)
+  end
 end

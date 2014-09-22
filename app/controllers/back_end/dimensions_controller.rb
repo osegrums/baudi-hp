@@ -47,15 +47,16 @@ class BackEnd::DimensionsController < BackEndController
   end
 
   private
-    def set_dimension
-      @dimension = @itemable.dimensions.find(params[:id])
-    end
 
-    def set_itemable
-      @itemable = Bed.find(params[:bed_id])
-    end
+  def set_dimension
+    @dimension = @itemable.dimensions.find(params[:id])
+  end
 
-    def dimension_params
-      params.require(:dimension).permit(:name, :itemable_id)
-    end
+  def set_itemable
+    @itemable = Bed.find(params[:bed_id])
+  end
+
+  def dimension_params
+    params.require(:dimension).permit(:name)
+  end
 end

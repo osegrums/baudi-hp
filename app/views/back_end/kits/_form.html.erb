@@ -1,0 +1,29 @@
+<%= form_for @kit, url: url do |f| %>
+  <% if @kit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@kit.errors.count, "error") %> prohibited this kit from being saved:</h2>
+
+      <ul>
+      <% @kit.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name_lv %><br>
+    <%= f.text_field :name_lv %>
+  </div>
+  <div class="field">
+    <%= f.label :name_en %><br>
+    <%= f.text_field :name_en %>
+  </div>
+  <div class="field">
+    <%= f.label :name_ru %><br>
+    <%= f.text_field :name_ru %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

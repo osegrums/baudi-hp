@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Latviski:</strong>
+  <%= @kit.name_lv %>
+</p>
+
+<p>
+  <strong>Angliski:</strong>
+  <%= @kit.name_en %>
+</p>
+
+<p>
+  <strong>Krieviski:</strong>
+  <%= @kit.name_ru %>
+</p>
+
+<%= link_to 'Edit', polymorphic_path([:edit, :back_end, @itemable, @kit]) %> |
+<%= link_to 'Back', polymorphic_path([:back_end, @itemable, :kits]) %>
