@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140922082058) do
+ActiveRecord::Schema.define(version: 20140922092029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,17 @@ ActiveRecord::Schema.define(version: 20140922082058) do
     t.string   "name_lv"
     t.string   "name_en"
     t.string   "name_ru"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "thumbs", force: true do |t|
+    t.integer  "thumbable_id"
+    t.string   "thumbable_type"
+    t.string   "file"
+    t.integer  "sequence"
+    t.text     "description"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

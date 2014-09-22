@@ -1,4 +1,6 @@
 class Kit < ActiveRecord::Base
+  belongs_to :itemable, polymorphic: true
+  has_many :thumbs, as: :thumbable
 end
 
 # == Schema Information

@@ -1,0 +1,32 @@
+<%= form_for @thumb, url: url do |f| %>
+  <% if @thumb.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@thumb.errors.count, "error") %> prohibited this image from being saved:</h2>
+
+      <ul>
+      <% @thumb.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :file %><br>
+    <%= f.file_field :file %>
+    <% if f.object.file %>
+      <%= image_tag f.object.file.small.url %>
+    <% end %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

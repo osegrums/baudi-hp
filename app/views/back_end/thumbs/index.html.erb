@@ -1,0 +1,30 @@
+<h1>Listing images</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nosaukums</th>
+      <th>Apraksts</th>
+      <th>Bilde</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @thumbs.each do |thumb| %>
+      <tr>
+        <td><%= thumb.name %></td>
+        <td><%= thumb.description %></td>
+        <td><%= image_tag thumb.file.micro.url %></td>
+        <td><%= link_to 'Show', polymorphic_path([:back_end, @itemable, @thumbable, thumb]) %></td>
+        <td><%= link_to 'Edit', polymorphic_path([:edit, :back_end, @itemable, @thumbable, thumb]) %></td>
+        <td><%= link_to 'Destroy', polymorphic_path([:back_end, @itemable, @thumbable, thumb]), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Image', polymorphic_path([:new, :back_end, @itemable, @thumbable, :thumb]) %> |
+<%= link_to "Back to parent", polymorphic_path([:back_end, @itemable, @thumbable]) %>

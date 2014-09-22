@@ -20,6 +20,11 @@ gem 'pg'
 
 gem 'annotate', '~> 2.6.5'
 
+# File uploads
+gem 'carrierwave'
+gem 'carrierwave-processing'
+gem 'mini_magick'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
