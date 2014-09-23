@@ -1,6 +1,6 @@
 <h1>Listing dimensions</h1>
 
-<table>
+<table class="table table-stripped table-bordered table-hover">
   <thead>
     <tr>
       <th>Name</th>
@@ -12,9 +12,9 @@
     <% @dimensions.each do |dimension| %>
       <tr>
         <td><%= dimension.name %></td>
-        <td><%= link_to 'Show', polymorphic_path([:back_end, @itemable, dimension]) %></td>
-        <td><%= link_to 'Edit', polymorphic_path([:edit, :back_end, @itemable, dimension]) %></td>
-        <td><%= link_to 'Destroy', polymorphic_path([:back_end, @itemable, dimension]), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= index_show_link polymorphic_path([:back_end, @itemable, dimension]) %></td>
+        <td><%= index_edit_link polymorphic_path([:edit, :back_end, @itemable, dimension]) %></td>
+        <td><%= index_destroy_link polymorphic_path([:back_end, @itemable, dimension]) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,5 +22,5 @@
 
 <br>
 
-<%= link_to 'New Dimension', polymorphic_path([:new, :back_end, @itemable, :dimension]) %> |
-<%= link_to "Back to master", polymorphic_path([:back_end, @itemable]) %>
+<%= link_to 'New Dimension', polymorphic_path([:new, :back_end, @itemable, :dimension]), class: 'btn btn-default' %>
+<%= link_to "Back to master", polymorphic_path([:back_end, @itemable]), class: 'btn btn-default' %>

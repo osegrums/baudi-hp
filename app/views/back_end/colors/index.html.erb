@@ -1,6 +1,6 @@
 <h1>Listing colors</h1>
 
-<table>
+<table class="table table-stripped table-bordered table-hover">
   <thead>
     <tr>
       <th>Name lv</th>
@@ -16,9 +16,9 @@
         <td><%= color.name_lv %></td>
         <td><%= color.name_en %></td>
         <td><%= color.name_ru %></td>
-        <td><%= link_to 'Show', back_end_bed_color_path(@itemable, color) %></td>
-        <td><%= link_to 'Edit', edit_back_end_bed_color_path(@itemable, color) %></td>
-        <td><%= link_to 'Destroy', back_end_bed_color_path(@itemable, color), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= index_show_link back_end_bed_color_path(@itemable, color) %></td>
+        <td><%= index_edit_link edit_back_end_bed_color_path(@itemable, color) %></td>
+        <td><%= index_destroy_link back_end_bed_color_path(@itemable, color) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,5 +26,5 @@
 
 <br>
 
-<%= link_to 'New Color', new_back_end_bed_color_path(@itemable) %> |
-<%= link_to "Back to master", polymorphic_path([:back_end, @itemable]) %>
+<%= link_to 'New Color', new_back_end_bed_color_path(@itemable), class: 'btn btn-default' %>
+<%= link_to "Back to master", polymorphic_path([:back_end, @itemable]), class: 'btn btn-default' %>

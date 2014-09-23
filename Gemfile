@@ -14,6 +14,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'devise-i18n'
 gem 'high_voltage'
+gem 'font-awesome-rails'
 
 # Database
 gem 'pg'

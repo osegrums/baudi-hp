@@ -15,6 +15,6 @@
   <%= @kit.name_ru %>
 </p>
 
-<%= link_to 'Edit', polymorphic_path([:edit, :back_end, @itemable, @kit]) %> |
-<%= link_to "Bildes (#{@kit.thumbs.count})", polymorphic_path([:back_end, @itemable, @kit, :thumbs]) %> |
-<%= link_to 'Back', polymorphic_path([:back_end, @itemable, :kits]) %>
+<%= link_to 'Edit', polymorphic_path([:edit, :back_end, @itemable, @kit]), class: 'btn btn-primary' %>
+<%= link_to "Images (#{@kit.thumbs.count})", polymorphic_path([:back_end, @itemable, @kit, :thumbs]), class: 'btn btn-default' %>
+<%= link_to 'Kits list', polymorphic_path([:back_end, @itemable, :kits]), class: 'btn btn-default' %>

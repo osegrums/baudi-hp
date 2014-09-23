@@ -1,6 +1,3 @@
 <h1>Editing image</h1>
 
 <%= render 'form', url: polymorphic_path([:back_end, @itemable, @thumbable, @thumb]) %>
-
-<%= link_to 'Show', polymorphic_path([:back_end, @itemable, @thumbable, @thumb]) %> |
-<%= link_to 'Back', polymorphic_path([:back_end, @itemable, @thumbable, :thumbs]) %>

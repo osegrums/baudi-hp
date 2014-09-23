@@ -1,6 +1,6 @@
 <h1>Listing beds</h1>
 
-<table>
+<table class="table table-stripped table-bordered table-hover">
   <thead>
     <tr>
       <th>Code</th>
@@ -21,13 +21,13 @@
         <td><%= bed.code %></td>
         <td><%= bed.name %></td>
         <td><%= bed.sequence %></td>
-        <td><%= bed.has_decoration %></td>
-        <td><%= bed.has_rack %></td>
+        <td><%= human_boolean bed.has_decoration %></td>
+        <td><%= human_boolean bed.has_rack %></td>
         <td><%= bed.description_lv %></td>
         <td><%= bed.description_ru %></td>
         <td><%= bed.description_en %></td>
-        <td><%= link_to 'Show', back_end_bed_path(bed) %></td>
-        <td><%= link_to 'Edit', edit_back_end_bed_path(bed) %></td>
+        <td><%= index_show_link back_end_bed_path(bed) %></td>
+        <td><%= index_edit_link edit_back_end_bed_path(bed) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -35,4 +35,4 @@
 
 <br>
 
-<%= link_to 'New Bed', new_back_end_bed_path %>
+<%= link_to 'New Bed', new_back_end_bed_path, class: 'btn btn-default' %>

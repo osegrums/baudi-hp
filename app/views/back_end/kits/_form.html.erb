@@ -11,19 +11,24 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name_lv %><br>
-    <%= f.text_field :name_lv %>
+  <div class="form-group">
+    <%= f.label :name_lv %>
+    <%= f.text_field :name_lv, class: 'form-control', placeholder: '' %>
   </div>
-  <div class="field">
-    <%= f.label :name_en %><br>
-    <%= f.text_field :name_en %>
+  <div class="form-group">
+    <%= f.label :name_en %>
+    <%= f.text_field :name_en, class: 'form-control', placeholder: '' %>
   </div>
-  <div class="field">
-    <%= f.label :name_ru %><br>
-    <%= f.text_field :name_ru %>
+  <div class="form-group">
+    <%= f.label :name_ru %>
+    <%= f.text_field :name_ru, class: 'form-control', placeholder: '' %>
   </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-success" %>
+    <% if @kit.persisted? %>
+      <%= link_to 'Show', polymorphic_path([:back_end, @itemable, @kit]), class: 'btn btn-default' %>
+    <% end %>
+    <%= link_to 'Kits list', polymorphic_path([:back_end, @itemable, :kits]), class: 'btn btn-default' %>
   </div>
 <% end %>

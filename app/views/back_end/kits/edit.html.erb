@@ -1,6 +1,3 @@
 <h1>Editing kit</h1>
 
 <%= render 'form', url: polymorphic_path([:back_end, @itemable, @kit]) %>
-
-<%= link_to 'Show', polymorphic_path([:back_end, @itemable, @kit]) %> |
-<%= link_to 'Back', polymorphic_path([:back_end, @itemable, :kits]) %>

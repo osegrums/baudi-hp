@@ -11,39 +11,43 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :code %><br>
-    <%= f.text_field :code %>
+  <div class="form-group">
+    <%= f.label :code %>
+    <%= f.text_field :code, class: 'form-control', placeholder: '' %>
   </div>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control', placeholder: '' %>
   </div>
-  <div class="field">
-    <%= f.label :sequence %><br>
-    <%= f.number_field :sequence %>
+  <div class="form-group">
+    <%= f.label :sequence %>
+    <%= f.number_field :sequence, class: 'form-control', placeholder: '' %>
   </div>
-  <div class="field">
-    <%= f.label :has_decoration %><br>
-    <%= f.check_box :has_decoration %>
+  <div>
+    <%= f.label :has_decoration %>
+    <%= f.check_box :has_decoration, class: 'checkbox', placeholder: '' %>
   </div>
-  <div class="field">
-    <%= f.label :has_rack %><br>
-    <%= f.check_box :has_rack %>
+  <div>
+    <%= f.label :has_rack %>
+    <%= f.check_box :has_rack, class: 'checkbox', placeholder: '' %>
   </div>
-  <div class="field">
-    <%= f.label :description_lv %><br>
-    <%= f.text_area :description_lv %>
+  <div class="form-group">
+    <%= f.label :description_lv %>
+    <%= f.text_field :description_lv, class: 'form-control', placeholder: '' %>
   </div>
-  <div class="field">
-    <%= f.label :description_ru %><br>
-    <%= f.text_area :description_ru %>
+  <div class="form-group">
+    <%= f.label :description_ru %>
+    <%= f.text_area :description_ru, class: 'form-control', placeholder: '' %>
   </div>
-  <div class="field">
-    <%= f.label :description_en %><br>
-    <%= f.text_area :description_en %>
+  <div class="form-group">
+    <%= f.label :description_en %>
+    <%= f.text_area :description_en, class: 'form-control', placeholder: '' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-success" %>
+    <% if @bed.persisted? %>
+      <%= link_to 'Show', back_end_bed_path(@bed), class: 'btn btn-default' %>
+    <% end %>
+    <%= link_to 'Beds list', back_end_beds_path, class: 'btn btn-default' %>
   </div>
 <% end %>

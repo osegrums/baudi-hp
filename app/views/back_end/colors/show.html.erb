@@ -15,5 +15,5 @@
   <%= @color.name_ru %>
 </p>
 
-<%= link_to 'Edit', edit_back_end_bed_color_path(@itemable, @color) %> |
-<%= link_to 'Back', back_end_bed_colors_path(@itemable) %>
+<%= link_to 'Edit', edit_back_end_bed_color_path(@itemable, @color), class: 'btn btn-primary' %>
+<%= link_to 'Colors list', back_end_bed_colors_path(@itemable), class: 'btn btn-default' %>

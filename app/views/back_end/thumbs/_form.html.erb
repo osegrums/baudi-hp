@@ -11,22 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control', placeholder: '' %>
   </div>
-  <div class="field">
-    <%= f.label :file %><br>
-    <%= f.file_field :file %>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_field :description, class: 'form-control', placeholder: '' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :file %>
+    <%= f.file_field :file, class: 'form-control', placeholder: '' %>
     <% if f.object.file %>
       <%= image_tag f.object.file.small.url %>
     <% end %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-success" %>
+    <% if @thumb.persisted? %>
+      <%= link_to 'Show', polymorphic_path([:back_end, @itemable, @thumbable, @thumb]), class: 'btn btn-default' %>
+    <% end %>
+    <%= link_to 'Images list', polymorphic_path([:back_end, @itemable, @thumbable, :thumbs]), class: 'btn btn-default' %>
   </div>
 <% end %>

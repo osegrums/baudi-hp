@@ -11,11 +11,16 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control', placeholder: '' %>
   </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-success" %>
+    <% if @dimension.persisted? %>
+      <%= link_to 'Show', polymorphic_path([:back_end, @itemable, @dimension]), class: 'btn btn-default' %>
+    <% end %>
+    <%= link_to 'Dimensions list', polymorphic_path([:back_end, @itemable, :dimensions]), class: 'btn btn-default' %>
   </div>
 <% end %>
