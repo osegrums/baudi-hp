@@ -77,3 +77,10 @@ pickle-email-*.html
 # Environment files that may contain sensitive data
 .env
 .powenv
+
+# Springkle related
+/config/sprinkle.rb
+/config/logrotate/
+/config/nginx/
+/config/packages/
+/config/postgres/
