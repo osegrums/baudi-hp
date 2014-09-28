@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<%= form_for @bed, url: back_end_bed_prices_path(@bed) do |f| %>
+  <table class="table table-stripped table-bordered table-hover">
+    <tr>
+      <th></th>
+      <% @bed.kits.each do |kit| %>
+        <th>
+          <%= kit.name %>
+        </th>
+      <% end %>
+    </tr>
+    <% @bed.dimensions.each do |dimension| %>
+      <%= render 'edit_prices_row', f: f, dimension: dimension, mode: 'show', has_decoration: false, has_rack: false %>
+      <%= render 'edit_prices_row', f: f, dimension: dimension, mode: 'show', has_decoration: true,  has_rack: false %>
+      <%= render 'edit_prices_row', f: f, dimension: dimension, mode: 'show', has_decoration: false, has_rack: true  %>
+      <%= render 'edit_prices_row', f: f, dimension: dimension, mode: 'show', has_decoration: true,  has_rack: true  %>
+    <% end %>
+  </table>
+<% end %>
+
+<%= link_to 'Edit prices', edit_back_end_bed_prices_path(@bed), class: 'btn btn-primary' %>
+<%= link_to 'Back to bed', back_end_bed_path(@bed), class: 'btn btn-default' %>

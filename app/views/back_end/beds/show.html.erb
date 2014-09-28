@@ -44,4 +44,5 @@
 <%= link_to "Colors (#{@bed.colors.count})", back_end_bed_colors_path(@bed), class: 'btn btn-default' %>
 <%= link_to "Dimensions (#{@bed.dimensions.count})", back_end_bed_dimensions_path(@bed), class: 'btn btn-default' %>
 <%= link_to "Kits (#{@bed.kits.count})", back_end_bed_kits_path(@bed), class: 'btn btn-default' %>
+<%= link_to "Prices (#{@bed.bed_prices.count})", back_end_bed_prices_path(@bed), class: 'btn btn-default' %>
 <%= link_to 'Beds list', back_end_beds_path, class: 'btn btn-default' %>

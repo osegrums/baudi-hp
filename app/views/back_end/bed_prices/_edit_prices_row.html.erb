@@ -1,0 +1,9 @@
+<tr>
+  <td>
+    <%= dimension.name %>,
+    Decoration: (<%= has_decoration %>), Rack: (<%= has_rack %>)
+  </td>
+  <% f.object.kits.each do |kit| %>
+    <%= render "#{mode}_price_cell", f: f, kit: kit, dimension: dimension, has_decoration: has_decoration, has_rack: has_rack %>
+  <% end %>
+</tr>

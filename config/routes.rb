@@ -3,8 +3,8 @@ Rails.application.routes.draw do
     resources :thumbs
   end
 
+  root to: 'high_voltage/pages#show', id: 'home'
 
-  root to: 'visitors#index'
   devise_for :users
   resources :beds, only: [:index, :show]
 
@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       resources :colors, concerns: [:thumbs]
       resources :dimensions
       resources :kits, concerns: [:thumbs]
+      resource  :prices, controller: 'bed_prices', only: [:show, :edit, :update]
     end
   end
 end
