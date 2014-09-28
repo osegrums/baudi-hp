@@ -15,8 +15,6 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'high_voltage'
 gem 'font-awesome-rails'
-gem 'puma', require: false
-gem 'puma_worker_killer', require: false
 
 # Database
 gem 'pg'
@@ -44,6 +42,7 @@ group :development, :test do
 end
 
 group :production do
-  gem 'puma'
+  gem 'puma', require: false
+  gem 'puma_worker_killer', require: false
   gem 'rails_12factor'
 end
