@@ -3,8 +3,26 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 jQuery ->
-  recalculatePrice = (event) ->
-    console.log 'shiiiiiiiiit'
+  prices = ->
+    $('#purchase-form').data('bed-prices')
+
+  findBedPrice = (hasRack, hasDecoration, dimensionId, kitId) ->
+    matches = $.grep prices(), (bedPrice) ->
+      bedPrice['has_rack']                == hasRack and
+      bedPrice['has_decoration']          == hasDecoration and
+      bedPrice['dimension_id'].toString() == dimensionId and
+      bedPrice['kit_id'].toString()       == kitId
+    matches[0]
+
+  recalculatePrice = ->
+    hasRack       = $('#bp-has-rack').is(':checked')
+    hasDecoration = $('#bp-has-decoration').is(':checked')
+    dimensionId   = $('input:radio[name=dimension]:checked').val();
+    kitId         = $('#bp-kit').val();
+    bedPrice      = findBedPrice(hasRack, hasDecoration, dimensionId, kitId)
+    if bedPrice
+      $('#bp-price-id').val(bedPrice['id'])
+      $('#actual-price-price').html(bedPrice['price'])
 
   changeColor = (event) ->
     event.preventDefault()
@@ -21,6 +39,8 @@ jQuery ->
     $('#bp-kit').val(kitId).trigger('change')
     $('.bp-kit-selected').removeClass('bp-kit-selected')
     $link.addClass('bp-kit-selected')
+
+  recalculatePrice()
 
   $('.bp-changer').on       'change', (event) -> recalculatePrice(event)
   $('.bp-color-changer').on 'click',  (event) -> changeColor(event)

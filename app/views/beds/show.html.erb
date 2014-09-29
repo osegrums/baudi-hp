@@ -1,4 +1,5 @@
-<%= form_for @bed_purchase, url: bed_bed_purchases_path(@bed) do |f| %>
+<% bed_prices_json = bed_prices_for_data(@bed) %>
+<%= form_for @bed_purchase, url: bed_bed_purchases_path(@bed), data: {bed_prices: bed_prices_json}, html: {id: 'purchase-form'} do |f| %>
   <% if @bed_purchase.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@bed_purchase.errors.count, "error") %> prohibited this purchase from being saved:</h2>
@@ -10,6 +11,11 @@
       </ul>
     </div>
   <% end %>
+
+  <div id="actual-price">
+    Cena: <span id='actual-price-price'>???</span> EUR
+
+  <input type="hidden" id="bp-price-id" class="bp-price-id" name="bed_purchase[bed_price_id]" />
 
   <% @bed.dimensions.order(name: :asc).each do |dim| %>
     <%= dim.name %>
