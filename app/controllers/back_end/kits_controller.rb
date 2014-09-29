@@ -57,6 +57,6 @@ class BackEnd::KitsController < BackEndController
   end
 
   def kit_params
-    params.require(:kit).permit(:name_lv, :name_en, :name_ru, :is_default)
+    params.require(:kit).permit(:name_lv, :name_en, :name_ru, :is_default, :description_lv, :description_en, :description_ru)
   end
 end

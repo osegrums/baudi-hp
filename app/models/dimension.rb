@@ -12,4 +12,5 @@ end
 #  created_at    :datetime
 #  updated_at    :datetime
 #  is_default    :boolean          default(FALSE)
+#  short_name    :string(255)
 #

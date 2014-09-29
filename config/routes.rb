@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
 
   namespace :back_end do
-    resources :beds, only: [:index, :new, :create, :edit, :update, :show] do
+    resources :beds, only: [:index, :new, :create, :edit, :update, :show], concerns: [:thumbs] do
       resources :colors, concerns: [:thumbs]
       resources :dimensions
       resources :kits, concerns: [:thumbs]

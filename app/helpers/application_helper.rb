@@ -30,4 +30,8 @@ module ApplicationHelper
       end
     end
   end
+
+  def rich_text(text)
+    sanitize text, tags: %w(p div b i strong), attributes: %w(id class style)
+  end
 end

@@ -20,5 +20,5 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  create_purchase: 'Purchase'
-  edit_purchase: 'Confirm purchase'
+  create_purchase: 'Order now'
+  edit_purchase: 'Confirm order'

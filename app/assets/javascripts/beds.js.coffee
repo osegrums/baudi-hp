@@ -24,24 +24,37 @@ jQuery ->
       $('#bp-price-id').val(bedPrice['id'])
       $('#actual-price-price').html(bedPrice['price'])
 
+  setDimensionName = ->
+    name = $('input[name=dimension]:checked').data('name')
+    $('#selected-dimension-name').html(name)
+
   changeColor = (event) ->
     event.preventDefault()
     $link = $(event.target)
+    $link = $link.closest('a') if $link.prop('tagName') == 'IMG'
     colorId = $link.data('color-id')
+    colorName = $link.data('color-name')
     $('#bp-color').val(colorId)
     $('.bp-color-selected').removeClass('bp-color-selected')
     $link.addClass('bp-color-selected')
+    $('#selected-color-name').html(colorName)
 
   changeKit = (event) ->
     event.preventDefault()
     $link = $(event.target)
+    $link = $link.closest('a') if $link.prop('tagName') == 'IMG'
     kitId = $link.data('kit-id')
+    kitDesc = $link.data('kit-description')
     $('#bp-kit').val(kitId).trigger('change')
     $('.bp-kit-selected').removeClass('bp-kit-selected')
     $link.addClass('bp-kit-selected')
+    $('#selected-kit-description').html(kitDesc)
 
-  recalculatePrice() if $('#purchase-form').length > 0
+  if $('#purchase-form').length > 0
+    recalculatePrice()
+    setDimensionName()
 
   $('.bp-changer').on       'change', (event) -> recalculatePrice(event)
   $('.bp-color-changer').on 'click',  (event) -> changeColor(event)
   $('.bp-kit-changer').on   'click',  (event) -> changeKit(event)
+  $('.bp-dimension').on     'click',  (event) -> setDimensionName()

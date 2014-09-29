@@ -3,10 +3,13 @@
 <table class="table table-stripped table-bordered table-hover">
   <thead>
     <tr>
-      <th>Latviski</th>
-      <th>Angliski</th>
-      <th>Krieviski</th>
+      <th>Īsais LV</th>
+      <th>Īsais EN</th>
+      <th>Īsais RU</th>
       <th>Is default selection</th>
+      <th>Apraksts LV</th>
+      <th>Apraksts EN</th>
+      <th>Apraksts RU</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +21,9 @@
         <td><%= kit.name_en %></td>
         <td><%= kit.name_ru %></td>
         <td><%= human_boolean kit.is_default %></td>
+        <td><%= kit.description_lv %></td>
+        <td><%= kit.description_en %></td>
+        <td><%= kit.description_ru %></td>
         <td><%= index_show_link polymorphic_path([:back_end, @itemable, kit]) %></td>
         <td><%= index_edit_link polymorphic_path([:edit, :back_end, @itemable, kit]) %></td>
         <td><%= index_destroy_link polymorphic_path([:back_end, @itemable, kit]) %></td>

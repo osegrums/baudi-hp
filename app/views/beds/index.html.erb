@@ -1,33 +1,14 @@
-<h1>Listing beds</h1>
+<div class="main" id="shop-grid">
+  <div class="innerBox">
+    <h1>Collection of 2015</h1>
+    <div class="gridContainer">
+      <% @beds.each do |bed| %>
+        <div class="grid-item">
+          <% link_content = bed.main_thumb ? image_tag(bed.main_thumb.file.w280.url) : bed.name %>
+          <%= link_to link_content, friendly_bed_path(bed) %>
+        </div>
+      <% end %>
+    </div><!-- end.gridContainer -->
 
-<table class="table table-stripped table-bordered table-hover">
-  <thead>
-    <tr>
-      <th>Code</th>
-      <th>Name</th>
-      <th>Sequence</th>
-      <th>Has decoration</th>
-      <th>Has rack</th>
-      <th>Description lv</th>
-      <th>Description ru</th>
-      <th>Description en</th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @beds.each do |bed| %>
-      <tr>
-        <td><%= bed.code %></td>
-        <td><%= bed.name %></td>
-        <td><%= bed.sequence %></td>
-        <td><%= bed.has_decoration %></td>
-        <td><%= bed.has_rack %></td>
-        <td><%= bed.description_lv %></td>
-        <td><%= bed.description_ru %></td>
-        <td><%= bed.description_en %></td>
-        <td><%= link_to 'Show', friendly_bed_path(bed) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  </div><!-- end.innerBox -->
+</div><!-- end.main -->

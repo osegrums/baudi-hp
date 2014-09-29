@@ -55,22 +55,21 @@ namespace :deploy do
   desc 'Start application'
   task :start do
     on roles(:app), in: :sequence, wait: 15 do
-      execute 'env'
-      execute "cd #{current_path} && BUNDLE_GEMFILE=#{current_path}/Gemfile RAILS_ROOT=#{current_path} PID_FILE=#{shared_path}/pids/puma.pid RAILS_ENV=production bundle exec puma -C config/puma.rb"
+      execute :bash, "-c 'cd #{current_path} && BUNDLE_GEMFILE=#{current_path}/Gemfile RAILS_ROOT=#{current_path} PID_FILE=#{shared_path}/pids/puma.pid RAILS_ENV=production bundle exec puma -C config/puma.rb'"
     end
   end
 
   desc 'Stop application'
   task :stop do
     on roles(:app), in: :sequence, wait: 15 do
-      execute "kill -s QUIT `cat #{shared_path}/pids/puma.pid`"
+      execute :kill, "-s QUIT `cat #{shared_path}/pids/puma.pid`"
     end
   end
 
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 15 do
-      execute "kill -s USR1 `cat #{shared_path}/pids/puma.pid`"
+      execute :kill, "-s USR1 `cat #{shared_path}/pids/puma.pid`"
     end
   end
 

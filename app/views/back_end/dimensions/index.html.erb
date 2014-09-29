@@ -3,6 +3,7 @@
 <table class="table table-stripped table-bordered table-hover">
   <thead>
     <tr>
+      <th>Short name</th>
       <th>Name</th>
       <th>Is default selection</th>
       <th colspan="3"></th>
@@ -12,6 +13,7 @@
   <tbody>
     <% @dimensions.each do |dimension| %>
       <tr>
+        <td><%= dimension.short_name %></td>
         <td><%= dimension.name %></td>
         <td><%= human_boolean dimension.is_default %></td>
         <td><%= index_show_link polymorphic_path([:back_end, @itemable, dimension]) %></td>

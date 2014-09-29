@@ -45,6 +45,9 @@ GEM
       i18n
       rake (>= 10.0.0)
       sshkit (~> 1.3)
+    capistrano-bundler (1.1.3)
+      capistrano (~> 3.1)
+      sshkit (~> 1.2)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -193,6 +196,7 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass
   capistrano (~> 3.2.1)
+  capistrano-bundler
   carrierwave
   carrierwave-processing
   coffee-rails (~> 4.0.0)

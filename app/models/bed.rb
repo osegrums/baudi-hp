@@ -4,6 +4,7 @@ class Bed < ActiveRecord::Base
   has_many :kits, as: :itemable
   has_many :bed_prices
   has_many :bed_purchases
+  has_many :thumbs, as: :thumbable
 
   validates :code, uniqueness: true
   validates :name, :code, presence: true
@@ -11,6 +12,10 @@ class Bed < ActiveRecord::Base
   after_create :create_default_kit
 
   accepts_nested_attributes_for :bed_prices, reject_if: proc { |attributes| attributes['price'].to_f == 0 }, allow_destroy: true
+
+  def main_thumb
+    thumbs.order(is_default: :asc).first
+  end
 
   def price_for_editing(kit, dimension, has_decoration, has_rack)
     bed_prices.find_or_initialize_by(

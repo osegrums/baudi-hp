@@ -33,6 +33,7 @@ group :development do
   gem 'quiet_assets'
   gem 'rails_layout'
   gem 'capistrano', '~> 3.2.1'
+  gem 'capistrano-bundler'
 end
 
 group :development, :test do

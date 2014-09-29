@@ -57,6 +57,6 @@ class BackEnd::DimensionsController < BackEndController
   end
 
   def dimension_params
-    params.require(:dimension).permit(:name, :is_default)
+    params.require(:dimension).permit(:name, :short_name, :is_default)
   end
 end

@@ -5,6 +5,7 @@
     <tr>
       <th>Nosaukums</th>
       <th>Apraksts</th>
+      <th>Ir galvenā?</th>
       <th>Bilde</th>
       <th colspan="3"></th>
     </tr>
@@ -15,6 +16,7 @@
       <tr>
         <td><%= thumb.name %></td>
         <td><%= thumb.description %></td>
+        <td><%= human_boolean thumb.is_default %></td>
         <td><%= image_tag thumb.file.micro.url %></td>
         <td><%= index_show_link polymorphic_path([:back_end, @itemable, @thumbable, thumb]) %></td>
         <td><%= index_edit_link polymorphic_path([:edit, :back_end, @itemable, @thumbable, thumb]) %></td>

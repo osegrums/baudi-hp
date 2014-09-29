@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140929073530) do
+ActiveRecord::Schema.define(version: 20140929223201) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 20140929073530) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "is_default",    default: false
+    t.string   "short_name"
   end
 
   create_table "kits", force: true do |t|
@@ -83,7 +84,10 @@ ActiveRecord::Schema.define(version: 20140929073530) do
     t.string   "name_ru"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "is_default",    default: false
+    t.boolean  "is_default",     default: false
+    t.text     "description_lv"
+    t.text     "description_en"
+    t.text     "description_ru"
   end
 
   create_table "thumbs", force: true do |t|
@@ -95,6 +99,7 @@ ActiveRecord::Schema.define(version: 20140929073530) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_default",     default: false
   end
 
   create_table "users", force: true do |t|

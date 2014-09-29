@@ -65,10 +65,10 @@ class BackEnd::ThumbsController < BackEndController
         @thumbable = $1.classify.constantize.find(value)
       end
     end
-    @itemable = @thumbable.itemable
+    @itemable = @thumbable.itemable if @thumbable.respond_to?(:itemable)
   end
 
   def thumb_params
-    params.require(:thumb).permit(:file, :description)
+    params.require(:thumb).permit(:name, :file, :description, :is_default)
   end
 end

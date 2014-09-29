@@ -1,23 +1,38 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Latviski:</strong>
+  <strong>Īsais LV:</strong>
   <%= @kit.name_lv %>
 </p>
 
 <p>
-  <strong>Angliski:</strong>
+  <strong>Īsais EN:</strong>
   <%= @kit.name_en %>
 </p>
 
 <p>
-  <strong>Krieviski:</strong>
+  <strong>Īsais RU:</strong>
   <%= @kit.name_ru %>
 </p>
 
 <p>
   <strong>Is Default selection:</strong>
   <%= human_boolean @kit.is_default %>
+</p>
+
+<p>
+  <strong>Apraksts LV:</strong>
+  <%= @kit.description_lv %>
+</p>
+
+<p>
+  <strong>Apraksts EN:</strong>
+  <%= @kit.description_en %>
+</p>
+
+<p>
+  <strong>Apraksts RU:</strong>
+  <%= @kit.description_ru %>
 </p>
 
 <%= link_to 'Edit', polymorphic_path([:edit, :back_end, @itemable, @kit]), class: 'btn btn-primary' %>

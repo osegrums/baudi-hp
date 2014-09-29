@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Bilde:</strong>
+  <%= image_tag @thumb.file.mini.url %>
+</p>
+
+<p>
+  <strong>Is Default selection:</strong>
+  <%= human_boolean @thumb.is_default %>
+</p>
+
+<p>
   <strong>Nosaukums:</strong>
   <%= @thumb.name %>
 </p>
@@ -8,11 +18,6 @@
 <p>
   <strong>Apraksts:</strong>
   <%= @thumb.description %>
-</p>
-
-<p>
-  <strong>Bilde:</strong>
-  <%= image_tag @thumb.file.mini.url %>
 </p>
 
 <%= link_to 'Edit', polymorphic_path([:edit, :back_end, @itemable, @thumbable, @thumb]), class: 'btn btn-primary' %>

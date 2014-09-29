@@ -12,92 +12,149 @@
     </div>
   <% end %>
 
-  <div id="actual-price">
-    Cena: <span id='actual-price-price'>???</span> EUR
-
   <input type="hidden" id="bp-price-id" class="bp-price-id" name="bed_purchase[bed_price_id]" />
 
-  <% @bed.dimensions.order(name: :asc).each do |dim| %>
-    <%= dim.name %>
-    <input type="radio" class="bp-dimension bp-changer" name="dimension" value="<%= dim.id %>" <%= 'checked="checked"' if dim.is_default? %> />
-  <% end %>
+  <!-- label for="bp-has-decoration">Ir dekorācija</label-->
+  <input type="hidden" class="bp-has-decoration bp-changer" name="has_decoration" value="" id="bp-has-decoration" />
 
-  <% default_kit = @bed.kits.where(is_default: true).first %>
-  <input type="hidden" id="bp-kit" class="bp-kit bp-changer" name="kit" value="<%= default_kit.try(:id) %>" />
-  <% if @bed.kits.count > 1 %>
-    <% @bed.kits.order(is_default: :asc, name_lv: :asc).each do |kit| %>
-      <a href="#" data-kit-id="<%= kit.id %>" class="bp-kit-changer <%= 'bp-kit-selected' if kit.is_default? %>">
-        <% thumb = kit.thumbs.first %>
-        <% if thumb %>
-          <%= image_tag thumb.file.mini.url %>
-        <% end %>
-        <%= kit.name_lv %>
-      </a>
-    <% end %>
-  <% end %>
+  <div class="main" id="shop-item">
+    <div class="leftCol">
+      <div class="innerBox">
+        <h1 class="dynamic"><%= @bed.name %></h1>
+        <p style="margin-top:-10px; padding-bottom:13px;"><img src="/assets/css/line_dotted.gif" width="497" height="1" /></p>
+        <div class="shop_thumbs_img">
+          <input type="hidden" id="bp-color" class="bp-color" name="bed_purchase[color_id]" value="" />
+          <% if @bed.colors.exists? %>
+            <% @bed.colors.order(name_lv: :asc).each_slice(5) do |colors| %>
+              <div>
+                <% colors.each do |color| %>
+                  <a href="#" data-color-id="<%= color.id %>" data-color-name="<%= color.name_lv %>" class="bp-color-changer <%= 'bp-color-selected' if color.id == @bed_purchase.color_id %>">
+                    <% thumb = color.thumbs.first %>
+                    <% if thumb %>
+                      <%= image_tag thumb.file.w46.url, alt: color.name_lv %>
+                    <% end %>
+                  </a>
+                <% end %>
+              </div>
+            <% end %>
+          <% end %>
 
-  <input type="hidden" id="bp-color" class="bp-color" name="bed_purchase[color_id]" value="" />
-  <% if @bed.colors.exists? %>
-    <% @bed.colors.order(name_lv: :asc).each do |color| %>
-      <a href="#" data-color-id="<%= color.id %>" class="bp-color-changer <%= 'bp-color-selected' if color.id == @bed_purchase.color_id %>">
-        <% thumb = color.thumbs.first %>
-        <% if thumb %>
-          <%= image_tag thumb.file.mini.url %>
-        <% end %>
-        <%= color.name_lv %>
-      </a>
-    <% end %>
-  <% end %>
+          <p>
+            <span class="dynamic">
+              Color scheme:
+            </span>
+            <span class="dynamic" id="selected-color-name"></span>
+          </p>
+        </div>
+        <!--end.shop_thumbs_img -->
 
-  <label for="bp-has-decoration">Ir dekorācija</label>
-  <input type="checkbox" class="bp-has-decoration bp-changer" name="has_decoration" value="" id="bp-has-decoration" />
+        <p>
+          <img src="/assets/css/line_dotted.gif" width="497" height="1" />
+        </p>
+        <div class="shop_size_selector" style="background-color: #fafafa;">
+          <h3>
+            Select your bed size (<span class="dynamic" id="selected-dimension-name"></span>)
+          </h3>
 
-  <label for="bp-has-rack">Ir režģis</label>
-  <input type="checkbox" class="bp-has-rack bp-changer" name="has_rack" value="" id="bp-has-rack" />
+          <table width="320" border="0">
+            <tr>
+              <% @bed.dimensions.order(name: :asc).each do |dim| %>
+                <td>
+                  <input type="radio" id="dim-<%= dim.id %>" class="bp-dimension bp-changer css-checkbox" name="dimension" value="<%= dim.id %>" <%= 'checked="checked"' if dim.is_default? %> data-name="<%= dim.name %>" />
+                  <label for="dim-<%= dim.id %>" class="css-label radGroup2"><%= dim.short_name %></label>
+                </td>
+              <% end %>
+            </tr>
+            <tr>
+              <td colspan="3" class="chekbox">
 
-  <div class="actions">
-    <%= f.submit value: t('create_purchase'), class: "btn btn-success" %>
+                <input type="checkbox" class="bp-has-rack bp-changer css-checkbox-off" name="has_rack" value="" id="bp-has-rack" />
+                <label for="bp-has-rack" class="css-label">Ir režģis</label>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <p><img src="/assets/css/line_dotted.gif" width="497" height="1" /></p>
+        <div class="linenSelect">
+          <% default_kit = @bed.kits.where(is_default: true).first %>
+          <input type="hidden" id="bp-kit" class="bp-kit bp-changer" name="kit" value="<%= default_kit.try(:id) %>" />
+          <% if @bed.kits.count > 1 %>
+            <% @bed.kits.order(is_default: :asc, name_lv: :asc).each do |kit| %>
+              <div class="linenSelectBox">
+                <a href="#" data-kit-id="<%= kit.id %>" data-kit-description="<%= kit.description_lv %>" class="bp-kit-changer <%= 'bp-kit-selected' if kit.is_default? %>">
+                  <% thumb = kit.thumbs.first %>
+                  <% if thumb %>
+                    <%= image_tag thumb.file.w93.url %>
+                  <% else %>
+                    <%= kit.name_lv %>
+                  <% end %>
+                </a>
+                <br />
+                <%= kit.name_lv %>
+              </div>
+            <% end %>
+          <% end %>
+          <div class="clear"></div>
+          <p id="selected-kit-description">
+            <%= default_kit.try(:description_lv) %>
+          </p>
+        </div>
+        <!-- end linen -->
+        <p><img src="/assets/css/line_dotted.gif" width="497" height="1" /></p>
+        <div class="cena">
+          <table width="303" border="0">
+            <!-- tr class="bed">
+              <td class="txt" width="52">Bed:</td>
+              <td class="sum" width="273">€ 2300</td>
+            </tr>
+            <tr class="linen">
+              <td class="txt">Linen:</td>
+              <td class="sum">€ 300</td>
+            </tr -->
+            <tr class="totalCost">
+              <td class="txt">Total:</td>
+              <td class="sum">
+                € <span id='actual-price-price'>???</span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <%= f.submit value: t('create_purchase'), class: "btn-style" %>
+        <div class="subNav">
+          <ul>
+            <li><a href="#">Click for more info</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- end.innerBox -->
+    </div>
+    <!-- end.leftCol -->
+
+
+    <div class="rightCol">
+      <div class="innerBox">
+        <div class="breadcrumbs"><a href="#">Beds</a> / <%= @bed.name %></div>
+        <div class="gallery" style="padding: 10px 0 0 0">
+          <div class="gallery_img">
+            <%= image_tag @bed.main_thumb.file.w510.url %>
+          </div>
+          <div class="gallery_th">
+            <% @bed.thumbs.each do |thumb| %>
+              <a href="#">
+                <%= image_tag thumb.file.w60.url %>
+              </a>
+            <% end %>
+          </div>
+        </div>
+        <!-- end gallery-->
+
+
+        <%= rich_text @bed.description_en %>
+      </div>
+      <!-- end.innerBox -->
+    </div>
+    <!-- end.rightCol -->
+    <span class="clear"></span>
   </div>
+  <!-- end.main -->
 <% end %>
-
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Code:</strong>
-  <%= @bed.code %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @bed.name %>
-</p>
-
-<p>
-  <strong>Sequence:</strong>
-  <%= @bed.sequence %>
-</p>
-
-<p>
-  <strong>Has decoration:</strong>
-  <%= @bed.has_decoration %>
-</p>
-
-<p>
-  <strong>Has rack:</strong>
-  <%= @bed.has_rack %>
-</p>
-
-<p>
-  <strong>Description lv:</strong>
-  <%= @bed.description_lv %>
-</p>
-
-<p>
-  <strong>Description ru:</strong>
-  <%= @bed.description_ru %>
-</p>
-
-<p>
-  <strong>Description en:</strong>
-  <%= @bed.description_en %>
-</p>
