@@ -40,7 +40,7 @@ jQuery ->
     $('.bp-kit-selected').removeClass('bp-kit-selected')
     $link.addClass('bp-kit-selected')
 
-  recalculatePrice()
+  recalculatePrice() if $('#purchase-form').length > 0
 
   $('.bp-changer').on       'change', (event) -> recalculatePrice(event)
   $('.bp-color-changer').on 'click',  (event) -> changeColor(event)

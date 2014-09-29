@@ -4,7 +4,15 @@ class BedPurchase < ActiveRecord::Base
 
   before_create :set_uid
 
+  before_validation :update_price
+
   private
+
+  def update_price
+    if bed_price_id_changed?
+      self.price = bed_price.price
+    end
+  end
 
   def set_uid
     self.uid = SecureRandom.uuid
