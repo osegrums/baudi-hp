@@ -4,6 +4,10 @@
   <strong>Name:</strong>
   <%= @dimension.name %>
 </p>
+<p>
+  <strong>Is Default selection:</strong>
+  <%= human_boolean @dimension.is_default %>
+</p>
 
 <%= link_to 'Edit', polymorphic_path([:edit, :back_end, @itemable, @dimension]), class: 'btn btn-primary' %>
 <%= link_to 'Dimensions list', polymorphic_path([:back_end, @itemable, :dimensions]), class: 'btn btn-default' %>

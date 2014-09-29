@@ -23,6 +23,10 @@
     <%= f.label :name_ru %>
     <%= f.text_field :name_ru, class: 'form-control', placeholder: '' %>
   </div>
+  <div>
+    <%= f.label :is_default %>
+    <%= f.check_box :is_default, class: 'checkbox', placeholder: '' %>
+  </div>
 
   <div class="actions">
     <%= f.submit class: "btn btn-success" %>

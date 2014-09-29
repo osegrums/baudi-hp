@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   root to: 'high_voltage/pages#show', id: 'home'
 
   devise_for :users
-  resources :beds, only: [:index, :show]
+  resources :beds, only: [:index, :show] do
+    resources :bed_purchases
+  end
 
   namespace :back_end do
     resources :beds, only: [:index, :new, :create, :edit, :update, :show] do

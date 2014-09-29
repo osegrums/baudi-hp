@@ -11,4 +11,5 @@ end
 #  itemable_type :string(255)
 #  created_at    :datetime
 #  updated_at    :datetime
+#  is_default    :boolean          default(FALSE)
 #

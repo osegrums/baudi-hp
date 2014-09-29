@@ -1,0 +1,46 @@
+class BedPurchasesController < ApplicationController
+  before_action :set_bed
+  before_action :set_bed_purchase, only: [:edit, :update, :show]
+
+  # GET /beds/{:bed_id}/bed_purchases/[:id]
+  def show
+  end
+
+  # GET /beds/{:bed_id}/bed_purchases/[:id]/edit
+  def edit
+  end
+
+  # POST /beds/{:bed_id}/bed_purchases
+  def create
+    @bed_purchase = @bed.bed_purchases.new(bed_purchase_params.merge(ip_address: request.remote_ip, state: 'created'))
+
+    if @bed_purchase.save
+      redirect_to edit_bed_purchase_path(@bed_purchase)
+    else
+      redirect_to friendly_bed_path(@bed), alert: 'Can not create purchase'
+    end
+  end
+
+  # PATCH/PUT /beds/{:bed_id}/bed_purchases/1
+  def update
+    if @bed_purchase.update(bed_purchase_params.merge(state: 'completed'))
+      redirect_to bed_purchase_path(@bed_purchase)
+    else
+      redirect_to friendly_bed_path(@bed), alert: 'Can not update purchase'
+    end
+  end
+
+  private
+
+  def set_color
+    @bed_purchase = @bed.bed_purchases.find(params[:id])
+  end
+
+  def set_bed_purchase
+    @bed = BedPurchase.where(uid: params[:id]).first
+  end
+
+  def bed_purchase_params
+    params.require(:bed_purchase).permit(:bed_id, :bed_price_id, :name, :email, :phone, :notes)
+  end
+end

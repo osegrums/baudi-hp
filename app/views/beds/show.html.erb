@@ -1,3 +1,59 @@
+<%= form_for @bed_purchase, url: bed_bed_purchases_path(@bed) do |f| %>
+  <% if @bed_purchase.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bed_purchase.errors.count, "error") %> prohibited this purchase from being saved:</h2>
+
+      <ul>
+      <% @bed_purchase.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% @bed.dimensions.order(name: :asc).each do |dim| %>
+    <%= dim.name %>
+    <input type="radio" class="bp-dimension bp-changer" name="dimension" value="<%= dim.id %>" <%= 'checked="checked"' if dim.is_default? %> />
+  <% end %>
+
+  <% default_kit = @bed.kits.where(is_default: true).first %>
+  <input type="hidden" id="bp-kit" class="bp-kit bp-changer" name="kit" value="<%= default_kit.try(:id) %>" />
+  <% if @bed.kits.count > 1 %>
+    <% @bed.kits.order(is_default: :asc, name_lv: :asc).each do |kit| %>
+      <a href="#" data-kit-id="<%= kit.id %>" class="bp-kit-changer <%= 'bp-kit-selected' if kit.is_default? %>">
+        <% thumb = kit.thumbs.first %>
+        <% if thumb %>
+          <%= image_tag thumb.file.mini.url %>
+        <% end %>
+        <%= kit.name_lv %>
+      </a>
+    <% end %>
+  <% end %>
+
+  <input type="hidden" id="bp-color" class="bp-color" name="bed_purchase[color_id]" value="" />
+  <% if @bed.colors.exists? %>
+    <% @bed.colors.order(name_lv: :asc).each do |color| %>
+      <a href="#" data-color-id="<%= color.id %>" class="bp-color-changer <%= 'bp-color-selected' if color.id == @bed_purchase.color_id %>">
+        <% thumb = color.thumbs.first %>
+        <% if thumb %>
+          <%= image_tag thumb.file.mini.url %>
+        <% end %>
+        <%= color.name_lv %>
+      </a>
+    <% end %>
+  <% end %>
+
+  <label for="bp-has-decoration">Ir dekorācija</label>
+  <input type="checkbox" class="bp-has-decoration bp-changer" name="bed_purchase[has_decoration]" value="" id="bp-has-decoration" />
+
+  <label for="bp-has-rack">Ir režģis</label>
+  <input type="checkbox" class="bp-has-rack bp-changer" name="bed_purchase[has_rack]" value="" id="bp-has-rack" />
+
+  <div class="actions">
+    <%= f.submit value: t('create_purchase'), class: "btn btn-success" %>
+  </div>
+<% end %>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -39,5 +95,3 @@
   <strong>Description en:</strong>
   <%= @bed.description_en %>
 </p>
-
-<%= link_to 'Back', beds_path %>

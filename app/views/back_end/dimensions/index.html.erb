@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Is default selection</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,6 +13,7 @@
     <% @dimensions.each do |dimension| %>
       <tr>
         <td><%= dimension.name %></td>
+        <td><%= human_boolean dimension.is_default %></td>
         <td><%= index_show_link polymorphic_path([:back_end, @itemable, dimension]) %></td>
         <td><%= index_edit_link polymorphic_path([:edit, :back_end, @itemable, dimension]) %></td>
         <td><%= index_destroy_link polymorphic_path([:back_end, @itemable, dimension]) %></td>

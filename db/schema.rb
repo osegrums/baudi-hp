@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140928181110) do
+ActiveRecord::Schema.define(version: 20140929073530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,22 @@ ActiveRecord::Schema.define(version: 20140928181110) do
     t.integer  "dimension_id"
     t.integer  "kit_id"
     t.decimal  "price",          precision: 10, scale: 2, default: 0.0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "bed_purchases", force: true do |t|
+    t.string   "uid"
+    t.integer  "bed_id"
+    t.integer  "bed_price_id"
+    t.integer  "color_id"
+    t.decimal  "price",        precision: 10, scale: 2
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.text     "notes"
+    t.string   "state"
+    t.string   "ip_address"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -56,6 +72,7 @@ ActiveRecord::Schema.define(version: 20140928181110) do
     t.string   "itemable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_default",    default: false
   end
 
   create_table "kits", force: true do |t|
@@ -66,6 +83,7 @@ ActiveRecord::Schema.define(version: 20140928181110) do
     t.string   "name_ru"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_default",    default: false
   end
 
   create_table "thumbs", force: true do |t|

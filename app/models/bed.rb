@@ -3,9 +3,12 @@ class Bed < ActiveRecord::Base
   has_many :dimensions, as: :itemable
   has_many :kits, as: :itemable
   has_many :bed_prices
+  has_many :bed_purchases
 
   validates :code, uniqueness: true
   validates :name, :code, presence: true
+
+  after_create :create_default_kit
 
   accepts_nested_attributes_for :bed_prices, reject_if: proc { |attributes| attributes['price'].to_f == 0 }, allow_destroy: true
 
@@ -16,6 +19,17 @@ class Bed < ActiveRecord::Base
         has_decoration: has_decoration,
         has_rack: has_rack
       )
+  end
+
+  private
+
+  def create_default_kit
+    kits.create(
+      name_lv: 'Nav komplekta',
+      name_en: 'No linen',
+      name_ru: 'Netu komplekta',
+      is_default: true
+    )
   end
 
 end

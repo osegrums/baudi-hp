@@ -59,7 +59,12 @@ class BackEnd::ThumbsController < BackEndController
   end
 
   def load_thumbable
-    @thumbable = Kit.find(params[:kit_id])
+    @thumbable = nil
+    params.each do |name, value|
+      if name =~ /(.+)_id$/
+        @thumbable = $1.classify.constantize.find(value)
+      end
+    end
     @itemable = @thumbable.itemable
   end
 
