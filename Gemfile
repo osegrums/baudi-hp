@@ -27,9 +27,9 @@ gem 'mini_magick'
 
 group :development do
   gem 'better_errors'
-  gem 'binding_of_caller', :platforms => [:mri_21]
+  gem 'binding_of_caller'
   gem 'foreman'
-  gem 'hub', :require=>nil
+  gem 'hub', require: false
   gem 'quiet_assets'
   gem 'rails_layout'
   gem 'capistrano', '~> 3.2.1'
