@@ -20,7 +20,7 @@ env_default = {
 set :default_env, env_default
 
 # Default value for linked_dirs is []
-set :linked_dirs, %w{pids bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs, %w{pids bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
 set :linked_files, %w{.env}
 
 # Default branch is :master
