@@ -6,6 +6,7 @@
 
 role :app, %w{www-baudidesign@178.62.229.137}
 role :web, %w{www-baudidesign@178.62.229.137}
+role :db,  %w{www-baudidesign@178.62.229.137}
 
 
 # Extended Server Syntax
@@ -14,7 +15,7 @@ role :web, %w{www-baudidesign@178.62.229.137}
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server '178.62.229.137', user: 'www-baudidesign', roles: %w{web app}
+server '178.62.229.137', user: 'www-baudidesign', roles: %w{web app db}
 
 
 # Custom SSH Options
