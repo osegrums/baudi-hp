@@ -1,5 +1,3 @@
-require "dotenv/capistrano"
-
 # config valid only for Capistrano 3.1
 lock '3.2.1'
 
@@ -23,6 +21,7 @@ set :default_env, env_default
 
 # Default value for linked_dirs is []
 set :linked_dirs, %w{pids bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_files, %w{config/database.yml .env}
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
