@@ -1,17 +1,19 @@
 <div class="header">
-  <div class="logo"><a href="#"><img src="/assets/css/logo.png" width="310" height="163" /></a></div>
+  <div class="logo"><a href="<%= root_path %>"><img src="/assets/css/logo.png" width="310" height="163" /></a></div>
   <div class="navig">
     <ul>
-      <li class="here"><a href="#">home</a></li>
-      <li>
-        <%= link_to 'beds', beds_path %>
-      </li>
-      <li><a href="#">linen</a></li>
-      <li><a href="#">inspiration</a></li>
-      <li><a href="#">about</a></li>
+      <%= main_nav_link 'home', root_path %>
+      <%= main_nav_link 'beds', beds_path %>
+      <%= main_nav_link 'linen', '#' %>
+      <%= main_nav_link 'inspiration', '#' %>
+      <%= main_nav_link 'about', page_path(id: 'about') %>
     </ul>
   </div>
-  <div class="langmenu"><a href="#">EN</a> &nbsp; <a href="#">LV</a> &nbsp; <a href="#">RU</a></div>
+  <div class="langmenu">
+    <% allowed_locales.each do |locale| %>
+      <%= link_to locale.upcase, root_path(locale: locale), class: "locale-switch-link #{'active' if locale.to_sym == I18n.locale}" %>
+    <% end %>
+  </div>
   <img src="/assets/css/line_header.gif" width="950" height="1" />
 </div>
 <!-- end.header -->

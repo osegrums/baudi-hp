@@ -25,13 +25,13 @@
         <div class="shop_thumbs_img">
           <input type="hidden" id="bp-color" class="bp-color" name="bed_purchase[color_id]" value="" />
           <% if @bed.colors.exists? %>
-            <% @bed.colors.order(name_lv: :asc).each_slice(5) do |colors| %>
+            <% @bed.colors.order(located_field_name(:name) => :asc).each_slice(5) do |colors| %>
               <div>
                 <% colors.each do |color| %>
-                  <a href="#" data-color-id="<%= color.id %>" data-color-name="<%= color.name_lv %>" class="bp-color-changer <%= 'bp-color-selected' if color.id == @bed_purchase.color_id %>">
+                  <a href="#" data-color-id="<%= color.id %>" data-color-name="<%= lf(color, :name) %>" class="bp-color-changer <%= 'bp-color-selected' if color.id == @bed_purchase.color_id %>">
                     <% thumb = color.thumbs.first %>
                     <% if thumb %>
-                      <%= image_tag thumb.file.w46.url, alt: color.name_lv %>
+                      <%= image_tag thumb.file.w46.url, alt: lf(color, :name) %>
                     <% end %>
                   </a>
                 <% end %>
@@ -79,24 +79,24 @@
           <% default_kit = @bed.kits.where(is_default: true).first %>
           <input type="hidden" id="bp-kit" class="bp-kit bp-changer" name="kit" value="<%= default_kit.try(:id) %>" />
           <% if @bed.kits.count > 1 %>
-            <% @bed.kits.order(is_default: :asc, name_lv: :asc).each do |kit| %>
+            <% @bed.kits.order(:is_default => :asc, located_field_name(:name) => :asc).each do |kit| %>
               <div class="linenSelectBox">
-                <a href="#" data-kit-id="<%= kit.id %>" data-kit-description="<%= kit.description_lv %>" class="bp-kit-changer <%= 'bp-kit-selected' if kit.is_default? %>">
+                <a href="#" data-kit-id="<%= kit.id %>" data-kit-description="<%= lf(kit, :description) %>" class="bp-kit-changer <%= 'bp-kit-selected' if kit.is_default? %>">
                   <% thumb = kit.thumbs.first %>
                   <% if thumb %>
                     <%= image_tag thumb.file.w93.url %>
                   <% else %>
-                    <%= kit.name_lv %>
+                    <%= lf(kit, :name) %>
                   <% end %>
                 </a>
                 <br />
-                <%= kit.name_lv %>
+                <%= lf(kit, :name) %>
               </div>
             <% end %>
           <% end %>
           <div class="clear"></div>
           <p id="selected-kit-description">
-            <%= default_kit.try(:description_lv) %>
+            <%= lf(default_kit, :description) %>
           </p>
         </div>
         <!-- end linen -->
@@ -149,7 +149,7 @@
         <!-- end gallery-->
 
 
-        <%= rich_text @bed.description_en %>
+        <%= rich_text lf(@bed, :description) %>
       </div>
       <!-- end.innerBox -->
     </div>

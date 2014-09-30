@@ -34,4 +34,18 @@ module ApplicationHelper
   def rich_text(text)
     sanitize text, tags: %w(p div b i strong), attributes: %w(id class style)
   end
+
+  def lf(object, field)
+    object.send(located_field_name(field)) if object
+  end
+
+  def located_field_name(field)
+    "#{field}_#{I18n.locale}".to_sym
+  end
+
+  def main_nav_link(name, path)
+    content_tag('li', class: "#{"here" if name.to_s == @active_nav_tab.to_s}") do
+      link_to name, path
+    end
+  end
 end

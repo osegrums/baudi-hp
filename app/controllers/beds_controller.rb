@@ -8,4 +8,8 @@ class BedsController < ApplicationController
     @bed = Bed.where(code: params[:id]).first
     @bed_purchase = @bed.bed_purchases.build
   end
+
+  def set_active_nav_tab
+    @active_nav_tab = :beds
+  end
 end

@@ -22,6 +22,7 @@ body { margin: 0; padding: 0; background: url(/assets/css/BG-LINIJAS.png) no-rep
   .langmenu { position:absolute; top: 30px; left:840px; font-family: 'Dosis'; font-weight:500; font-size:14px; color: #999;  }
   .langmenu a:link, .langmenu a:visited { color:#999; text-decoration:none }
   .langmenu a:hover { color:#F60; text-decoration:underline }
+  .langmenu a.active { color:#F60; }
 
 .main { border-bottom:1px solid #ccc; padding-bottom:150px; margin-bottom:400px }
 
