@@ -38,6 +38,7 @@ group :development do
   gem 'rails_layout'
   gem 'capistrano', '~> 3.2.1'
   gem 'capistrano-bundler'
+  gem 'capistrano-rails'
 end
 
 group :development, :test do

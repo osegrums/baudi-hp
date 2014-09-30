@@ -6,7 +6,8 @@ set :repo_url, 'git@github.com:osegrums/baudi-hp.git'
 
 set :scm, :git
 set :repository_cache, "git_cache"
-set :deploy_via, :remote_cache
+# set :deploy_via, :remote_cache
+set :deploy_via, :copy
 set :copy_exclude, [".git", "public/images/*.psd"]
 # set :shared_children, fetch(:shared_children) + ['tmp/sockets', 'tmp/cache']
 
@@ -21,7 +22,7 @@ set :default_env, env_default
 
 # Default value for linked_dirs is []
 set :linked_dirs, %w{pids bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
-set :linked_files, %w{config/database.yml .env}
+set :linked_files, %w{.env}
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
