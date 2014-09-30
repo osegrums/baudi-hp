@@ -19,7 +19,7 @@ threads 2,2
 state_path "#{rails_root}/tmp/sockets/puma.state"
 
 # Listen on a Unix data socket
-bind "unix://#{rails_root}/tmp/sockets/unicorn.sock"
+bind "unix://#{rails_root}/tmp/sockets/puma.sock"
 
 # Daemonize the server into the background. Highly suggest that
 # this be combined with “pidfile” and “stdout_redirect”.
