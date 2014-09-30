@@ -2,7 +2,7 @@
 /* CSS Document */
 
 
-body { margin: 0; padding: 0; background: url(/assets/css/BG-LINIJAS.png) no-repeat center center fixed #eaeaea;
+body { margin: 0; padding: 0; background: url(/images/css/BG-LINIJAS.png) no-repeat center center fixed #eaeaea;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -17,8 +17,8 @@ body { margin: 0; padding: 0; background: url(/assets/css/BG-LINIJAS.png) no-rep
        text-shadow: 0 0 5px #f1f1f1; font-weight:500}
     .navig ul li { display:inline-block; margin:0; margin:0;  }
     .navig ul li.here { font-weight:700 }
-    .navig ul li a { display:block; padding:7px 30px; background:#fafafa; background-image:url(/assets/css/bg_nav.gif); text-decoration:none; color:#979595;  }
-    .navig ul li a:hover {  background-image:url(/assets/css/bg_nav-hover.gif); color:#4c9e7b }
+    .navig ul li a { display:block; padding:7px 30px; background:#fafafa; background-image:url(/images/css/bg_nav.gif); text-decoration:none; color:#979595;  }
+    .navig ul li a:hover {  background-image:url(/images/css/bg_nav-hover.gif); color:#4c9e7b }
   .langmenu { position:absolute; top: 30px; left:840px; font-family: 'Dosis'; font-weight:500; font-size:14px; color: #999;  }
   .langmenu a:link, .langmenu a:visited { color:#999; text-decoration:none }
   .langmenu a:hover { color:#F60; text-decoration:underline }
@@ -63,7 +63,7 @@ input[type=radio].css-checkbox { display:none; }
 
 input[type=radio].css-checkbox + label.css-label { padding-left:20px; height:15px; display:inline-block; line-height:15px; background-repeat:no-repeat; background-position: 0 0;font-size:13px; vertical-align:middle; cursor:pointer ;}
   input[type=radio].css-checkbox:checked + label.css-label { background-position: 0 -15px;}
-  label.css-label { background-image:url(/assets/css/csscheckbox_9ca3d7e8c2abca416f07682f901e90f6.png);
+  label.css-label { background-image:url(/images/css/csscheckbox_9ca3d7e8c2abca416f07682f901e90f6.png);
           -webkit-touch-callout: none;
           -webkit-user-select: none;
           -khtml-user-select: none;
@@ -82,7 +82,7 @@ input[type=checkbox].css-checkbox:checked + label.css-label { background-positio
 
 td.chekbox { padding-top:7px }
 td.chekbox label {
-        background-image:url(/assets/css/csscheckbox_3834ae89f4737dac1eac0995f9ac4cc9.png);
+        background-image:url(/images/css/csscheckbox_3834ae89f4737dac1eac0995f9ac4cc9.png);
         -webkit-touch-callout: none;
         -webkit-user-select: none;
         -khtml-user-select: none;
@@ -92,9 +92,9 @@ td.chekbox label {
       }
 
 /* LIELÄ€ PIRKT POGA */
-.btn-style { font-family: 'Dosis', sans-serif; text-transform:uppercase; color:#979595; font-size:27px; font-weight:700; border:none; width: 100%; padding: 8px;  cursor:pointer; text-shadow: 0 0 5px #f1f1f1; margin-top:30px; background:url(/assets/css/bg_nav.gif); }
+.btn-style { font-family: 'Dosis', sans-serif; text-transform:uppercase; color:#979595; font-size:27px; font-weight:700; border:none; width: 100%; padding: 8px;  cursor:pointer; text-shadow: 0 0 5px #f1f1f1; margin-top:30px; background:url(/images/css/bg_nav.gif); }
 
-.btn-style:hover { background:url(/assets/css/bg_nav-hoverOrange.gif);  color:#ff9900; text-shadow: 0 0 5px #f1f1f1 }
+.btn-style:hover { background:url(/images/css/bg_nav-hoverOrange.gif);  color:#ff9900; text-shadow: 0 0 5px #f1f1f1 }
 
 
 

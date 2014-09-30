@@ -21,7 +21,7 @@
     <div class="leftCol">
       <div class="innerBox">
         <h1 class="dynamic"><%= @bed.name %></h1>
-        <p style="margin-top:-10px; padding-bottom:13px;"><img src="/assets/css/line_dotted.gif" width="497" height="1" /></p>
+        <p style="margin-top:-10px; padding-bottom:13px;"><img src="/images/css/line_dotted.gif" width="497" height="1" /></p>
         <div class="shop_thumbs_img">
           <input type="hidden" id="bp-color" class="bp-color" name="bed_purchase[color_id]" value="" />
           <% if @bed.colors.exists? %>
@@ -49,7 +49,7 @@
         <!--end.shop_thumbs_img -->
 
         <p>
-          <img src="/assets/css/line_dotted.gif" width="497" height="1" />
+          <img src="/images/css/line_dotted.gif" width="497" height="1" />
         </p>
         <div class="shop_size_selector" style="background-color: #fafafa;">
           <h3>
@@ -74,7 +74,7 @@
             </tr>
           </table>
         </div>
-        <p><img src="/assets/css/line_dotted.gif" width="497" height="1" /></p>
+        <p><img src="/images/css/line_dotted.gif" width="497" height="1" /></p>
         <div class="linenSelect">
           <% default_kit = @bed.kits.where(is_default: true).first %>
           <input type="hidden" id="bp-kit" class="bp-kit bp-changer" name="kit" value="<%= default_kit.try(:id) %>" />
@@ -100,7 +100,7 @@
           </p>
         </div>
         <!-- end linen -->
-        <p><img src="/assets/css/line_dotted.gif" width="497" height="1" /></p>
+        <p><img src="/images/css/line_dotted.gif" width="497" height="1" /></p>
         <div class="cena">
           <table width="303" border="0">
             <!-- tr class="bed">
