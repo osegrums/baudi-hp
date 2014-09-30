@@ -6,8 +6,7 @@ set :repo_url, 'git@github.com:osegrums/baudi-hp.git'
 
 set :scm, :git
 set :repository_cache, "git_cache"
-# set :deploy_via, :remote_cache
-set :deploy_via, :copy
+set :deploy_via, :remote_cache
 set :copy_exclude, [".git", "public/images/*.psd"]
 # set :shared_children, fetch(:shared_children) + ['tmp/sockets', 'tmp/cache']
 
