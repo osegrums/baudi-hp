@@ -1,6 +1,6 @@
 class Color < ActiveRecord::Base
   belongs_to :itemable, polymorphic: true
-  has_many   :thumbs, as: :thumbable
+  has_many   :thumbs, as: :thumbable, dependent: :destroy
 end
 
 # == Schema Information

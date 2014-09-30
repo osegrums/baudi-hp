@@ -1,11 +1,11 @@
 class Bed < ActiveRecord::Base
   include Bootsy::Container
-  has_many :colors, as: :itemable
-  has_many :dimensions, as: :itemable
-  has_many :kits, as: :itemable
-  has_many :bed_prices
-  has_many :bed_purchases
-  has_many :thumbs, as: :thumbable
+  has_many :colors, as: :itemable, dependent: :destroy
+  has_many :dimensions, as: :itemable, dependent: :destroy
+  has_many :kits, as: :itemable, dependent: :destroy
+  has_many :bed_prices, dependent: :destroy
+  has_many :bed_purchases, dependent: :nullify
+  has_many :thumbs, as: :thumbable, dependent: :destroy
 
   validates :code, uniqueness: true
   validates :name, :code, presence: true
