@@ -23,9 +23,9 @@
         <td><%= bed.sequence %></td>
         <td><%= human_boolean bed.has_decoration %></td>
         <td><%= human_boolean bed.has_rack %></td>
-        <td><%= bed.description_lv %></td>
-        <td><%= bed.description_ru %></td>
-        <td><%= bed.description_en %></td>
+        <td><%= rich_text bed.description_lv %></td>
+        <td><%= rich_text bed.description_en %></td>
+        <td><%= rich_text bed.description_ru %></td>
         <td><%= index_show_link back_end_bed_path(bed) %></td>
         <td><%= index_edit_link edit_back_end_bed_path(bed) %></td>
       </tr>

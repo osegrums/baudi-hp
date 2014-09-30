@@ -33,15 +33,15 @@
   </div>
   <div class="form-group">
     <%= f.label :description_lv %>
-    <%= f.text_area :description_lv, class: 'form-control', placeholder: '' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :description_ru %>
-    <%= f.text_area :description_ru, class: 'form-control', placeholder: '' %>
+    <%= f.bootsy_area :description_lv, class: 'form-control' %>
   </div>
   <div class="form-group">
     <%= f.label :description_en %>
-    <%= f.text_area :description_en, class: 'form-control', placeholder: '' %>
+    <%= f.bootsy_area :description_en, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description_ru %>
+    <%= f.bootsy_area :description_ru, class: 'form-control' %>
   </div>
   <div class="actions">
     <%= f.submit class: "btn btn-success" %>

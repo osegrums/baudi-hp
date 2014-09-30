@@ -1,4 +1,5 @@
 class Bed < ActiveRecord::Base
+  include Bootsy::Container
   has_many :colors, as: :itemable
   has_many :dimensions, as: :itemable
   has_many :kits, as: :itemable

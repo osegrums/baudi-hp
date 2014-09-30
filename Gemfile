@@ -25,6 +25,8 @@ gem 'carrierwave'
 gem 'carrierwave-processing'
 gem 'mini_magick'
 
+gem 'bootsy'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
