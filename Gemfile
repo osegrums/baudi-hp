@@ -15,6 +15,7 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'high_voltage'
 gem 'font-awesome-rails'
+gem 'dotenv-rails'
 
 # Database
 gem 'pg'
