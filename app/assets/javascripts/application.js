@@ -15,3 +15,4 @@
 //= require bootsy
 //= require bootstrap-sprockets
 //= require_tree .
+//= require blueimp-gallery

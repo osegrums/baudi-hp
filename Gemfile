@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 # ruby '2.1.3'
 
 gem 'rails', '4.1.6'
@@ -26,6 +27,7 @@ gem 'carrierwave-processing'
 gem 'mini_magick'
 
 gem 'bootsy'
+gem 'rails-assets-blueimp-gallery'
 
 group :development do
   gem 'better_errors'
