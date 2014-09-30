@@ -31,8 +31,6 @@ test:
 #
 #   DATABASE_URL="mysql2://myuser:mypass@localhost/somedatabase"
 #
-demo:
-  url: <%= ENV['DATABASE_URL'] %>
-
 production:
+  adapter: postgresql
   url: <%= ENV['DATABASE_URL'] %>
