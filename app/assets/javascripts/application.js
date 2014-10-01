@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require bootsy
 //= require bootstrap-sprockets
-//= require_tree .
 //= require blueimp-gallery
+//= require simple.carousel
+//= require_tree .
