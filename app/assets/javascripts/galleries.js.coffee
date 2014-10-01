@@ -1,3 +1,6 @@
+# https://github.com/Phifo/blueimp-gallery
+# http://blueimp.github.io/Gallery/
+
 jQuery ->
   document.getElementById("bed-images-container").onclick = (event) ->
     event = event or window.event
