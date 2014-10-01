@@ -1,31 +1,61 @@
 <div class="main" id="home">
-  <div class="slider">
-    <div class="sliderBox"><img src="/images/slider/01.jpg" width="874" height="369" /></div>
-  </div>
-  <!-- end .slider -->
-  <div class="leftCol">
-    <div class="innerBox">
+  <div class="innerBox">
+
+    <div class="slider">
+    <div class="sliderBox"><img src="/images/slider/01.jpg" width="874" height="369" /></div><!-- end.sliderBox -->
+    </div><!-- end .slider -->
+
+    <div class="leftCol">
+      <div class="innerBox">
       <h1>Welcome to Baudi design beds</h1>
       <p>We produce hand-made custom beds, headboards and linen for those open minded. Situated in Lettland, Riga we offer our products for ordering on-line. </p>
       <p style="padding-top:13px; padding-bottom:13px;"><img src="/images/css/line_dotted.gif" width="497" height="1" /></p>
+
       <div class="quickLink">
-        <div><img src="/images/slider/quickLinkBeds.jpg" width="244" height="164" /></div>
-        <div><img src="/images/slider/quickLinkLinen.jpg" width="244" height="164" /></div>
+        <div class="quickLinkBox">
+          <div class="titleContainer">
+            <h3>BEDS</h3>
+          </div>
+          <a href="<%= beds_path %>"><img src="/images/slider/quickLinkBeds.jpg" width="244" height="164" /></a>
+        </div>
+        <div class="quickLinkBox">
+          <div class="titleContainer">
+            <h3>LINEN</h3>
+          </div>
+          <a href="#"><img src="/images/slider/quickLinkLinen.jpg" width="244" height="164" /></a>
+        </div>
         <span class="clear"></span>
       </div>
-      <p class="oswald">Take a look at our <%= link_to 'collection of beds', beds_path %></a> and <a href="#">linen</a>. </p>
+
+      <p class="oswald">Take a look at our <a href="<%= beds_path %>">collection of beds</a> and <a href="#">linen</a>. </p>
+
+      </div>
     </div>
-  </div>
-  <div class="rightCol">
-    <div style="display:block; height:300px; width:290px; overflow: hidden;">
-      <h2 style="margin-bottom: -3px">Contacts</h2>
-      <p style="color:#3e5d76; line-height: 1.5em; padding-top:0px">Tel: +371 26393580<br />Mail: baudi@baudidesign.com</p>
-      <p style=" font-style:italic; color:#757c81; font-size:13px">Customers needs are at the top of our priorities. If you have any questions, dont be shy and call us or send an email.</p>
-      <p style="padding-top:13px; padding-bottom:13px;"><img src="/images/css/line_dotted.gif" width="497" height="1" /></p>
-      <div style=""><img src="/images/slider/sc_tmp.gif" /></div>
-    </div>
-  </div>
-  <!-- end.rightCol -->
-  <span class="clear"></span>
-</div>
-<!-- end.main -->
+
+    <div class="rightCol">
+      <div class="contactInfo">
+        <h2 style="margin-bottom: -3px">Contacts</h2>
+
+        <p style="color:#3e5d76; line-height: 1.5em;">Tel: +371 22-02-08-02 (GT+2)<br />Mail: shop@baudibeds.com</p>
+        <p style="font-style:italic; color:#757c81; font-size:13px">Customers needs are at the top of our priorities. If you have any questions, dont be shy and call us or send an email.</p>
+        <p style="padding-top:30px; padding-bottom:13px;"><img src="/images/css/line_dotted.gif" width="497" height="1" /></p>
+
+        <div class="sc_icons">
+          <div class="fb">
+            <a href="https://www.facebook.com/pages/BAUDI/1537569736475457"><img src="/images/css/ico_FB.gif" width="29" height="29" /></a>
+          </div>
+          <div class="tw">
+            <a href="https://twitter.com/baudibeds"><img src="/images/css/ico_TW.gif" width="29" height="29" /></a>
+          </div>
+          <div class="pin">
+            <a href="http://www.pinterest.com/baudibeds/"><img src="/images/css/ico_PN.gif" width="29" height="29" /></a>
+          </div>
+        </div>
+
+      </div><!-- end.contactInfo -->
+    </div><!-- end.rightCol -->
+
+    <span class="clear"></span>
+
+  </div><!-- end.innerBox -->
+</div><!-- end.main -->

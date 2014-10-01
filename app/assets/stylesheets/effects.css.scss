@@ -1,0 +1,36 @@
+body:after{
+  display:none;
+  content: url(/images/css/bg_nav-hover.gif) url(/images/css/bg_nav-hoverOrange.gif);
+}
+
+.btn-style {
+  transition: background-image 0.2s ease-in-out;
+
+  -webkit-transition-property:color, text;
+  -webkit-transition-duration: 0.2s, 0.2s;
+  -webkit-transition-timing-function: linear, ease-in;
+
+  -moz-transition-property:color, text;
+  -moz-transition-duration:0.2s;
+  -moz-transition-timing-function: linear, ease-in;
+}
+
+.sc_icons img {
+  opacity: 0.4; /* -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  filter: grayscale(100%);  */
+
+  -moz-transition-duration: 0s;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.08s;
+}
+
+.sc_icons img:hover {
+  opacity: 1;  /* -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  filter: grayscale(0%); */
+
+  -moz-transition-duration: 0s;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.08s;
+}

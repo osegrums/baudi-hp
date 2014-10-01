@@ -26,6 +26,9 @@ body { margin: 0; padding: 0; background: url(/images/css/BG-LINIJAS.png) no-rep
 
 .main { border-bottom:1px solid #ccc; padding-bottom:150px; margin-bottom:400px }
 
+
+/* GLOBAL TEXT DIZ */
+
 h1 { font-family: 'Oswald', Impact, sans-serif; font-weight:400; color:#3e5d76; font-size:27px }
 h2 { font-family: 'Oswald', Impact, sans-serif; font-weight:300; color:#6c89a1;  font-size:27px }
 h3 {  font-family: 'Oswald', Impact, sans-serif; font-weight:400; color:#615f5f; font-size:18px }
@@ -34,16 +37,19 @@ p { line-height:1.4em; color:#372714; font-family: 'Open Sans', sans-serif; font
 p.oswald { font-family: 'Oswald'; font-weight:500; font-size:18px; color:#666 }
 p.oswald a:link, p.oswald a:visited { color:#F60 }
 
-.slider { display:block; padding: 16px 36px; max-width:950px; overflow:hidden; }
+.slider { display:block; padding: 16px 36px 16px 7px; max-width:950px; overflow:hidden; }
 .sliderBox {  }
+
+
+/* LEFT COL */
 
 .leftCol { display:block; float:left; width:555px;  }
   body #shop-item .leftCol { display:block; float:left; width:390px;  overflow:hidden  }
 
 .leftCol .innerBox {  padding-left:60px }
-  .leftCol p { }
-  .quickLink { }
-  .quickLink div { float: left }
+
+
+
 
 .shop_thumbs_img { margin-top:-10px }
 .shop_thumbs_img div { padding-bottom:7px  }
@@ -55,6 +61,11 @@ p.oswald a:link, p.oswald a:visited { color:#F60 }
 .shop_size_selector h3 { padding:5px 0 10px 0; margin:0  }
 .shop_size_selector table { font-size: 12px; color:#666; border-collapse:collapse }
 .shop_size_selector table td { padding-bottom: 5px  }
+
+
+
+
+
 
 
 
@@ -91,14 +102,13 @@ td.chekbox label {
         user-select: none;
       }
 
-/* LIELÄ€ PIRKT POGA */
+/* LIELĀ PIRKT POGA */
 .btn-style { font-family: 'Dosis', sans-serif; text-transform:uppercase; color:#979595; font-size:27px; font-weight:700; border:none; width: 100%; padding: 8px;  cursor:pointer; text-shadow: 0 0 5px #f1f1f1; margin-top:30px; background:url(/images/css/bg_nav.gif); }
 
 .btn-style:hover { background:url(/images/css/bg_nav-hoverOrange.gif);  color:#ff9900; text-shadow: 0 0 5px #f1f1f1 }
 
 
-
-
+/* SHOP LINEN */
 
 .linenSelect { }
 .linenSelect  p  { border:1px solid #d3d3d3; padding: 15px 12px; font-size:13px; color:#666  }
@@ -128,6 +138,7 @@ td.chekbox label {
 
 
 /* SUBNAV LEFTCOL */
+
 .leftCol .subNav { border-top: 1px solid #ccc; font-family: 'Oswald', Impact, sans-serif; font-weight:400; color:#3e5d76; font-size:17px; text-align:center; margin-top:20px   }
  .leftCol .subNav ul { margin:0; padding:0; }
  .leftCol .subNav ul li { margin:0; padding:5px; list-style-type:none; border-bottom: 1px solid #ccc   }
@@ -137,6 +148,9 @@ td.chekbox label {
 -webkit-transition-timing-function: ease-out, ease-in;   }
  .leftCol .subNav ul li a:hover { color:#F60 }
 
+
+
+/* RIGHT COL */
 
 .rightCol { display:block; float: right; width: 330px; }
   body #shop-item .rightCol { width: 540px;  }
@@ -149,7 +163,7 @@ td.chekbox label {
   .gallery_th { text-align:center; padding: 11px 0 0 0 }
   .gallery_th img { padding: 0 4px 0 0 }
 
-.rightCol p { font-size:13px; color:#595959; line-height:1.4em; margin-left:23px }
+.rightCol p { font-size:13px; color:#595959; line-height:1.4em;  }
 
 
 .clear { display:block; clear:both }
@@ -166,5 +180,35 @@ td.chekbox label {
 .gridContainer { display:block;  overflow:hidden; width:915px;  }
 
 .grid-item { float:left; margin-right:24px; margin-bottom: 24px  }
+
+
+
+/* HOME SPECIALS */
+
+.quickLink {  }
+  .quickLinkBox { display:block; width:244px; float:left  }
+    .titleContainer { background-image:url(/images/css/bg_quickLinkTitle.png); background-position:right; position: absolute; display:block; width:244px  }
+    .titleContainer h3 { margin:0; padding: 4px 13px; margin:0; color:#FFF; text-transform: uppercase; font-weight:300; font-size:20px;   }
+      .quickLinkBox:hover h3 { color:#FC0 }
+    .titleContainer img { border:none  }
+
+
+
+
+.contactInfo { display:block; overflow:hidden; width:290px }
+.contactInfo p {  padding:10px 0px 10px 0px; margin: 0; }
+
+
+.sc_icons { padding-top:29px  } /*Social media */
+  .sc_icons img { border: none;  }
+    .sc_icons img:hover { /* chek effects.css */ }
+
+.sc_icons div  { display:block; float:left; width:30px; height:30px; margin-right:18px }
+  .sc_icons .fb {  }
+  .sc_icons .tw {  }
+  .sc_icons .pin {  }
+
+
+
 
 
