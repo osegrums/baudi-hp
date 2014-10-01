@@ -1,0 +1,74 @@
+<% bed_prices_json = bed_prices_for_data(@bed) %>
+<%= form_for @bed_purchase, url: bed_bed_purchases_path(@bed), data: {bed_prices: bed_prices_json}, html: {id: 'purchase-form'} do |f| %>
+  <% if @bed_purchase.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bed_purchase.errors.count, "error") %> prohibited this purchase from being saved:</h2>
+
+      <ul>
+      <% @bed_purchase.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <input type="hidden" id="bp-price-id" class="bp-price-id" name="bed_purchase[bed_price_id]" />
+
+  <!-- label for="bp-has-decoration">Ir dekorācija</label-->
+  <input type="hidden" class="bp-has-decoration bp-changer" name="has_decoration" value="" id="bp-has-decoration" />
+
+  <div class="main" id="shop-item">
+    <div class="leftCol">
+      <div class="innerBox">
+        <h1 class="dynamic"><%= @bed.name %></h1>
+        <p style="font-size:13px; color:#999; border:1px solid #f1f1f1; background:#fcfcfc; text-align:center; padding:50px;">
+          The online shop is going to be lounched on october 6th, 2014.
+        </p>
+      </div>
+      <!-- end.innerBox -->
+    </div>
+    <!-- end.leftCol -->
+
+
+    <div class="rightCol">
+      <div class="innerBox">
+        <div class="breadcrumbs"><a href="#">Beds</a> / <%= @bed.name %></div>
+        <div id="bed-images-container" class="gallery" style="padding: 10px 0 0 0">
+          <div class="gallery_img">
+            <% if @bed.thumbs.any? %>
+              <%= link_to image_tag(@bed.main_thumb.file.w510.url), @bed.main_thumb.file.w510.url, target: '_blank', data: {gallery: '#blueimp-gallery'} %>
+              <!-- <%= image_tag(@bed.main_thumb.file.w510.url) %> -->
+            <% end %>
+          </div>
+          <div class="gallery_th">
+            <% if @bed.thumbs.any? %>
+
+              <% images = @bed.thumbs.to_a - [@bed.main_thumb] %>
+              <% images.each do |thumb| %>
+                <%= link_to image_tag(thumb.file.w60.url), thumb.file.w510.url, target: '_blank', data: {gallery: '#blueimp-gallery'} %>
+                <!-- <%= image_tag(thumb.file.w60.url) %> -->
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        <div id="blueimp-gallery" class="blueimp-gallery">
+          <div class="slides"></div>
+          <h3 class="title"></h3>
+          <a class="prev">‹</a>
+          <a class="next">›</a>
+          <a class="play-pause"></a>
+          <ol class="indicator"></ol>
+        </div>
+
+        <!-- end gallery-->
+
+
+        <%= rich_text lf(@bed, :description) %>
+      </div>
+      <!-- end.innerBox -->
+    </div>
+    <!-- end.rightCol -->
+    <span class="clear"></span>
+  </div>
+  <!-- end.main -->
+<% end %>

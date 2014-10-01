@@ -7,6 +7,11 @@ class BedsController < ApplicationController
   def show
     @bed = Bed.where(code: params[:id]).first
     @bed_purchase = @bed.bed_purchases.build
+    if params[:showme]
+      render :show
+    else
+      render :show_incomplete
+    end
   end
 
   def set_active_nav_tab
