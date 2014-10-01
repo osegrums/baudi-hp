@@ -10,9 +10,12 @@
     </ul>
   </div>
   <div class="langmenu">
-    <% allowed_locales.each do |locale| %>
+    <!-- <% allowed_locales.each do |locale| %>
       <%= link_to locale.upcase, root_path(locale: locale), class: "locale-switch-link #{'active' if locale.to_sym == I18n.locale}" %>
-    <% end %>
+    <% end %> -->
+    <%= link_to 'EN', '#', class: "active" %>
+    LV
+    RU
   </div>
   <img src="/images/css/line_header.gif" width="950" height="1" />
 </div>

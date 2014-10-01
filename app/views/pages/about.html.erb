@@ -1,6 +1,5 @@
 <% @active_nav_tab = :about %>
-<% content_for :title do %>About<% end %>
-<h3>About the Website</h3>
-<p>
-Coming soon
-</p>
+<div class="static-page about-page">
+  <%= render "/pages/about_#{I18n.locale}" %>
+</div>
+
