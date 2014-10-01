@@ -15,6 +15,13 @@
   <%= @color.name_ru %>
 </p>
 
+<% if @color.thumb %>
+  <p>
+    <strong>Image:</strong>
+    <%= image_tag @color.thumb.file.w46.url %>
+  </p>
+<% end %>
+
 <%= link_to 'Edit', edit_back_end_bed_color_path(@itemable, @color), class: 'btn btn-primary' %>
 <%= link_to "Image (max 1)", polymorphic_path([:back_end, @itemable, @color, :thumbs]), class: 'btn btn-default' %>
 <%= link_to 'Colors list', back_end_bed_colors_path(@itemable), class: 'btn btn-default' %>

@@ -5,6 +5,10 @@ class Kit < ActiveRecord::Base
   def name
     name_lv || name_en || name_ru
   end
+
+  def thumb
+    thumbs.order(is_default: :asc).first
+  end
 end
 
 # == Schema Information

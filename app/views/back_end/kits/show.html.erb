@@ -20,6 +20,13 @@
   <%= human_boolean @kit.is_default %>
 </p>
 
+<% if @kit.thumb %>
+  <p>
+    <strong>Image:</strong>
+    <%= image_tag @kit.thumb.file.w93.url %>
+  </p>
+<% end %>
+
 <p>
   <strong>Apraksts LV:</strong>
   <%= @kit.description_lv %>

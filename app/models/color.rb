@@ -1,6 +1,10 @@
 class Color < ActiveRecord::Base
   belongs_to :itemable, polymorphic: true
   has_many   :thumbs, as: :thumbable, dependent: :destroy
+
+  def thumb
+    thumbs.order(is_default: :asc).first
+  end
 end
 
 # == Schema Information

@@ -6,6 +6,7 @@
       <th>Name lv</th>
       <th>Name en</th>
       <th>Name ru</th>
+      <th>Image</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,11 @@
         <td><%= color.name_lv %></td>
         <td><%= color.name_en %></td>
         <td><%= color.name_ru %></td>
+        <td>
+          <% if color.thumb %>
+            <%= image_tag color.thumb.file.w46.url %>
+          <% end %>
+        </td>
         <td><%= index_show_link back_end_bed_color_path(@itemable, color) %></td>
         <td><%= index_edit_link edit_back_end_bed_color_path(@itemable, color) %></td>
         <td><%= index_destroy_link back_end_bed_color_path(@itemable, color) %></td>
