@@ -11,9 +11,7 @@
 // about supported directives.
 //
 //= require jquery
-//= require blueimp-gallery
-//= require simple.carousel
-//= require segmentio
-//= require home_carousel
-//= require galleries
-//= require beds
+//= require jquery_ujs
+//= require bootsy
+//= require bootstrap-sprockets
+

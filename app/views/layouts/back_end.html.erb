@@ -5,7 +5,7 @@
     <title><%= content_for?(:title) ? yield(:title) : "Baudi Hp" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Baudi Hp" %>">
     <%= stylesheet_link_tag 'back_end', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'back_end' %>
     <%= csrf_meta_tags %>
   </head>
   <body>
