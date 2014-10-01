@@ -33,7 +33,7 @@ h1 { font-family: 'Oswald', Impact, sans-serif; font-weight:400; color:#3e5d76; 
 h2 { font-family: 'Oswald', Impact, sans-serif; font-weight:300; color:#6c89a1;  font-size:27px }
 h3 {  font-family: 'Oswald', Impact, sans-serif; font-weight:400; color:#615f5f; font-size:18px }
 
-p { line-height:1.4em; color:#372714; font-family: 'Open Sans', sans-serif; font-size:15px }
+p, .p { line-height:1.4em; color:#372714; font-family: 'Open Sans', sans-serif; font-size:15px }
 p.oswald { font-family: 'Oswald'; font-weight:500; font-size:18px; color:#666 }
 p.oswald a:link, p.oswald a:visited { color:#F60 }
 
