@@ -14,6 +14,7 @@
       <th>Colors</th>
       <th>Kits</th>
       <th>Dimensions</th>
+      <th>Images</th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -32,6 +33,7 @@
         <td><%= link_to bed.colors.count, back_end_bed_colors_path(bed) %></td>
         <td><%= link_to bed.kits.count, back_end_bed_kits_path(bed) %></td>
         <td><%= link_to bed.dimensions.count, back_end_bed_dimensions_path(bed) %></td>
+        <td><%= link_to bed.thumbs.count, polymorphic_path([:back_end, bed, :thumbs]) %></td>
         <td><%= index_show_link back_end_bed_path(bed) %></td>
         <td><%= index_edit_link edit_back_end_bed_path(bed) %></td>
       </tr>
