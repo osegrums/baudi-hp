@@ -11,6 +11,9 @@
       <th>Description lv</th>
       <th>Description ru</th>
       <th>Description en</th>
+      <th>Colors</th>
+      <th>Kits</th>
+      <th>Dimensions</th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -26,6 +29,9 @@
         <td><%= "#{bed.description_lv.try(:size) || 0 } characters long" %></td>
         <td><%= "#{bed.description_ru.try(:size) || 0 } characters long" %></td>
         <td><%= "#{bed.description_en.try(:size) || 0 } characters long" %></td>
+        <td><%= link_to bed.colors.count, back_end_bed_colors_path(bed) %></td>
+        <td><%= link_to bed.kits.count, back_end_bed_kits_path(bed) %></td>
+        <td><%= link_to bed.dimensions.count, back_end_bed_dimensions_path(bed) %></td>
         <td><%= index_show_link back_end_bed_path(bed) %></td>
         <td><%= index_edit_link edit_back_end_bed_path(bed) %></td>
       </tr>
