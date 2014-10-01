@@ -134,11 +134,11 @@
     <div class="rightCol">
       <div class="innerBox">
         <div class="breadcrumbs"><a href="#">Beds</a> / <%= @bed.name %></div>
-        <div class="gallery" style="padding: 10px 0 0 0">
+        <div id="bed-images-container" class="gallery" style="padding: 10px 0 0 0">
           <div class="gallery_img">
             <% if @bed.thumbs.any? %>
-              <!-- <%= link_to image_tag(@bed.main_thumb.file.w510.url), @bed.main_thumb.file.w510.url, target: '_blank', data: {gallery: '#blueimp-gallery'} %> -->
-              <%= image_tag(@bed.main_thumb.file.w510.url) %>
+              <%= link_to image_tag(@bed.main_thumb.file.w510.url), @bed.main_thumb.file.w510.url, target: '_blank', data: {gallery: '#blueimp-gallery'} %>
+              <!-- <%= image_tag(@bed.main_thumb.file.w510.url) %> -->
             <% end %>
           </div>
           <div class="gallery_th">
@@ -146,13 +146,13 @@
 
               <% images = @bed.thumbs.to_a - [@bed.main_thumb] %>
               <% images.each do |thumb| %>
-                <!-- <%= link_to image_tag(thumb.file.w60.url), thumb.file.w510.url, target: '_blank', data: {gallery: '#blueimp-gallery'} %> -->
-                <%= image_tag(thumb.file.w60.url) %>
+                <%= link_to image_tag(thumb.file.w60.url), thumb.file.w510.url, target: '_blank', data: {gallery: '#blueimp-gallery'} %>
+                <!-- <%= image_tag(thumb.file.w60.url) %> -->
               <% end %>
             <% end %>
           </div>
         </div>
-        <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-carousel">
+        <div id="blueimp-gallery" class="blueimp-gallery">
           <div class="slides"></div>
           <h3 class="title"></h3>
           <a class="prev">‹</a>

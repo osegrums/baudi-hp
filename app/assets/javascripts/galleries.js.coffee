@@ -1,15 +1,12 @@
 jQuery ->
-  $(document).on 'click', '[data-gallery]', (event) ->
+  document.getElementById("bed-images-container").onclick = (event) ->
+    event = event or window.event
     event.preventDefault()
-    id = $(@).data('gallery')
-    container = $(id)
-
-    # Select all links with the same data-gallery attribute:
-    links = $('[data-gallery="' + id + '"]')
-
-    console.log links.length, links
-    new blueimp.Gallery links,
-      container: container,
-      urlProperty: 'preview-url' # data-preview-url
-      index: @,
+    target = event.target or event.srcElement
+    link = (if target.src then target.parentNode else target)
+    options =
+      index: link
       event: event
+
+    links = @getElementsByTagName("a")
+    blueimp.Gallery links, options
