@@ -54,6 +54,10 @@ class ThumbUploader < CarrierWave::Uploader::Base
     process resize_and_pad: [510, 340]
   end
 
+  version :w800 do
+    process resize_to_fit: [800, 600]
+  end
+
   version :w60 do
     process resize_and_pad: [60, 40]
   end
