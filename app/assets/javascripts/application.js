@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require blueimp-gallery
-//= require simple.carousel
+//= require neemantools.slides
 //= require segmentio
 //= require home_carousel
 //= require galleries
