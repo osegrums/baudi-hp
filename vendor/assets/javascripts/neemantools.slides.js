@@ -1,4 +1,8 @@
 var initSlideShow = function($container) {
+  if ($container.length == 0) {
+    return;
+  }
+
   var transitionMs = 800;
   var betweenSlidesMs = 4000;
 
