@@ -18,5 +18,6 @@ Rails.application.routes.draw do
       resources :kits, concerns: [:thumbs]
       resource  :prices, controller: 'bed_prices', only: [:show, :edit, :update]
     end
+    resources :bed_purchases, only: [:index]
   end
 end

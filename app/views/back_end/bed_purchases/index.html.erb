@@ -1,0 +1,66 @@
+<h1>Latest bed purchases</h1>
+
+<table class="table table-stripped table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Bed</th>
+      <th>Dimension</th>
+      <th>Kit</th>
+      <th>Color</th>
+      <th>Price</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Post code</th>
+      <th>City</th>
+      <th>Country</th>
+      <th>Purchased at</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @purchases.each do |purchase| %>
+      <%- bed = purchase.bed %>
+      <%- bed_price = purchase.bed_price %>
+      <%- dimension = bed_price.dimension %>
+      <%- kit = bed_price.kit %>
+      <%- color = purchase.color %>
+      <tr>
+        <td>
+          <%= bed.name %>
+          <br />
+          <% if bed.main_thumb %>
+            <%= image_tag bed.main_thumb.file.w46.url %>
+          <% end %>
+        </td>
+        <td><%= dimension.name %></td>
+        <td>
+          <%= kit.name_lv %>
+          <br />
+          <% if kit.thumb %>
+            <%= image_tag kit.thumb.file.w46.url %>
+          <% end %>
+        </td>
+        <td>
+          <% if color %>
+            <%= color.name_lv %>
+            <br />
+            <% if color.thumb %>
+              <%= image_tag color.thumb.file.w46.url %>
+            <% end %>
+          <% end %>
+        </td>
+        <td><%= bed_price.price %></td>
+        <td><%= purchase.name %></td>
+        <td><%= purchase.email %></td>
+        <td><%= purchase.phone %></td>
+        <td><%= purchase.address %></td>
+        <td><%= purchase.zip_code %></td>
+        <td><%= purchase.city %></td>
+        <td><%= purchase.country %></td>
+        <td><%= l purchase.created_at, format: :short %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

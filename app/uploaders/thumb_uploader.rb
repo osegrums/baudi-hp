@@ -58,6 +58,10 @@ class ThumbUploader < CarrierWave::Uploader::Base
     process resize_and_pad: [60, 40]
   end
 
+  version :w169 do
+    process resize_to_fit: [169, 169]
+  end
+
   # Process files as they are uploaded:
   # process :scale => [200, 300]
   #

@@ -8,24 +8,24 @@ body { margin: 0; padding: 0; background: url(/images/css/BG-LINIJAS.png) no-rep
   -o-background-size: cover;
   background-size: cover; font-family:Arial, sans-serif; }
 
-.wrapper { display:block; width:950px; position:relative; margin:0 auto; background:#FFF;   }
+.wrapper { display:block; width:950px; position:relative; margin:0 auto; background:#FFF;    }
 
 
 
 
 /* GLOBAL TEXT DIZ */
 
-h1 { font-family: 'Oswald', Impact, sans-serif; font-weight:400; color:#3e5d76; font-size:27px }
-h2 { font-family: 'Oswald', Impact, sans-serif; font-weight:300; color:#6c89a1;  font-size:27px }
-h3 {  font-family: 'Oswald', Impact, sans-serif; font-weight:400; color:#615f5f; font-size:18px }
-h4 {  font-family: 'Oswald', Impact, sans-serif; font-weight:400; color:#615f5f; font-size:18px }
+h1 { font-family: 'Oswald', Georgia, Helvetica, sans-serif; font-weight:400; color:#3e5d76; font-size:27px }
+h2 { font-family: 'Oswald', Georgia, Helvetica, sans-serif; font-weight:300; color:#6c89a1;  font-size:27px }
+h3 {  font-family: 'Oswald', Georgia, Helvetica, sans-serif; font-weight:400; color:#615f5f; font-size:18px }
+h4 {  font-family: 'Oswald', Georgia, Helvetica, sans-serif; font-weight:400; color:#615f5f; font-size:18px }
 
-p { line-height:1.4em; color:#372714; font-family: 'Open Sans', sans-serif; font-size:15px }
+p { line-height:1.4em; color:#372714; font-family: 'Open Sans', Helvetica sans-serif; font-size:15px }
 p.oswald { font-family: 'Oswald'; font-weight:500; font-size:18px; color:#666 }
 p.oswald a:link, p.oswald a:visited { color:#F60 }
 
 .main  ul li, ol li {  color:#333; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size:15px; padding-bottom:10px }
-
+.main { color:#333; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size:15px; min-height:500px }
 
 
 
@@ -156,7 +156,7 @@ td.chekbox label {
 
 /* SUBNAV LEFTCOL */
 
-.leftCol .subNav { border-top: 1px solid #ccc; font-family: 'Oswald', Impact, sans-serif; font-weight:400; color:#3e5d76; font-size:17px; text-align:center; margin-top:20px   }
+.leftCol .subNav { border-top: 1px solid #ccc; font-family: 'Oswald', Georgia, Helvetica, sans-serif; font-weight:400; color:#3e5d76; font-size:17px; text-align:center; margin-top:20px   }
  .leftCol .subNav ul { margin:0; padding:0; }
  .leftCol .subNav ul li { margin:0; padding:5px; list-style-type:none; border-bottom: 1px solid #ccc   }
  .leftCol .subNav ul li a:link, .leftCol .subNav ul li a:visited { color:#666; text-decoration:none; display:block;
@@ -237,3 +237,33 @@ td.chekbox label {
 
 
 hr { border-style: none none dotted; border-color:#ccc; display:block;  height: 1px;  width:auto; margin: 40px 0 20px 0; display:none  }
+
+
+#inputform .innerBox { padding-left: 170px; padding-right:170px;  }
+
+
+/* SHOP CHEKOUT */
+.pirkumaRezume { border:1px solid #ECECEC;  display:nonez; margin: 0 -20px 0 -20px; padding: 10px 20px 10px 20px;}
+.pirkumaRezume img { padding-right:20px; borderz: 1px solid #ccc;
+padding:2px; margin-right:15px; max-width:165px    }
+.pirkumaRezume .box { display: block; padding: 10px 0 5px 0;  margin-bottom:5px  }
+.pirkumaRezume .box p { margin: 0; padding-top:5px; color:#333 }
+.pirkumaRezume h6 { font-family:'Open Sans'; font-weight:500; font-size:12px; color:#666; padding:0; margin:0 }
+.pirkumaRezume h5 { font-family: 'Oswald'; font-weight:500; font-size:18px; color:#666; padding:0 0 10px 0; margin:0 }
+.pirkumaRezume .box#linen h5 { padding: 0 }
+
+
+  .btn_Remove {border-top:1px dotted #ccc; padding-top:10px; text-align:center}
+  .btn_Remove a:link {  font-family: 'Oswald'; font-weight:500; font-size:16px; color:#999; text-decoration:none; text-transform:uppercase; transition-duration: 0.08s;  }
+  .btn_Remove a:hover { color:#F60; transition-duration: 0.08s; }
+
+
+#inputform input { letter-spacing:0.05em; font-size:15px;border:1px solid #ccc; width:300px; padding:4px 10px  }
+
+table.inputformTable { color:#666; margin-left:10px }
+#inputform .btn-style { border: none; font-size:28px; letter-spacing:0; padding:20px 0px; width:320px }
+
+
+
+
+.dotted { display:block; border-bottom:1px dotted #ccc }

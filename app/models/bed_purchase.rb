@@ -1,6 +1,7 @@
 class BedPurchase < ActiveRecord::Base
   belongs_to :bed
   belongs_to :bed_price
+  belongs_to :color
 
   before_create :set_uid
 
@@ -33,8 +34,12 @@ end
 #  email        :string(255)
 #  phone        :string(255)
 #  notes        :text
-#  state        :string(255)
+#  state        :string(255)      default("new")
 #  ip_address   :string(255)
 #  created_at   :datetime
 #  updated_at   :datetime
+#  address      :string(255)
+#  zip_code     :string(255)
+#  city         :string(255)
+#  country      :string(255)
 #

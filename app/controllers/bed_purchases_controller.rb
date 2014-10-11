@@ -41,6 +41,12 @@ class BedPurchasesController < ApplicationController
   end
 
   def bed_purchase_params
-    params.require(:bed_purchase).permit(:color_id, :bed_id, :bed_price_id, :name, :email, :phone, :notes)
+    params.require(:bed_purchase).permit(
+      :color_id, :bed_id, :bed_price_id, :name, :email, :phone, :notes, :address, :zip_code, :city, :country
+    )
+  end
+
+  def set_active_nav_tab
+    @active_nav_tab = :beds
   end
 end
