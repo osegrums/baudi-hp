@@ -45,7 +45,7 @@ module ApplicationHelper
 
   def main_nav_link(name, path)
     content_tag('li', class: "#{"here" if name.to_s == @active_nav_tab.to_s}") do
-      link_to name, path
+      link_to t(".#{name}"), path
     end
   end
 end

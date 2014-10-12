@@ -2,11 +2,11 @@
   <div class="logo"><a href="<%= root_path %>"><img src="/images/css/logo.png" width="310" height="163" /></a></div>
   <div class="navig">
     <ul>
-      <%= main_nav_link t('.home'), root_path %>
-      <%= main_nav_link t('.beds'), beds_path %>
+      <%= main_nav_link 'home', root_path %>
+      <%= main_nav_link 'beds', beds_path %>
       <%#= main_nav_link 'linen', '#' %>
-      <%= main_nav_link t('.inspiration'), page_path(id: 'inspiration') %>
-      <%= main_nav_link t('.about'), page_path(id: 'about') %>
+      <%= main_nav_link 'inspiration', page_path(id: 'inspiration') %>
+      <%= main_nav_link 'about', page_path(id: 'about') %>
     </ul>
   </div>
   <div class="langmenu">
