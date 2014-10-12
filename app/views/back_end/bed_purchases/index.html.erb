@@ -23,8 +23,8 @@
     <% @purchases.each do |purchase| %>
       <%- bed = purchase.bed %>
       <%- bed_price = purchase.bed_price %>
-      <%- dimension = bed_price.dimension %>
-      <%- kit = bed_price.kit %>
+      <%- dimension = bed_price.try :dimension %>
+      <%- kit = bed_price.try :kit %>
       <%- color = purchase.color %>
       <tr>
         <td>
@@ -34,24 +34,24 @@
             <%= image_tag bed.main_thumb.file.w46.url %>
           <% end %>
         </td>
-        <td><%= dimension.name %></td>
+        <td><%= dimension.try :name %></td>
         <td>
-          <%= kit.name_lv %>
+          <%= kit.try :name_lv %>
           <br />
-          <% if kit.thumb %>
+          <% if kit && kit.thumb %>
             <%= image_tag kit.thumb.file.w46.url %>
           <% end %>
         </td>
         <td>
           <% if color %>
-            <%= color.name_lv %>
+            <%= color.try :name_lv %>
             <br />
-            <% if color.thumb %>
+            <% if color && color.thumb %>
               <%= image_tag color.thumb.file.w46.url %>
             <% end %>
           <% end %>
         </td>
-        <td><%= bed_price.price %></td>
+        <td><%= bed_price.try :price %></td>
         <td><%= purchase.name %></td>
         <td><%= purchase.email %></td>
         <td><%= purchase.phone %></td>
