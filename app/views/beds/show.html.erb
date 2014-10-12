@@ -41,7 +41,7 @@
 
           <p>
             <span class="dynamic">
-              Color scheme:
+              <%= t '.color_scheme' %>:
             </span>
             <span class="dynamic" id="selected-color-name"></span>
           </p>
@@ -53,7 +53,7 @@
         </p>
         <div class="shop_size_selector" style="background-color: #fafafa;">
           <h3>
-            Select your bed size (<span class="dynamic" id="selected-dimension-name"></span>)
+            <%= t '.bed_size' %> (<span class="dynamic" id="selected-dimension-name"></span>)
           </h3>
 
           <table width="320" border="0">
@@ -69,7 +69,7 @@
               <td colspan="3" class="chekbox">
 
                 <input type="checkbox" class="bp-has-rack bp-changer css-checkbox-off" name="has_rack" value="" id="bp-has-rack" />
-                <label for="bp-has-rack" class="css-label">with bad slats</label>
+                <label for="bp-has-rack" class="css-label"><%= t '.has_rack' %></label>
               </td>
             </tr>
           </table>
@@ -112,7 +112,7 @@
               <td class="sum">€ 300</td>
             </tr -->
             <tr class="totalCost">
-              <td class="txt">Total:</td>
+              <td class="txt"><%= t '.total_price' %>:</td>
               <td class="sum">
                 € <span id='actual-price-price'>???</span>
               </td>
@@ -122,7 +122,7 @@
         <%= f.submit value: t('create_purchase'), class: "btn-style" %>
         <div class="subNav">
           <ul>
-            <li><a href="#">Click for more info</a></li>
+            <li><a href="#"><%= t '.more_info' %></a></li>
           </ul>
         </div>
       </div>
@@ -133,7 +133,7 @@
 
     <div class="rightCol">
       <div class="innerBox">
-        <div class="breadcrumbs"><a href="#">Beds</a> / <%= @bed.name %></div>
+        <div class="breadcrumbs"><%= link_to t('.all_beds'), beds_path %> / <%= @bed.name %></div>
         <div id="bed-images-container" class="gallery" style="padding: 10px 0 0 0">
           <div class="gallery_img">
             <% if @bed.thumbs.any? %>

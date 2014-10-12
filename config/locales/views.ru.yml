@@ -1,0 +1,45 @@
+ru:
+  create_purchase: 'Order now'
+  edit_purchase: 'Confirm order'
+  layouts:
+    header:
+      home: home
+      beds: beds
+      inspiration: inspiration
+      about: about
+  bed_purchases:
+    edit:
+      title: You are about to complete your order
+      bed_model: 'Bed model:'
+      bed_size: 'Size:'
+      bed_linen: 'Linen:'
+      enter_your_data: Enter your data
+      field_name: 'Name:'
+      complete_order: Complete order
+    show:
+      title: You submitted your order
+      resume: 'Thank you for your purchase. We will contact you soon. Back to'
+      homepage_link: homepage
+  beds:
+    index:
+      title: Collection of 2015
+    show:
+      color_scheme: Color scheme
+      bed_size: Select your bed size
+      has_rack: with bad slats
+      total_price: Total
+      more_info: Click for more info
+      all_beds: Beds
+  pages:
+    home:
+      title: Welcome to Baudi design beds
+      about_us: 'We produce hand-made custom beds, headboards and linen for those open minded. Situated in Lettland, Riga we offer our products for ordering on-line.'
+      beds: BEDS
+      linen: LINEN
+      link_to_beds: collection of beds
+      link_to_linen: linen
+      take_a_look: 'Take a look at our %{link_to_beds} and %{link_to_linen}.'
+      contacts: Contacts
+      contact_phone: 'Tel: +371 26393580 (GT+2)'
+      contact_mail: 'Mail: baudi@baudidesign.com'
+      if_any_questions: 'Customers needs are at the top of our priorities. If you have any questions, dont be shy and call us or send an email.'

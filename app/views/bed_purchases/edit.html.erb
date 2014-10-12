@@ -14,13 +14,13 @@
       <% end %>
 
 
-      <h1 class="first">You are about to complete your order</h1>
+      <h1 class="first"><%= t '.title' %></h1>
       <div class="pirkumaRezume">
         <div class="box" id="bed">
           <%= image_tag @bed.main_thumb.file.w169.url, align: :left %>
-          <h6>Bed model: </h6>
+          <h6><%= t '.bed_model' %></h6>
           <h5><%= @bed.name %></h5>
-          <h6>Size: </h6>
+          <h6><%= t '.bed_size' %></h6>
           <h5><%= @bed_purchase.bed_price.dimension.name%></h5>
           <span class="clear" />
         </div><!-- end box -->
@@ -28,7 +28,7 @@
         <div class="box" id="linen">
           <% kit = @bed_purchase.bed_price.kit %>
           <%= image_tag kit.thumb.file.w169.url, align: :left %>
-          <h5>Linen:</h5>
+          <h5><%= t '.bed_linen' %></h5>
           <h6><%= lf(kit, :description) %></h6>
           <span class="clear" />
         </div>
@@ -41,11 +41,11 @@
 
       <span class="clear" />
 
-      <h2 style="border-top:1px solid #ccc; margin-top: 40px; padding-top:30px">Enter your data</h2>
+      <h2 style="border-top:1px solid #ccc; margin-top: 40px; padding-top:30px"><%= t '.enter_your_data' %></h2>
       <table width="610" class="inputformTable">
         <tr>
           <td width="122">
-            <label for="purchase-name">Name:</label>
+            <label for="purchase-name"><%= BedPurchase.human_attribute_name(:name) %>:</label>
           </td>
           <td width="471">
             <%= f.text_field :name, class: 'form-control', placeholder: '', id: 'purchase-name' %>
@@ -53,7 +53,7 @@
         </tr>
         <tr>
           <td width="122">
-            <label for="purchase-email">Email:</label>
+            <label for="purchase-email"><%= BedPurchase.human_attribute_name(:email) %>:</label>
           </td>
           <td width="471">
             <%= f.text_field :email, class: 'form-control', placeholder: '', id: 'purchase-email' %>
@@ -61,7 +61,7 @@
         </tr>
         <tr>
           <td width="122">
-            <label for="purchase-phone">Phone:</label>
+            <label for="purchase-phone"><%= BedPurchase.human_attribute_name(:phone) %>:</label>
           </td>
           <td width="471">
             <%= f.text_field :phone, class: 'form-control', placeholder: '', id: 'purchase-phone' %>
@@ -72,7 +72,7 @@
         </tr>
         <tr>
           <td width="122">
-            <label for="purchase-address">Street address:</label>
+            <label for="purchase-address"><%= BedPurchase.human_attribute_name(:address) %>:</label>
           </td>
           <td width="471">
             <%= f.text_field :address, class: 'form-control', placeholder: '', id: 'purchase-address' %>
@@ -80,7 +80,7 @@
         </tr>
         <tr>
           <td width="122">
-            <label for="purchase-zip-code">Post Code:</label>
+            <label for="purchase-zip-code"><%= BedPurchase.human_attribute_name(:zip_code) %>:</label>
           </td>
           <td width="471">
             <%= f.text_field :zip_code, class: 'form-control', placeholder: '', id: 'purchase-zip-code' %>
@@ -88,7 +88,7 @@
         </tr>
         <tr>
           <td width="122">
-            <label for="purchase-city">City:</label>
+            <label for="purchase-city"><%= BedPurchase.human_attribute_name(:city) %>:</label>
           </td>
           <td width="471">
             <%= f.text_field :city, class: 'form-control', placeholder: '', id: 'purchase-city' %>
@@ -96,7 +96,7 @@
         </tr>
         <tr>
           <td width="122">
-            <label for="purchase-country">Country:</label>
+            <label for="purchase-country"><%= BedPurchase.human_attribute_name(:country) %>:</label>
           </td>
           <td width="471">
             <%= f.text_field :country, class: 'form-control', placeholder: '', id: 'purchase-country' %>
@@ -105,7 +105,7 @@
         <tr>
           <td></td>
           <td>
-            <%= f.submit value: 'Complete order', class: "btn-style" %>
+            <%= f.submit value: t('.complete_order'), class: "btn-style" %>
           </td>
         </tr>
       </table>

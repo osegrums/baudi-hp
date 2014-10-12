@@ -1,8 +1,8 @@
 <div class="main" id="inputform">
   <div class="innerBox">
-    <h1 class="first">You submitted your order</h1>
+    <h1 class="first"><%= t '.title' %></h1>
     <div class="pirkumaRezume">
-      Thank you for your purchase. We will contact you soon. Back to <%= link_to 'homepage', root_path %>
+      <%= t '.resume' %> <%= link_to t('.homepage_link'), root_path %>
     </div><!-- end.pirkumaRezume"-->
   </div><!-- end.innerBox -->
 </div><!-- end.main -->

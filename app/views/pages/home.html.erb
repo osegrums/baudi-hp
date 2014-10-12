@@ -7,37 +7,46 @@
 
     <div class="leftCol">
       <div class="innerBox">
-      <h1>Welcome to Baudi design beds</h1>
-      <p>We produce hand-made custom beds, headboards and linen for those open minded. Situated in Lettland, Riga we offer our products for ordering on-line. </p>
-      <p style="padding-top:13px; padding-bottom:13px;"><img src="/images/css/line_dotted.gif" width="497" height="1" /></p>
+        <h1><%= t '.title' %></h1>
+        <p><%= t '.about_us' %> </p>
+        <p style="padding-top:13px; padding-bottom:13px;"><img src="/images/css/line_dotted.gif" width="497" height="1" /></p>
 
-      <div class="quickLink">
-        <div class="quickLinkBox">
-          <div class="titleContainer">
-            <h3>BEDS</h3>
+        <div class="quickLink">
+          <div class="quickLinkBox">
+            <div class="titleContainer">
+              <h3><%= t '.beds' %></h3>
+            </div>
+            <a href="<%= beds_path %>"><img src="/images/slider/quickLinkBeds.jpg" width="244" height="164" /></a>
           </div>
-          <a href="<%= beds_path %>"><img src="/images/slider/quickLinkBeds.jpg" width="244" height="164" /></a>
-        </div>
-        <div class="quickLinkBox">
-          <div class="titleContainer">
-            <h3>LINEN</h3>
+          <div class="quickLinkBox">
+            <div class="titleContainer">
+              <h3><%= t '.linen' %></h3>
+            </div>
+            <a href="#"><img src="/images/slider/quickLinkLinen.jpg" width="244" height="164" /></a>
           </div>
-          <a href="#"><img src="/images/slider/quickLinkLinen.jpg" width="244" height="164" /></a>
+          <span class="clear"></span>
         </div>
-        <span class="clear"></span>
-      </div>
 
-      <p class="oswald">Take a look at our <a href="<%= beds_path %>">collection of beds</a> and <a href="#">linen</a>. </p>
-
+        <p class="oswald">
+          <%= t('.take_a_look', link_to_beds: link_to(t('.link_to_beds'), beds_path), link_to_linen: link_to(t('.link_to_linen'), '#')).html_safe %>
+        </p>
       </div>
     </div>
 
     <div class="rightCol">
       <div class="contactInfo">
-        <h2 style="margin-bottom: -3px">Contacts</h2>
+        <h2 style="margin-bottom: -3px">
+          <%= t '.contacts' %>
+        </h2>
 
-        <p style="color:#3e5d76; line-height: 1.5em;">Tel: +371 26393580 (GT+2)<br />Mail: baudi@baudidesign.com</p>
-        <p style="font-style:italic; color:#757c81; font-size:13px">Customers needs are at the top of our priorities. If you have any questions, dont be shy and call us or send an email.</p>
+        <p style="color:#3e5d76; line-height: 1.5em;">
+          <%= t '.contact_phone' %>
+          <br />
+          <%= t '.contact_mail' %>
+        </p>
+        <p style="font-style:italic; color:#757c81; font-size:13px">
+          <%= t '.if_any_questions' %>
+        </p>
         <p style="padding-top:30px; padding-bottom:13px;"><img src="/images/css/line_dotted.gif" width="497" height="1" /></p>
 
         <div class="sc_icons">
