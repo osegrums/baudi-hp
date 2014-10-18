@@ -6,7 +6,6 @@ module BedsHelper
         has_decoration: bed_price.has_decoration,
         has_rack:       bed_price.has_rack,
         dimension_id:   bed_price.dimension_id,
-        kit_id:         bed_price.kit_id,
         price:          bed_price.price
       }
     end

@@ -1,0 +1,8 @@
+<tr>
+  <td>
+    Size: <%= dimension.name %>
+  </td>
+  <% f.object.kits.each do |kit| %>
+    <%= render "#{mode}_price_cell", f: f, kit: kit, dimension: dimension %>
+  <% end %>
+</tr>

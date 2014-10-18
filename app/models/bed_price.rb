@@ -1,7 +1,6 @@
 class BedPrice < ActiveRecord::Base
   belongs_to :bed
   belongs_to :dimension
-  belongs_to :kit
 end
 
 # == Schema Information

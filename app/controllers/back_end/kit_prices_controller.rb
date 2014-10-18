@@ -1,4 +1,4 @@
-class BackEnd::BedPricesController < BackEndController
+class BackEnd::KitPricesController < BackEndController
   before_action :set_bed, only: [:show, :edit, :update, :destroy]
 
   # GET /beds/1
@@ -12,7 +12,7 @@ class BackEnd::BedPricesController < BackEndController
   # PATCH/PUT /beds/1
   def update
     if @bed.update(bed_params)
-      redirect_to back_end_bed_prices_path(@bed), notice: "Veiksmīgi tika labotas gultas '#{@bed.name}' cenas"
+      redirect_to back_end_bed_kit_prices_path(@bed), notice: "Veiksmīgi tika labotas gultas '#{@bed.name}' komplektu cenas"
     else
       render :edit
     end
@@ -25,8 +25,8 @@ class BackEnd::BedPricesController < BackEndController
   end
 
   def bed_params
-    params.require(:bed).permit(bed_prices_attributes: [
-      :id, :dimension_id, :has_decoration, :has_rack, :price
+    params.require(:bed).permit(kit_prices_attributes: [
+      :id, :dimension_id, :kit_id, :price
     ])
   end
 end

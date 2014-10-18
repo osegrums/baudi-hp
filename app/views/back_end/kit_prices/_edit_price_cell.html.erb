@@ -1,0 +1,8 @@
+<td>
+  <%= f.fields_for :kit_prices, f.object.kit_price_for_editing(kit, dimension) do |ff| %>
+    <%= ff.hidden_field :id %>
+    <%= ff.hidden_field :kit_id %>
+    <%= ff.hidden_field :dimension_id %>
+    <%= ff.text_field :price %>
+  <% end %>
+</td>

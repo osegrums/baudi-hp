@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141011155641) do
+ActiveRecord::Schema.define(version: 20141017172627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,6 +92,15 @@ ActiveRecord::Schema.define(version: 20141011155641) do
     t.datetime "updated_at"
     t.boolean  "is_default",    default: false
     t.string   "short_name"
+  end
+
+  create_table "kit_prices", force: true do |t|
+    t.integer  "bed_id"
+    t.integer  "kit_id"
+    t.integer  "dimension_id"
+    t.decimal  "price",        precision: 10, scale: 2, default: 0.0
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "kits", force: true do |t|
