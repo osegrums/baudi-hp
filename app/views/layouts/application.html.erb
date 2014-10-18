@@ -4,7 +4,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title><%= content_for?(:title) ? yield(:title) : "BAUDIDESIGN" %></title>
 
-    <link href='http://fonts.googleapis.com/css?family=Dosis:500,700|Oswald:400,300|Open+Sans&subset=latin-ext' rel='stylesheet' type='text/css'>
+    <% if I18n.locale == :ru %>
+      <link href='http://fonts.googleapis.com/css?family=Kelly+Slab|Roboto+Slab&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <% else %>
+      <link href='http://fonts.googleapis.com/css?family=Dosis:500,700|Oswald:400,300|Open+Sans&subset=latin-ext' rel='stylesheet' type='text/css'>
+    <% end %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
@@ -12,7 +16,8 @@
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Baudi design beds and linens" %>">
   </head>
 
-  <body id="en">
+  <% body_id = I18n.locale == :ru ? 'ru' : 'lv' %>
+  <body id="<%= body_id %>">
     <div class="wrapper">
       <%= render 'layouts/header' %>
 

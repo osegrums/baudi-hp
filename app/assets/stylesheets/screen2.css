@@ -1,7 +1,6 @@
 @charset "UTF-8";
 /* CSS Document */
 
-
 body { margin: 0; padding: 0; background: url(/images/css/BG-LINIJAS.png) no-repeat center center fixed #eaeaea;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -15,18 +14,26 @@ body { margin: 0; padding: 0; background: url(/images/css/BG-LINIJAS.png) no-rep
 
 /* GLOBAL TEXT DIZ */
 
-h1 { font-family: 'Oswald', Georgia, Helvetica, sans-serif; font-weight:400; color:#3e5d76; font-size:27px }
-h2 { font-family: 'Oswald', Georgia, Helvetica, sans-serif; font-weight:300; color:#6c89a1;  font-size:27px }
-h3 {  font-family: 'Oswald', Georgia, Helvetica, sans-serif; font-weight:400; color:#615f5f; font-size:18px }
-h4 {  font-family: 'Oswald', Georgia, Helvetica, sans-serif; font-weight:400; color:#615f5f; font-size:18px }
+h1 { font-family: 'Oswald', Georgia, Helvetica, sans-serif; font-weight:400; color:#3e5d76; font-size:27px;   }
+  body#ru h1 { font-family:  'Roboto Slab', Georgia, Helvetica, sans-serif; font-weight:400; color:#3e5d76; font-size:27px; line-height:1em }
+h2 { font-family: 'Oswald', Georgia, Helvetica, sans-serif; font-weight:300; color:#6c89a1;  font-size:27px;   }
+  body#ru h2 { font-family: 'Roboto Slabz', Georgia, Helvetica, sans-serif; font-weight:300; color:#6c89a1;  font-size:27px }
+h3 {  font-family: 'Oswald', Georgia, Helvetica, sans-serif; font-weight:400; color:#615f5f; font-size:18px;    }
+  body#ru h3 { }
+h4 {  font-family: 'Oswald', Georgia, Helvetica, sans-serif; font-weight:400; color:#615f5f; font-size:18px;    }
+  body#ru h4 { }
+
+
 
 p { line-height:1.4em; color:#372714; font-family: 'Open Sans', Helvetica sans-serif; font-size:15px }
+  body#ru p { font-family: Helvetica, Georgia, sans-serif;  }
 p.oswald { font-family: 'Oswald'; font-weight:500; font-size:18px; color:#666 }
+  body#ru p.oswald { font-family: 'Roboto Slab', Georgia, Helvetica, sans-serif;  }
 p.oswald a:link, p.oswald a:visited { color:#F60 }
 
 .main  ul li, ol li {  color:#333; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size:15px; padding-bottom:10px }
 .main { color:#333; font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size:15px; min-height:500px }
-
+body#ru .main { font-family:  Arial, Helvetica, sans-serif; }
 
 
 
@@ -36,12 +43,19 @@ p.oswald a:link, p.oswald a:visited { color:#F60 }
   .logo { display:block; width:310px; borderz:1px solid red }
   .navig { display:block; width: 600px; position:absolute;top: 105px; left:320px; z-index:2; text-align:right;  }
     .navig ul { margin:0; padding:0; font-family: 'Dosis', sans-serif; text-transform:uppercase; color:#979595; font-size:17px;
-       text-shadow: 0 0 5px #f1f1f1; font-weight:500}
+       text-shadow: 0 0 5px #f1f1f1; font-weight:500 }
+        body#ru .navig ul { font-family: 'Kelly Slab', 'Roboto Slab', 'Scada', 'Comfortaa', 'Ubuntu Condensed','Oranienbaum', cursive; font-size:17px; font-weight-z:600 }
+
     .navig ul li { display:inline-block; margin:0; margin:0;  }
     .navig ul li.here { font-weight:700 }
     .navig ul li a { display:block; padding:7px 30px; background:#fafafa; background-image:url(/images/css/bg_nav.gif); text-decoration:none; color:#979595;  }
+      body#lv .navig ul li a { padding:7px 22px;}
+      body#ru .navig ul li a { padding:7px 18px; font-size:16px; }
+
+
     .navig ul li a:hover {  background-image:url(/images/css/bg_nav-hover.gif); color:#4c9e7b }
   .langmenu { position:absolute; top: 30px; left:840px; font-family: 'Dosis'; font-weight:500; font-size:14px; color: #999;  }
+    body#ru .langmenu { font-family: 'Roboto Slab', Arial; font-size:13px }
   .langmenu a:link, .langmenu a:visited { color:#999; text-decoration:none }
   .langmenu a:hover { color:#F60; text-decoration:underline }
 
@@ -75,6 +89,7 @@ p.oswald a:link, p.oswald a:visited { color:#F60 }
 
 .shop_size_selector { padding: 10px 0 10px 20px }
 .shop_size_selector h3 { padding:5px 0 10px 0; margin:0  }
+    body#ru .shop_size_selector h3 { font-family:Georgia, "Times New Roman", Times, serif }
 .shop_size_selector table { font-size: 12px; color:#666; border-collapse:collapse }
 .shop_size_selector table td { padding-bottom: 5px  }
 
@@ -120,6 +135,7 @@ td.chekbox label {
 
 /* LIELĀ PIRKT POGA */
 .btn-style { font-family: 'Dosis', sans-serif; text-transform:uppercase; color:#979595; font-size:27px; font-weight:700; border:none; width: 100%; padding: 8px;  cursor:pointer; text-shadow: 0 0 5px #f1f1f1; margin-top:30px; background:url(/images/css/bg_nav.gif); }
+  body#ru .btn-style { font-family:  'Kelly Slab', Helvetica }
 
 .btn-style:hover { background:url(/images/css/bg_nav-hoverOrange.gif);  color:#ff9900; text-shadow: 0 0 5px #f1f1f1 }
 
@@ -205,6 +221,7 @@ td.chekbox label {
   .quickLinkBox { display:block; width:244px; float:left  }
     .titleContainer { background-image:url(/images/css/bg_quickLinkTitle.png); background-position:right; position: absolute; display:block; width:244px  }
     .titleContainer h3 { margin:0; padding: 4px 13px; margin:0; color:#FFF; text-transform: uppercase; font-weight:300; font-size:20px;   }
+      body#ru .titleContainer h3 {  font-family: 'Kelly Slab', Georgia, Helvetica, sans-serif; letter-spacing:-0.05em normal }
       .quickLinkBox:hover h3 { color:#FC0 }
     .titleContainer img { border:none  }
 
@@ -213,6 +230,7 @@ td.chekbox label {
 
 .contactInfo { display:block; overflow:hidden; width:290px }
 .contactInfo p {  padding:10px 0px 10px 0px; margin: 0; }
+.contactInfo h2 {   }
 
 
 .sc_icons { padding-top:29px  } /*Social media */
@@ -247,13 +265,16 @@ hr { border-style: none none dotted; border-color:#ccc; display:block;  height: 
 padding:2px; margin-right:15px; max-width:165px    }
 .pirkumaRezume .box { display: block; padding: 10px 0 5px 0;  margin-bottom:5px  }
 .pirkumaRezume .box p { margin: 0; padding-top:5px; color:#333 }
-.pirkumaRezume h6 { font-family:'Open Sans'; font-weight:500; font-size:12px; color:#666; padding:0; margin:0 }
-.pirkumaRezume h5 { font-family: 'Oswald'; font-weight:500; font-size:18px; color:#666; padding:0 0 10px 0; margin:0 }
+.pirkumaRezume h6 { font-family:'Open Sans'; font-weight:500; font-size:12px; color:#666; padding:0; margin:0;    }
+.pirkumaRezume h5 { font-family: 'Oswald'; font-weight:500; font-size:18px; color:#666; padding:0 0 10px 0; margin:0;    }
+  body#ru .pirkumaRezume h6 { }
+  body#ru .pirkumaRezume h5 { font-family: Georgia, "Times New Roman", Times, serif; }
 .pirkumaRezume .box#linen h5 { padding: 0 }
 
 
   .btn_Remove {border-top:1px dotted #ccc; padding-top:10px; text-align:center}
   .btn_Remove a:link {  font-family: 'Oswald'; font-weight:500; font-size:16px; color:#999; text-decoration:none; text-transform:uppercase; transition-duration: 0.08s;  }
+    body#ru .btn_Remove a:link {  font-family: 'Roboto Slab', Georgia, Helvetica, sans-serif; font-weight:600   }
   .btn_Remove a:hover { color:#F60; transition-duration: 0.08s; }
 
 
@@ -261,6 +282,7 @@ padding:2px; margin-right:15px; max-width:165px    }
 
 table.inputformTable { color:#666; margin-left:10px }
 #inputform .btn-style { border: none; font-size:28px; letter-spacing:0; padding:20px 0px; width:320px }
+  body#ru #inputform .btn-style { font-family: 'Kelly Slab', Helvetica; font-size:25px }
 
 
 

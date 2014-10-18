@@ -3,10 +3,11 @@ ru:
   edit_purchase: 'Confirm order'
   layouts:
     header:
-      home: home
-      beds: beds
-      inspiration: inspiration
-      about: about
+      home: домой
+      beds: КРОВАТЬ
+      linen: БЕЛЬЕ
+      inspiration: ВДОХНОВЕНИЕ
+      about: О НАС
   bed_purchases:
     edit:
       title: You are about to complete your order
@@ -34,14 +35,14 @@ ru:
       all_beds: Beds
   pages:
     home:
-      title: Welcome to Baudi design beds
-      about_us: 'We produce hand-made custom beds, headboards and linen for those open minded. Situated in Lettland, Riga we offer our products for ordering on-line.'
-      beds: BEDS
-      linen: LINEN
+      title: Добро пожаловать в BAUDI дизайнерские кровати
+      about_us: 'Мы производим ручной пользовательских кровати, спинки и постельное белье для тех, открытыми. Расположенный в Lettland, Рига , мы предлагаем нашу продукцию для заказа он-лайн.'
+      beds: КРОВАТЬ
+      linen: БЕЛЬЕ
       link_to_beds: collection of beds
       link_to_linen: linen
       take_a_look: 'Take a look at our %{link_to_beds} and %{link_to_linen}.'
-      contacts: Contacts
-      contact_phone: 'Tel: +371 26393580 (GT+2)'
-      contact_mail: 'Mail: baudi@baudidesign.com'
-      if_any_questions: 'Customers needs are at the top of our priorities. If you have any questions, dont be shy and call us or send an email.'
+      contacts: контакты
+      contact_phone: 'Тел: +371 22-02-08-02 (GT+2)'
+      contact_mail: 'Mail: shop@baudibeds.com'
+      if_any_questions: 'Потребности клиентов находятся на вершине наших приоритетов. Если у вас возникли вопросы, не будьте застенчивы и позвоните нам или отправьте письмо.'

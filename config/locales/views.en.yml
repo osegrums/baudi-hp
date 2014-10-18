@@ -5,6 +5,7 @@ en:
     header:
       home: home
       beds: beds
+      linen: linen
       inspiration: inspiration
       about: about
   bed_purchases:

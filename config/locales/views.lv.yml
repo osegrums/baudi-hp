@@ -5,6 +5,7 @@ lv:
     header:
       home: sākums
       beds: gultas
+      linen: veļa
       inspiration: inspiration
       about: par mums
   bed_purchases:
