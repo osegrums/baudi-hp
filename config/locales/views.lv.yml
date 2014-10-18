@@ -23,7 +23,7 @@ lv:
   beds:
     index:
       title: 2015. gada kolekcijas
-    show:
+    show: &beds_show
       color_scheme: Color scheme
       bed_size: Select your bed size
       has_rack: with bad slats
@@ -32,6 +32,8 @@ lv:
       total_price: Total
       more_info: Click for more info
       all_beds: Beds
+    show_incomplete:
+      <<: *beds_show
   pages:
     home:
       title: Welcome to Baudi design beds

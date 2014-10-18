@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141018141921) do
+ActiveRecord::Schema.define(version: 20141018182922) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 20141018141921) do
     t.boolean  "has_decoration",                          default: false
     t.boolean  "has_rack",                                default: false
     t.integer  "dimension_id"
-    t.integer  "kit_id"
     t.decimal  "price",          precision: 10, scale: 2, default: 0.0
     t.datetime "created_at"
     t.datetime "updated_at"

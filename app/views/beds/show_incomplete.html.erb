@@ -1,5 +1,6 @@
 <% bed_prices_json = bed_prices_for_data(@bed) %>
-<%= form_for @bed_purchase, url: bed_bed_purchases_path(@bed), data: {bed_prices: bed_prices_json}, html: {id: 'purchase-form'} do |f| %>
+<% kit_prices_json = bed_kit_prices_for_data(@bed) %>
+<%= form_for @bed_purchase, url: bed_bed_purchases_path(@bed), data: {bed_prices: bed_prices_json, kit_prices: kit_prices_json}, html: {id: 'purchase-form'} do |f| %>
   <% if @bed_purchase.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@bed_purchase.errors.count, "error") %> prohibited this purchase from being saved:</h2>
@@ -13,6 +14,7 @@
   <% end %>
 
   <input type="hidden" id="bp-price-id" class="bp-price-id" name="bed_purchase[bed_price_id]" />
+  <input type="hidden" id="bp-kit-price-id" class="bp-kit-price-id" name="bed_purchase[kit_price_id]" />
 
   <!-- label for="bp-has-decoration">Ir dekorācija</label-->
   <input type="hidden" class="bp-has-decoration bp-changer" name="has_decoration" value="" id="bp-has-decoration" />
@@ -32,7 +34,7 @@
 
     <div class="rightCol">
       <div class="innerBox">
-        <div class="breadcrumbs"><a href="#">Beds</a> / <%= @bed.name %></div>
+        <div class="breadcrumbs"><%= link_to t('.all_beds'), beds_path %> / <%= @bed.name %></div>
         <div id="bed-images-container" class="gallery" style="padding: 10px 0 0 0">
           <div class="gallery_img">
             <% if @bed.thumbs.any? %>

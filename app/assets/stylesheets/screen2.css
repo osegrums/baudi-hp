@@ -44,7 +44,6 @@ p.oswald a:link, p.oswald a:visited { color:#F60 }
   .langmenu { position:absolute; top: 30px; left:840px; font-family: 'Dosis'; font-weight:500; font-size:14px; color: #999;  }
   .langmenu a:link, .langmenu a:visited { color:#999; text-decoration:none }
   .langmenu a:hover { color:#F60; text-decoration:underline }
-  .langmenu a.active { color:#F60; }
 
 
 

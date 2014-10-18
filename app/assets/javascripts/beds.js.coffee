@@ -23,9 +23,10 @@ jQuery ->
     matches[0]
 
   recalculatePrice = ->
+    return unless $('#actual-price-price').length > 0
     hasRack       = $('#bp-has-rack').is(':checked')
     hasDecoration = $('#bp-has-decoration').is(':checked')
-    dimensionId   = $('input:radio[name=dimension]:checked').val();
+    dimensionId   = $('input:radio[name=dimension]:checked').val()
     kitId         = $('#bp-kit').val();
     bedPriceData  = findBedPrice(hasRack, hasDecoration, dimensionId)
     kitPriceData  = findKitPrice(kitId, dimensionId)
@@ -39,7 +40,6 @@ jQuery ->
     $('#kit-price').html(kitPrice)
 
     $('#actual-price-price').html(bedPrice + kitPrice)
-    console.log bedPrice, kitPrice, $('#bp-price-id').val(), $('#bp-kit-price-id').val()
 
   setDimensionName = ->
     name = $('input[name=dimension]:checked').data('name')
@@ -52,8 +52,8 @@ jQuery ->
     colorId = $link.data('color-id')
     colorName = $link.data('color-name')
     $('#bp-color').val(colorId)
-    $('.bp-color-selected').removeClass('bp-color-selected')
-    $link.addClass('bp-color-selected')
+    $('.color-selected').removeClass('color-selected')
+    $link.addClass('color-selected')
     $('#selected-color-name').html(colorName)
 
   changeKit = (event) ->
@@ -63,8 +63,8 @@ jQuery ->
     kitId = $link.data('kit-id')
     kitDesc = $link.data('kit-description')
     $('#bp-kit').val(kitId).trigger('change')
-    $('.bp-kit-selected').removeClass('bp-kit-selected')
-    $link.addClass('bp-kit-selected')
+    $('.kit-selected').removeClass('kit-selected')
+    $link.addClass('kit-selected')
     $('#selected-kit-description').html(kitDesc)
 
   if $('#purchase-form').length > 0
