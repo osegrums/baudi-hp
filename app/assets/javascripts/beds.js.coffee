@@ -30,13 +30,13 @@ jQuery ->
     kitId         = $('#bp-kit').val();
     bedPriceData  = findBedPrice(hasRack, hasDecoration, dimensionId)
     kitPriceData  = findKitPrice(kitId, dimensionId)
-    bedPrice      = parseFloat(bedPriceData['price'] || 0)
-    kitPrice      = parseFloat(kitPriceData['price'] || 0)
+    bedPrice      = parseFloat(if bedPriceData then bedPriceData['price'] else 0)
+    kitPrice      = parseFloat(if kitPriceData then kitPriceData['price'] else 0)
 
-    $('#bp-price-id').val(bedPriceData['id'])
+    $('#bp-price-id').val(bedPriceData['id']) if bedPriceData
     $('#bed-price').html(bedPrice)
 
-    $('#bp-kit-price-id').val(kitPriceData['id'])
+    $('#bp-kit-price-id').val(kitPriceData['id']) if kitPriceData
     $('#kit-price').html(kitPrice)
 
     $('#actual-price-price').html(bedPrice + kitPrice)
