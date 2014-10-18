@@ -3,15 +3,23 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 jQuery ->
-  prices = ->
+  bedPrices = ->
     $('#purchase-form').data('bed-prices')
 
-  findBedPrice = (hasRack, hasDecoration, dimensionId, kitId) ->
-    matches = $.grep prices(), (bedPrice) ->
+  kitPrices = ->
+    $('#purchase-form').data('kit-prices')
+
+  findBedPrice = (hasRack, hasDecoration, dimensionId) ->
+    matches = $.grep bedPrices(), (bedPrice) ->
       bedPrice['has_rack']                == hasRack and
       bedPrice['has_decoration']          == hasDecoration and
-      bedPrice['dimension_id'].toString() == dimensionId and
-      bedPrice['kit_id'].toString()       == kitId
+      bedPrice['dimension_id'].toString() == dimensionId
+    matches[0]
+
+  findKitPrice = (kitId, dimensionId) ->
+    matches = $.grep kitPrices(), (kitPrice) ->
+      kitPrice['kit_id'].toString()       == kitId and
+      kitPrice['dimension_id'].toString() == dimensionId
     matches[0]
 
   recalculatePrice = ->
@@ -19,10 +27,19 @@ jQuery ->
     hasDecoration = $('#bp-has-decoration').is(':checked')
     dimensionId   = $('input:radio[name=dimension]:checked').val();
     kitId         = $('#bp-kit').val();
-    bedPrice      = findBedPrice(hasRack, hasDecoration, dimensionId, kitId)
-    if bedPrice
-      $('#bp-price-id').val(bedPrice['id'])
-      $('#actual-price-price').html(bedPrice['price'])
+    bedPriceData  = findBedPrice(hasRack, hasDecoration, dimensionId)
+    kitPriceData  = findKitPrice(kitId, dimensionId)
+    bedPrice      = parseFloat(bedPriceData['price'] || 0)
+    kitPrice      = parseFloat(kitPriceData['price'] || 0)
+
+    $('#bp-price-id').val(bedPriceData['id'])
+    $('#bed-price').html(bedPrice)
+
+    $('#bp-kit-price-id').val(kitPriceData['id'])
+    $('#kit-price').html(kitPrice)
+
+    $('#actual-price-price').html(bedPrice + kitPrice)
+    console.log bedPrice, kitPrice, $('#bp-price-id').val(), $('#bp-kit-price-id').val()
 
   setDimensionName = ->
     name = $('input[name=dimension]:checked').data('name')

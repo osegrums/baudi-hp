@@ -27,6 +27,8 @@ en:
       color_scheme: Color scheme
       bed_size: Select your bed size
       has_rack: with bad slats
+      bed_price: Bed
+      kit_price: Linen
       total_price: Total
       more_info: Click for more info
       all_beds: Beds

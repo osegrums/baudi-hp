@@ -1,5 +1,6 @@
 <% bed_prices_json = bed_prices_for_data(@bed) %>
-<%= form_for @bed_purchase, url: bed_bed_purchases_path(@bed), data: {bed_prices: bed_prices_json}, html: {id: 'purchase-form'} do |f| %>
+<% kit_prices_json = bed_kit_prices_for_data(@bed) %>
+<%= form_for @bed_purchase, url: bed_bed_purchases_path(@bed), data: {bed_prices: bed_prices_json, kit_prices: kit_prices_json}, html: {id: 'purchase-form'} do |f| %>
   <% if @bed_purchase.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@bed_purchase.errors.count, "error") %> prohibited this purchase from being saved:</h2>
@@ -13,6 +14,7 @@
   <% end %>
 
   <input type="hidden" id="bp-price-id" class="bp-price-id" name="bed_purchase[bed_price_id]" />
+  <input type="hidden" id="bp-kit-price-id" class="bp-kit-price-id" name="bed_purchase[kit_price_id]" />
 
   <!-- label for="bp-has-decoration">Ir dekorācija</label-->
   <input type="hidden" class="bp-has-decoration bp-changer" name="has_decoration" value="" id="bp-has-decoration" />
@@ -103,18 +105,22 @@
         <p><img src="/images/css/line_dotted.gif" width="497" height="1" /></p>
         <div class="cena">
           <table width="303" border="0">
-            <!-- tr class="bed">
-              <td class="txt" width="52">Bed:</td>
-              <td class="sum" width="273">€ 2300</td>
+            <tr class="bed">
+              <td class="txt" width="52"><%= t '.bed_price' %>:</td>
+              <td class="sum" width="273">
+                € <span id='bed-price'></span>
+              </td>
             </tr>
             <tr class="linen">
-              <td class="txt">Linen:</td>
-              <td class="sum">€ 300</td>
-            </tr -->
+              <td class="txt"><%= t '.kit_price' %>:</td>
+              <td class="sum">
+                € <span id='kit-price'></span>
+              </td>
+            </tr>
             <tr class="totalCost">
               <td class="txt"><%= t '.total_price' %>:</td>
               <td class="sum">
-                € <span id='actual-price-price'>???</span>
+                € <span id='actual-price-price'></span>
               </td>
             </tr>
           </table>

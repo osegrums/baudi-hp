@@ -42,7 +42,7 @@ class BedPurchasesController < ApplicationController
 
   def bed_purchase_params
     params.require(:bed_purchase).permit(
-      :color_id, :bed_id, :bed_price_id, :name, :email, :phone, :notes, :address, :zip_code, :city, :country
+      :color_id, :bed_id, :bed_price_id, :kit_price_id, :name, :email, :phone, :notes, :address, :zip_code, :city, :country
     )
   end
 

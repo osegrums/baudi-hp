@@ -10,4 +10,15 @@ module BedsHelper
       }
     end
   end
+
+  def bed_kit_prices_for_data(bed)
+    bed.kit_prices.map do |kit_price|
+      {
+        id:             kit_price.id,
+        kit_id:         kit_price.kit_id,
+        dimension_id:   kit_price.dimension_id,
+        price:          kit_price.price
+      }
+    end
+  end
 end

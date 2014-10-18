@@ -3,6 +3,7 @@
 <table class="table table-stripped table-bordered table-hover">
   <thead>
     <tr>
+      <th>State</th>
       <th>Bed</th>
       <th>Dimension</th>
       <th>Kit</th>
@@ -27,6 +28,9 @@
       <%- kit = bed_price.try :kit %>
       <%- color = purchase.color %>
       <tr>
+        <Td>
+          <%= purchase.state == 'completed' ? 'Approved' : 'Not approved' %>
+        </td>
         <td>
           <%= bed.name %>
           <br />

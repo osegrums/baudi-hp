@@ -1,6 +1,7 @@
 class BedPurchase < ActiveRecord::Base
   belongs_to :bed
   belongs_to :bed_price
+  belongs_to :kit_price
   belongs_to :color
 
   before_create :set_uid
@@ -10,9 +11,9 @@ class BedPurchase < ActiveRecord::Base
   private
 
   def update_price
-    if bed_price_id_changed?
-      self.price = bed_price.price
-    end
+    self.price_bed = bed_price.price
+    self.price_kit = kit_price.price
+    self.price     = self.price_bed + self.price_kit
   end
 
   def set_uid
@@ -42,4 +43,7 @@ end
 #  zip_code     :string(255)
 #  city         :string(255)
 #  country      :string(255)
+#  kit_price_id :integer
+#  price_kit    :decimal(10, 2)
+#  price_bed    :decimal(10, 2)
 #

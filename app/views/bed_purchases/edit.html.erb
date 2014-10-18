@@ -28,7 +28,7 @@
         </div><!-- end box -->
 
         <div class="box" id="linen">
-          <% kit = @bed_purchase.bed_price.try :kit %>
+          <% kit = @bed_purchase.kit_price.try :kit %>
           <% if kit && kit.thumb%>
             <%= image_tag kit.thumb.file.w169.url, align: :left %>
           <% end %>
