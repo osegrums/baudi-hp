@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /* CSS Document */
 
+
 body { margin: 0; padding: 0; background: url(/images/css/BG-LINIJAS.png) no-repeat center center fixed #eaeaea;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -40,7 +41,7 @@ body#ru .main { font-family:  Arial, Helvetica, sans-serif; }
 
 
 .header { display:block; height:165px; }
-  .logo { display:block; width:310px; borderz:1px solid red }
+  .logo { display:block; width:310px; }
   .navig { display:block; width: 600px; position:absolute;top: 105px; left:320px; z-index:2; text-align:right;  }
     .navig ul { margin:0; padding:0; font-family: 'Dosis', sans-serif; text-transform:uppercase; color:#979595; font-size:17px;
        text-shadow: 0 0 5px #f1f1f1; font-weight:500 }
@@ -56,7 +57,7 @@ body#ru .main { font-family:  Arial, Helvetica, sans-serif; }
     .navig ul li a:hover {  background-image:url(/images/css/bg_nav-hover.gif); color:#4c9e7b }
   .langmenu { position:absolute; top: 30px; left:840px; font-family: 'Dosis'; font-weight:500; font-size:14px; color: #999;  }
     body#ru .langmenu { font-family: 'Roboto Slab', Arial; font-size:13px }
-  .langmenu a:link, .langmenu a:visited { color:#999; text-decoration:none; padding-left:10px; }
+  .langmenu a:link, .langmenu a:visited { color:#999; text-decoration:none }
   .langmenu a:hover { color:#F60; text-decoration:underline }
 
 
@@ -73,7 +74,7 @@ body#ru .main { font-family:  Arial, Helvetica, sans-serif; }
 
 /* LEFT COL */
 
-.leftCol { display:block; float:left; width:555px;  }
+.leftCol { display:block; float:left; width:555px;   }
   body #shop-item .leftCol { display:block; float:left; width:390px;  overflow:hidden  }
 
 .leftCol .innerBox {  padding-left:60px }
@@ -96,14 +97,10 @@ body#ru .main { font-family:  Arial, Helvetica, sans-serif; }
 
 
 
-
-
-
-
 /* FORM ELEMENT SNIPPETI no csscheckbox.com RADIO BTNS */
 input[type=radio].css-checkbox { display:none; }
 
-input[type=radio].css-checkbox + label.css-label { padding-left:20px; height:15px; display:inline-block; line-height:15px; background-repeat:no-repeat; background-position: 0 0;font-size:13px; vertical-align:middle; cursor:pointer ;}
+input[type=radio].css-checkbox + label.css-label { padding-left:20px;  height:15px; display:inline-block; line-height:15px; background-repeat:no-repeat; background-position: 0 0;font-size:13px; vertical-align:middle; cursor:pointer;}
   input[type=radio].css-checkbox:checked + label.css-label { background-position: 0 -15px;}
   label.css-label { background-image:url(/images/css/csscheckbox_9ca3d7e8c2abca416f07682f901e90f6.png);
           -webkit-touch-callout: none;
@@ -115,10 +112,9 @@ input[type=radio].css-checkbox + label.css-label { padding-left:20px; height:15p
 
 /* FORM ELEMENT SNIPPETI no csscheckbox.com CHECKBOX */
 
-input[type=checkbox].css-checkbox { position:absolute; z-index:-1000; top:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0; }
+input[type=checkbox].css-checkbox { position:absolute; z-index:-1000; top:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;}
 
-input[type=checkbox].css-checkbox + label.css-label { padding-left:21px; height:16px; display:inline-block; line-height:16px; background-repeat:no-repeat;
-  background-position: 0 0; vertical-align:middle;cursor:pointer; }
+input[type=checkbox].css-checkbox + label.css-label { padding-left:21px; height:16px; display:inline-block; line-height:16px; background-repeat:no-repeat; background-position: 0 0; vertical-align:middle;cursor:pointer;  }
 
 input[type=checkbox].css-checkbox:checked + label.css-label { background-position: 0 -16px; }
 
@@ -133,21 +129,32 @@ td.chekbox label {
         user-select: none;
       }
 
-/* LIELĀ PIRKT POGA */
-.btn-style { font-family: 'Dosis', sans-serif; text-transform:uppercase; color:#979595; font-size:27px; font-weight:700; border:none; width: 100%; padding: 8px;  cursor:pointer; text-shadow: 0 0 5px #f1f1f1; margin-top:30px; background:url(/images/css/bg_nav.gif); }
-  body#ru .btn-style { font-family:  'Kelly Slab', Helvetica }
-
-.btn-style:hover { background:url(/images/css/bg_nav-hoverOrange.gif);  color:#ff9900; text-shadow: 0 0 5px #f1f1f1 }
 
 
-/* SHOP LINEN */
 
-.linenSelect { }
-.linenSelect  p  { border:1px solid #d3d3d3; padding: 15px 12px; font-size:13px; color:#666  }
+
+/* SHOP LINEN SHOP LINEN SHOP LINEN SHOP LINEN SHOP LINEN SHOP LINEN SHOP LINEN */
+
+.linenSelect { color:#555 }
+.linenSelect  p  { border:1px solid #d3d3d3; padding: 15px 12px; font-size:13px; color:#666  }'
+
 .linenSelect img { padding:1px; border:1px solid #9f9f9f; margin-bottom:5px }
-.linenSelect img:hover { border:1px solid #ff6f0f }
-  .linenSelectBox { display: block; width:100px; borderz:1px solid red; float: left; text-align: center; font-size:12px; color:#666; padding: 2px }
-  .linenSelectBox:hover { color: #ff6f0f }
+
+  .linenSelect img.decoLinenImg { border: none; padding:0; margin-left:-10px; margin-right:-10px; float:left;  }
+  .linenSelect img.decoLinenImg:hover { border: none; padding:0; }
+
+table.linenSelect { border-collapse:collapse; margin-left:17px  }
+table.linenSelect td { padding: 5px   }
+    td.and { font-size:12px; font-style: italic; letter-spacing: 0.05em; padding-left:0px;  }
+    td.and img { padding:0px; margin: 0px 5px 0 0; border: none }
+    td.and img:hover { padding:0; border:none }
+
+  .linenSelect label { font-size:12px;  }
+    body#ru .linenSelect label {  }
+
+  label.radGroup3 { border:1px solid greeninput }
+
+
 
 
 .cena { padding-left:10px  }
@@ -169,6 +176,22 @@ td.chekbox label {
 
 
 
+
+
+
+
+
+
+
+
+
+/* LIELĀ PIRKT POGA */
+.btn-style { border:1px solid red; font-family: 'Dosis', sans-serif; text-transform:uppercase; color:#979595; font-size:27px; font-weight:700; border:none; width: 100%; padding: 8px;  cursor:pointer; text-shadow: 0 0 5px #f1f1f1; margin-top:30px; background:url(/images/css/bg_nav.gif); }
+  body#ru .btn-style { font-family:  'Kelly Slab', Georgia }
+
+.btn-style:hover { background:url(/images/css/bg_nav-hoverOrange.gif);  color:#ff9900; text-shadow: 0 0 5px #f1f1f1 }
+
+
 /* SUBNAV LEFTCOL */
 
 .leftCol .subNav { border-top: 1px solid #ccc; font-family: 'Oswald', Georgia, Helvetica, sans-serif; font-weight:400; color:#3e5d76; font-size:17px; text-align:center; margin-top:20px   }
@@ -182,7 +205,16 @@ td.chekbox label {
 
 
 
-/* RIGHT COL */
+
+
+
+
+
+
+
+
+
+/* RIGHT COL RIGHT COL RIGHT COL RIGHT COL RIGHT COL RIGHT COL RIGHT COL */
 
 .rightCol { display:block; float: right; width: 330px; }
   body #shop-item .rightCol { width: 540px;  }
@@ -197,8 +229,15 @@ td.chekbox label {
 
 .rightCol p { font-size:13px; color:#595959; line-height:1.4em;  }
 
+.descr { padding-left:20px }
+.rightCol table { border-collapse:collapse }
+.rightCol table td { border:1px solid #ccc; padding: 3px; font-size:13px }
 
 .clear { display:block; clear:both }
+
+
+
+
 
 
 
@@ -212,6 +251,15 @@ td.chekbox label {
 .gridContainer { display:block;  overflow:hidden; width:915px;  }
 
 .grid-item { float:left; margin-right:24px; margin-bottom: 24px  }
+  .grid-itemTitle { z-index:2; position:absolute; display:block; padding: 10px 0 0 15px;
+  visibility: hidden; opacity: 0;
+  font-family:'Oswald'; font-size:20px; font-weight:500; text-shadow: 0px 0px 7px #fff;  }
+  .grid-item:hover .grid-itemTitle { visibility: visible; opacity: 1;   }
+
+body#ru .grid-itemTitle { font-family: 'Kelly Slab', Georgia, Helvetica, sans-serif; }
+
+
+
 
 
 
@@ -230,7 +278,7 @@ td.chekbox label {
 
 .contactInfo { display:block; overflow:hidden; width:290px }
 .contactInfo p {  padding:10px 0px 10px 0px; margin: 0; }
-.contactInfo h2 {   }
+.contactInfo h2 { text-transform:capitalize }
 
 
 .sc_icons { padding-top:29px  } /*Social media */
@@ -288,3 +336,13 @@ table.inputformTable { color:#666; margin-left:10px }
 
 
 .dotted { display:block; border-bottom:1px dotted #ccc }
+
+
+
+
+
+
+
+/* to be removed */
+
+
