@@ -19,4 +19,5 @@ end
 #  name_ru       :string(255)
 #  created_at    :datetime
 #  updated_at    :datetime
+#  sequence      :integer          default(0)
 #

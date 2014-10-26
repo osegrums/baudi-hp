@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141026155330) do
+ActiveRecord::Schema.define(version: 20141026163640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20141026155330) do
     t.string   "name_ru"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "sequence",      default: 0
   end
 
   create_table "dimensions", force: true do |t|
@@ -80,6 +81,7 @@ ActiveRecord::Schema.define(version: 20141026155330) do
     t.datetime "updated_at"
     t.boolean  "is_default",    default: false
     t.string   "short_name"
+    t.integer  "sequence",      default: 0
   end
 
   create_table "kit_prices", force: true do |t|
@@ -103,6 +105,7 @@ ActiveRecord::Schema.define(version: 20141026155330) do
     t.text     "description_lv"
     t.text     "description_en"
     t.text     "description_ru"
+    t.integer  "sequence",       default: 0
   end
 
   create_table "thumbs", force: true do |t|

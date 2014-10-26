@@ -27,7 +27,7 @@
         <div class="shop_thumbs_img">
           <input type="hidden" id="bp-color" class="bp-color" name="bed_purchase[color_id]" value="" />
           <% if @bed.colors.exists? %>
-            <% @bed.colors.order(located_field_name(:name) => :asc).each_slice(5) do |colors| %>
+            <% @bed.colors.order(sequence: :asc).each_slice(5) do |colors| %>
               <div>
                 <% colors.each do |color| %>
                   <a href="#" data-color-id="<%= color.id %>" data-color-name="<%= lf(color, :name) %>" class="bp-color-changer <%= 'bp-color-selected' if color.id == @bed_purchase.color_id %>"><%- if color.thumbs.first -%><%= image_tag color.thumbs.first.file.w46.url, alt: lf(color, :name) %><%- end -%></a>
@@ -55,7 +55,7 @@
 
           <table width="320" border="0">
             <tr>
-              <% @bed.dimensions.order(name: :asc).each do |dim| %>
+              <% @bed.dimensions.order(sequence: :asc).each do |dim| %>
                 <td>
                   <input type="radio" id="dim-<%= dim.id %>" class="bp-dimension bp-changer css-checkbox" name="dimension" value="<%= dim.id %>" <%= 'checked="checked"' if dim.is_default? %> data-name="<%= dim.name %>" />
                   <label for="dim-<%= dim.id %>" class="css-label radGroup2"><%= dim.short_name %></label>
@@ -76,7 +76,7 @@
           <% default_kit = @bed.kits.where(is_default: true).first %>
           <input type="hidden" id="bp-kit" class="bp-kit bp-changer" name="kit" value="<%= default_kit.try(:id) %>" />
           <% if @bed.kits.count > 1 %>
-            <% @bed.kits.order(:is_default => :asc, located_field_name(:name) => :asc).each do |kit| %>
+            <% @bed.kits.order(sequence: :asc).each do |kit| %>
               <div class="linenSelectBox">
                 <a href="#" data-kit-id="<%= kit.id %>" data-kit-description="<%= lf(kit, :description) %>" class="bp-kit-changer <%= 'bp-kit-selected' if kit.is_default? %>">
                   <% thumb = kit.thumbs.first %>

@@ -4,7 +4,7 @@ class BackEnd::KitsController < BackEndController
 
   # GET /{:bed_id}/kits
   def index
-    @kits = @itemable.kits
+    @kits = @itemable.kits.order(sequence: :asc)
   end
 
   # GET /{:bed_id}/kits/1

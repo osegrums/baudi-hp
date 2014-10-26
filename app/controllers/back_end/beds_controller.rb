@@ -3,7 +3,7 @@ class BackEnd::BedsController < BackEndController
 
   # GET /beds
   def index
-    @beds = Bed.all
+    @beds = Bed.all.order(sequence: :asc)
   end
 
   # GET /beds/1

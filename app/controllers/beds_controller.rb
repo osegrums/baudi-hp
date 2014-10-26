@@ -1,7 +1,7 @@
 class BedsController < ApplicationController
   # GET /beds
   def index
-    @beds = Bed.all
+    @beds = Bed.all.order('sequence ASC')
   end
 
   def show

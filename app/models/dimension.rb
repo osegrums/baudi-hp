@@ -13,4 +13,5 @@ end
 #  updated_at    :datetime
 #  is_default    :boolean          default(FALSE)
 #  short_name    :string(255)
+#  sequence      :integer          default(0)
 #

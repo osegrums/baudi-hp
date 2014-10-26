@@ -4,7 +4,7 @@ class BackEnd::DimensionsController < BackEndController
 
   # GET /{:bed_id}/dimensions
   def index
-    @dimensions = @itemable.dimensions
+    @dimensions = @itemable.dimensions.order(sequence: :asc)
   end
 
   # GET /{:bed_id}/dimensions/1

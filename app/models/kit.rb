@@ -27,4 +27,5 @@ end
 #  description_lv :text
 #  description_en :text
 #  description_ru :text
+#  sequence       :integer          default(0)
 #

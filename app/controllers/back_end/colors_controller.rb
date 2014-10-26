@@ -4,7 +4,7 @@ class BackEnd::ColorsController < BackEndController
 
   # GET /{:bed_id}/colors
   def index
-    @colors = @itemable.colors
+    @colors = @itemable.colors.order(sequence: :asc)
   end
 
   # GET /{:bed_id}/colors/1

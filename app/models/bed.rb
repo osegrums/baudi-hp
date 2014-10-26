@@ -1,7 +1,7 @@
 class Bed < ActiveRecord::Base
   has_many :colors, as: :itemable, dependent: :destroy
-  has_many :dimensions, -> { order(is_default: :asc, name: :asc) },as: :itemable, dependent: :destroy
-  has_many :kits, -> { order(is_default: :asc, name_lv: :asc) }, as: :itemable, dependent: :destroy
+  has_many :dimensions, as: :itemable, dependent: :destroy
+  has_many :kits, as: :itemable, dependent: :destroy
   has_many :bed_prices, dependent: :destroy
   has_many :kit_prices, dependent: :destroy
   has_many :bed_purchases, dependent: :nullify
