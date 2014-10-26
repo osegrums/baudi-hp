@@ -69,6 +69,6 @@ class BackEnd::ThumbsController < BackEndController
   end
 
   def thumb_params
-    params.require(:thumb).permit(:name, :file, :description, :is_default)
+    params.require(:thumb).permit(:name, :file, :description, :is_default, :is_kit_image)
   end
 end

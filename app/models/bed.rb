@@ -16,7 +16,11 @@ class Bed < ActiveRecord::Base
   accepts_nested_attributes_for :kit_prices, allow_destroy: true
 
   def main_thumb
-    thumbs.order(is_default: :asc).first
+    thumbs.where(is_kit_image: false).order(is_default: :asc).first
+  end
+
+  def kit_image
+    thumbs.where(is_kit_image: true).first
   end
 
   def price_for_editing(dimension, has_decoration, has_rack)

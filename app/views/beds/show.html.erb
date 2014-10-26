@@ -16,9 +16,6 @@
   <input type="hidden" id="bp-price-id" class="bp-price-id" name="bed_purchase[bed_price_id]" />
   <input type="hidden" id="bp-kit-price-id" class="bp-kit-price-id" name="bed_purchase[kit_price_id]" />
 
-  <!-- label for="bp-has-decoration">Ir dekorācija</label-->
-  <input type="hidden" class="bp-has-decoration bp-changer" name="has_decoration" value="" id="bp-has-decoration" />
-
   <div class="main" id="shop-item">
     <div class="leftCol">
       <div class="innerBox">
@@ -48,6 +45,7 @@
         <p>
           <img src="/images/css/line_dotted.gif" width="497" height="1" />
         </p>
+
         <div class="shop_size_selector" style="background-color: #fafafa;">
           <h3>
             <%= t '.bed_size' %> (<span class="dynamic" id="selected-dimension-name"></span>)
@@ -71,33 +69,47 @@
             </tr>
           </table>
         </div>
+
         <p><img src="/images/css/line_dotted.gif" width="497" height="1" /></p>
+
         <div class="linenSelect">
           <% default_kit = @bed.kits.where(is_default: true).first %>
           <input type="hidden" id="bp-kit" class="bp-kit bp-changer" name="kit" value="<%= default_kit.try(:id) %>" />
-          <% if @bed.kits.count > 1 %>
-            <% @bed.kits.order(sequence: :asc).each do |kit| %>
-              <div class="linenSelectBox">
-                <a href="#" data-kit-id="<%= kit.id %>" data-kit-description="<%= lf(kit, :description) %>" class="bp-kit-changer <%= 'bp-kit-selected' if kit.is_default? %>">
-                  <% thumb = kit.thumbs.first %>
-                  <% if thumb %>
-                    <%= image_tag thumb.file.w93.url %>
-                  <% else %>
-                    <%= lf(kit, :name) %>
-                  <% end %>
-                </a>
-                <br />
-                <%= lf(kit, :name) %>
-              </div>
-            <% end %>
+
+          <% if @bed.kit_image %>
+            <%= image_tag(@bed.kit_image.file.w150.url, class: "decoLinenImg") %>
           <% end %>
-          <div class="clear"></div>
-          <p id="selected-kit-description">
-            <%= lf(default_kit, :description) %>
-          </p>
-        </div>
-        <!-- end linen -->
+
+          <% if @bed.has_decoration? %>
+            <table class="linenSelect">
+              <tr>
+                <td colspan="3" class="chekbox">
+                  <input type="checkbox" class="bp-has-decoration bp-changer css-checkbox" name="has_decoration" value="" id="bp-has-decoration" />
+                  <label for="bp-has-decoration" class="css-label"><%= t('.include_decorative_cover') %></label>
+                </td>
+              </tr>
+                <tr>
+                <td class="and"><img src="/images/and_imgL.gif"  height="7" /><%= t('.and') %><img src="/images/and_imgR.gif" width="43" height="7" /></td>
+                </tr>
+            </table> <!---->
+          <% end %>
+
+          <% if @bed.kits.count > 1 %>
+            <table class="linenSelect">
+              <% @bed.kits.order(sequence: :asc).each do |kit| %>
+                <tr>
+                <td>
+                  <input type="radio" name="radiog_dark2" id="kit<%= kit.id %>" class="css-checkbox bp-kit-changer" data-kit-id="<%= kit.id %>" data-kit-description="<%= lf(kit, :description) %>" <%= kit.is_default? ? 'checked' : '' %> />
+                  <label for="kit<%= kit.id %>" class="css-label radGroup3"><%= lf(kit, :name) %></label>
+                </td>
+                </tr>
+              <% end %>
+              </table>
+          <% end %>
+        </div><!-- end linenSelect -->
+
         <p><img src="/images/css/line_dotted.gif" width="497" height="1" /></p>
+
         <div class="cena">
           <table width="303" border="0">
             <tr class="bed">
@@ -106,6 +118,14 @@
                 € <span id='bed-price'></span>
               </td>
             </tr>
+            <% if false && @bed.has_decoration? %>
+              <tr class="bed">
+                <td class="txt"><%= t '.decoration_price' %>:</td>
+                <td class="sum">
+                  € <span id='decoration-price'></span>
+                </td>
+              </tr>
+            <% end %>
             <tr class="linen">
               <td class="txt"><%= t '.kit_price' %>:</td>
               <td class="sum">
@@ -145,7 +165,7 @@
           <div class="gallery_th">
             <% if @bed.thumbs.any? %>
 
-              <% images = @bed.thumbs.to_a - [@bed.main_thumb] %>
+              <% images = @bed.thumbs.where(is_kit_image: false).to_a - [@bed.main_thumb] %>
               <% images.each do |thumb| %>
                 <%= link_to image_tag(thumb.file.w60.url), thumb.file.w800.url, target: '_blank', data: {gallery: '#blueimp-gallery'} %>
                 <!-- <%= image_tag(thumb.file.w60.url) %> -->

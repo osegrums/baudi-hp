@@ -33,6 +33,9 @@ lv:
       total_price: Total
       more_info: Click for more info
       all_beds: Beds
+      include_decorative_cover: Include decorative bed cover
+      and: un
+      decoration_price: Dekoratīvais apvalks
     show_incomplete:
       <<: *beds_show
   pages:

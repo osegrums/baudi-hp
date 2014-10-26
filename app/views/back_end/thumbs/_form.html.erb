@@ -22,6 +22,12 @@
     <%= f.label :is_default %>
     <%= f.check_box :is_default, class: 'checkbox', placeholder: '' %>
   </div>
+  <% if @thumb.thumbable.is_a?(Bed) %>
+    <div>
+      <%= f.label :is_kit_image %>
+      <%= f.check_box :is_kit_image, class: 'checkbox', placeholder: '' %>
+    </div>
+  <% end %>
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, class: 'form-control', placeholder: '' %>

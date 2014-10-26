@@ -8,6 +8,12 @@
   <%= human_boolean @thumb.is_default %>
 </p>
 
+<% if @thumb.thumbable.is_a?(Bed) %>
+  <p>
+    <strong>Komplekta bilde:</strong>
+    <%= human_boolean @thumb.is_kit_image %>
+  </p>
+<% end %>
 <p>
   <strong>Nosaukums:</strong>
   <%= @thumb.name %>

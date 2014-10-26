@@ -33,6 +33,8 @@ jQuery ->
     bedPrice      = parseFloat(if bedPriceData then bedPriceData['price'] else 0)
     kitPrice      = parseFloat(if kitPriceData then kitPriceData['price'] else 0)
 
+    console.log kitPrice, bedPrice, kitId, dimensionId, hasRack, hasDecoration
+
     $('#bp-price-id').val(bedPriceData['id']) if bedPriceData
     $('#bed-price').html(bedPrice)
 
@@ -57,15 +59,10 @@ jQuery ->
     $('#selected-color-name').html(colorName)
 
   changeKit = (event) ->
-    event.preventDefault()
-    $link = $(event.target)
-    $link = $link.closest('a') if $link.prop('tagName') == 'IMG'
-    kitId = $link.data('kit-id')
-    kitDesc = $link.data('kit-description')
+    $radio = $(event.target)
+    kitId = $radio.data('kit-id')
+    kitDesc = $radio.data('kit-description')
     $('#bp-kit').val(kitId).trigger('change')
-    $('.kit-selected').removeClass('kit-selected')
-    $link.addClass('kit-selected')
-    $('#selected-kit-description').html(kitDesc)
 
   if $('#purchase-form').length > 0
     recalculatePrice()

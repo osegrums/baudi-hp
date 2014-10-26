@@ -18,4 +18,5 @@ end
 #  created_at     :datetime
 #  updated_at     :datetime
 #  is_default     :boolean          default(FALSE)
+#  is_kit_image   :boolean          default(FALSE)
 #
