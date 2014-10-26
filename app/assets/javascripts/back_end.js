@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require bootsy
 //= require bootstrap-sprockets
+//= require ckeditor/init
 

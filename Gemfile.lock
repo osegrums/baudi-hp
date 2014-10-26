@@ -63,6 +63,9 @@ GEM
       mime-types (>= 1.16)
     carrierwave-processing (1.0.0)
       carrierwave
+    ckeditor (4.1.0)
+      mime-types
+      orm_adapter (~> 0.5.0)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -213,6 +216,7 @@ DEPENDENCIES
   capistrano-rails
   carrierwave
   carrierwave-processing
+  ckeditor
   coffee-rails (~> 4.0.0)
   devise
   devise-i18n

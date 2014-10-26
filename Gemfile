@@ -28,6 +28,7 @@ gem 'carrierwave-processing'
 gem 'mini_magick'
 
 gem 'bootsy'
+gem 'ckeditor'
 gem 'rails-assets-blueimp-gallery'
 
 group :development do
