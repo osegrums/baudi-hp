@@ -1,5 +1,4 @@
 class Bed < ActiveRecord::Base
-  include Bootsy::Container
   has_many :colors, as: :itemable, dependent: :destroy
   has_many :dimensions, -> { order(is_default: :asc, name: :asc) },as: :itemable, dependent: :destroy
   has_many :kits, -> { order(is_default: :asc, name_lv: :asc) }, as: :itemable, dependent: :destroy

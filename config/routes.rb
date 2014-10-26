@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  mount Bootsy::Engine => '/bootsy', as: 'bootsy'
   concern :thumbs do
     resources :thumbs
   end

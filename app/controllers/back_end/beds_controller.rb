@@ -53,7 +53,7 @@ class BackEnd::BedsController < BackEndController
 
   def bed_params
     params.require(:bed).permit(
-      :code, :name, :sequence, :has_decoration, :has_rack, :description_lv, :description_ru, :description_en, :bootsy_image_gallery_id
+      :code, :name, :sequence, :has_decoration, :has_rack, :description_lv, :description_ru, :description_en
     )
   end
 end
