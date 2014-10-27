@@ -29,8 +29,8 @@
 
         <div class="box" id="linen">
           <% kit = @bed_purchase.kit_price.try :kit %>
-          <% if kit && kit.thumb%>
-            <%= image_tag kit.thumb.file.w169.url, align: :left %>
+          <% if @bed.kit_image %>
+            <%= image_tag @bed.kit_image.file.w169.url, align: :left %>
           <% end %>
           <h5><%= t '.bed_linen' %></h5>
           <h6><%= lf(kit, :description) %></h6>
