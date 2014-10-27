@@ -1,3 +1,7 @@
-.bp-kit-selected, .bp-color-selected {
-  border: 1px solid red;
+#preview {
+  position: absolute;
+  border: 1px solid #ccc;
+  background: #333;
+  padding: 0px;
+  color: #fff;
 }

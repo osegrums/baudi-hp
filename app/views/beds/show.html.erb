@@ -28,7 +28,7 @@
             <% @bed.colors.order(sequence: :asc).each_slice(5) do |colors| %>
               <div>
                 <% colors.each do |color| %>
-                  <a href="#" data-color-id="<%= color.id %>" data-color-name="<%= lf(color, :name) %>" class="bp-color-changer <%= 'bp-color-selected' if color.id == @bed_purchase.color_id %>"><%- if color.thumbs.first -%><%= image_tag color.thumbs.first.file.w46.url, alt: lf(color, :name) %><%- end -%></a>
+                  <a href="<%= color.thumbs.first.file.w200.url %>" data-color-id="<%= color.id %>" data-color-name="<%= lf(color, :name) %>" class="bp-color-changer <%= 'bp-color-selected' if color.id == @bed_purchase.color_id %>"><%- if color.thumbs.first -%><%= image_tag color.thumbs.first.file.w46.url, alt: lf(color, :name) %><%- end -%></a>
                 <% end %>
               </div>
             <% end %>

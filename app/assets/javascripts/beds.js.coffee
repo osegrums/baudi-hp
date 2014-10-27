@@ -77,6 +77,7 @@ jQuery ->
   if $('#purchase-form').length > 0
     recalculatePrice()
     setDimensionName()
+    initColorPreview()
 
   $('.bp-changer').on       'change', (event) -> recalculatePrice(event)
   $('.bp-color-changer').on 'click',  (event) -> changeColor(event)

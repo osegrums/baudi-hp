@@ -17,3 +17,4 @@
 //= require home_carousel
 //= require galleries
 //= require beds
+//= require color_preview
