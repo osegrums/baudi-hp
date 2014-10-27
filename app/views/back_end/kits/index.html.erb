@@ -10,7 +10,6 @@
       <th>Apraksts LV</th>
       <th>Apraksts EN</th>
       <th>Apraksts RU</th>
-      <th>Image</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -25,11 +24,6 @@
         <td><%= kit.description_lv %></td>
         <td><%= kit.description_en %></td>
         <td><%= kit.description_ru %></td>
-        <td>
-          <% if kit.thumb %>
-            <%= image_tag kit.thumb.file.w93.url %>
-          <% end %>
-        </td>
         <td><%= index_show_link polymorphic_path([:back_end, @itemable, kit]) %></td>
         <td><%= index_edit_link polymorphic_path([:edit, :back_end, @itemable, kit]) %></td>
         <td><%= index_destroy_link polymorphic_path([:back_end, @itemable, kit]) %></td>
