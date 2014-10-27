@@ -38,6 +38,21 @@ class Bed < ActiveRecord::Base
       )
   end
 
+  def decoration_prices
+    query = <<-SQL.squish
+      SELECT w.bed_id, w.dimension_id, w.has_rack, w.price - wo.price AS price
+        FROM bed_prices w
+        JOIN bed_prices wo ON w.bed_id = wo.bed_id
+                          AND w.has_rack = wo.has_rack
+                          AND w.dimension_id = wo.dimension_id
+       WHERE w.bed_id = #{id}
+         AND w.has_decoration = true
+         AND wo.has_decoration = false
+    SQL
+
+    bed_prices = BedPrice.find_by_sql(query)
+  end
+
   private
 
   def create_default_kit

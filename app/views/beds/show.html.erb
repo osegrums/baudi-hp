@@ -1,6 +1,7 @@
-<% bed_prices_json = bed_prices_for_data(@bed) %>
-<% kit_prices_json = bed_kit_prices_for_data(@bed) %>
-<%= form_for @bed_purchase, url: bed_bed_purchases_path(@bed), data: {bed_prices: bed_prices_json, kit_prices: kit_prices_json}, html: {id: 'purchase-form'} do |f| %>
+<% bed_prices_json        = bed_prices_for_data(@bed) %>
+<% kit_prices_json        = bed_kit_prices_for_data(@bed) %>
+<% decoration_prices_json = decoration_prices_for_data(@bed) %>
+<%= form_for @bed_purchase, url: bed_bed_purchases_path(@bed), data: {bed_prices: bed_prices_json, kit_prices: kit_prices_json, decoration_prices: decoration_prices_json}, html: {id: 'purchase-form'} do |f| %>
   <% if @bed_purchase.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@bed_purchase.errors.count, "error") %> prohibited this purchase from being saved:</h2>
@@ -118,7 +119,7 @@
                 € <span id='bed-price'></span>
               </td>
             </tr>
-            <% if false && @bed.has_decoration? %>
+            <% if @bed.has_decoration? %>
               <tr class="bed">
                 <td class="txt"><%= t '.decoration_price' %>:</td>
                 <td class="sum">

@@ -11,6 +11,16 @@ module BedsHelper
     end
   end
 
+  def decoration_prices_for_data(bed)
+    bed.decoration_prices.map do |bed_price|
+      {
+        has_rack:       bed_price.has_rack,
+        dimension_id:   bed_price.dimension_id,
+        price:          bed_price.price
+      }
+    end
+  end
+
   def bed_kit_prices_for_data(bed)
     bed.kit_prices.map do |kit_price|
       {

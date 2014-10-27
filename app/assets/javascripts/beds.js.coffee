@@ -9,6 +9,9 @@ jQuery ->
   kitPrices = ->
     $('#purchase-form').data('kit-prices')
 
+  decorationPrices = ->
+    $('#purchase-form').data('decoration-prices')
+
   findBedPrice = (hasRack, hasDecoration, dimensionId) ->
     matches = $.grep bedPrices(), (bedPrice) ->
       bedPrice['has_rack']                == hasRack and
@@ -22,6 +25,12 @@ jQuery ->
       kitPrice['dimension_id'].toString() == dimensionId
     matches[0]
 
+  findDecorationPrice = (dimensionId, hasRack) ->
+    matches = $.grep decorationPrices(), (decPrice) ->
+      decPrice['dimension_id'].toString() == dimensionId and
+      decPrice['has_rack']                == hasRack
+    matches[0]
+
   recalculatePrice = ->
     return unless $('#actual-price-price').length > 0
     hasRack       = $('#bp-has-rack').is(':checked')
@@ -30,10 +39,10 @@ jQuery ->
     kitId         = $('#bp-kit').val();
     bedPriceData  = findBedPrice(hasRack, hasDecoration, dimensionId)
     kitPriceData  = findKitPrice(kitId, dimensionId)
-    bedPrice      = parseFloat(if bedPriceData then bedPriceData['price'] else 0)
+    decPriceData  = findDecorationPrice(dimensionId, hasRack)
     kitPrice      = parseFloat(if kitPriceData then kitPriceData['price'] else 0)
-
-    console.log kitPrice, bedPrice, kitId, dimensionId, hasRack, hasDecoration
+    decPrice      = if hasDecoration then parseFloat(if decPriceData then decPriceData['price'] else 0) else 0
+    bedPrice      = parseFloat(if bedPriceData then bedPriceData['price'] - decPrice else 0)
 
     $('#bp-price-id').val(bedPriceData['id']) if bedPriceData
     $('#bed-price').html(bedPrice)
@@ -41,7 +50,8 @@ jQuery ->
     $('#bp-kit-price-id').val(kitPriceData['id']) if kitPriceData
     $('#kit-price').html(kitPrice)
 
-    $('#actual-price-price').html(bedPrice + kitPrice)
+    $('#decoration-price').html(decPrice)
+    $('#actual-price-price').html(bedPrice + kitPrice + decPrice)
 
   setDimensionName = ->
     name = $('input[name=dimension]:checked').data('name')
