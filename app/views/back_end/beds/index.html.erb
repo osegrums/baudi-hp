@@ -15,6 +15,10 @@
       <th>Kits</th>
       <th>Dimensions</th>
       <th>Images</th>
+      <th>Bed Prices</th>
+      <th>Kit Prices</th>
+      <th>Main img</th>
+      <th>Kit img</th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -34,6 +38,18 @@
         <td><%= link_to bed.kits.count, back_end_bed_kits_path(bed) %></td>
         <td><%= link_to bed.dimensions.count, back_end_bed_dimensions_path(bed) %></td>
         <td><%= link_to bed.thumbs.count, polymorphic_path([:back_end, bed, :thumbs]) %></td>
+        <td><%= link_to bed.bed_prices.count, back_end_bed_prices_path(bed) %></td>
+        <td><%= link_to bed.kit_prices.count, back_end_bed_kit_prices_path(bed) %></td>
+        <td>
+          <% if bed.main_thumb %>
+            <%= image_tag(bed.main_thumb.file.mini.url) %>
+          <% end %>
+        </td>
+        <td>
+          <% if bed.kit_image %>
+            <%= image_tag(bed.kit_image.file.mini.url) %>
+          <% end %>
+        </td>
         <td><%= index_show_link back_end_bed_path(bed) %></td>
         <td><%= index_edit_link edit_back_end_bed_path(bed) %></td>
       </tr>
