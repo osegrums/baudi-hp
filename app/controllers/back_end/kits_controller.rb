@@ -53,7 +53,11 @@ class BackEnd::KitsController < BackEndController
   end
 
   def set_itemable
-    @itemable = Bed.find(params[:bed_id])
+    if params[:bed_id]
+      @itemable = Bed.find(params[:bed_id])
+    else
+      @itemable = Linen.find(params[:linen_id])
+    end
   end
 
   def kit_params

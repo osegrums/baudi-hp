@@ -53,10 +53,14 @@ class BackEnd::DimensionsController < BackEndController
   end
 
   def set_itemable
-    @itemable = Bed.find(params[:bed_id])
+    if params[:bed_id]
+      @itemable = Bed.find(params[:bed_id])
+    else
+      @itemable = Linen.find(params[:linen_id])
+    end
   end
 
   def dimension_params
-    params.require(:dimension).permit(:name, :short_name, :is_default)
+    params.require(:dimension).permit(:name, :short_name, :is_default, :sequence)
   end
 end

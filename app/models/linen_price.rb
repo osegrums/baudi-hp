@@ -1,6 +1,7 @@
 class LinenPrice < ActiveRecord::Base
   belongs_to :kit
   belongs_to :dimension
+  belongs_to :linen
 
   validates :linen, uniqueness: { scope: [:dimension, :kit], message: "should have only one price per kit and dimension" }
 end

@@ -10,6 +10,13 @@ class Linen < ActiveRecord::Base
   def main_thumb
     thumbs.where(is_kit_image: false).order(is_default: :asc, sequence: :asc).first
   end
+
+  def price_for_editing(dimension, kit)
+    linen_prices.find_or_initialize_by(
+        dimension: dimension,
+        kit: kit
+      )
+  end
 end
 
 # == Schema Information
