@@ -40,7 +40,7 @@ ru:
     show: &beds_show
       color_scheme: Color scheme
       bed_size: Select your bed size
-      has_rack: with bad slats
+      has_rack: bed with slats
       bed_price: Bed
       kit_price: Linen
       total_price: Total
