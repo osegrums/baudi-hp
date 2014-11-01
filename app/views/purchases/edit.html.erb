@@ -1,12 +1,12 @@
 <div class="main" id="inputform">
   <div class="innerBox">
-    <%= form_for @bed_purchase, url: bed_bed_purchase_path(@bed, @bed_purchase.uid), html: {id: 'purchase-edit-form'} do |f| %>
-      <% if @bed_purchase.errors.any? %>
+    <%= form_for @purchase, url: purchase_path(@purchase.uid), html: {id: 'purchase-edit-form'} do |f| %>
+      <% if @purchase.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(@bed_purchase.errors.count, "error") %> prohibited this purchase from being saved:</h2>
+          <h2><%= pluralize(@purchase.errors.count, "error") %> prohibited this purchase from being saved:</h2>
 
           <ul>
-          <% @bed_purchase.errors.full_messages.each do |message| %>
+          <% @purchase.errors.full_messages.each do |message| %>
             <li><%= message %></li>
           <% end %>
           </ul>
@@ -16,31 +16,7 @@
 
       <h1 class="first"><%= t '.title' %></h1>
       <div class="pirkumaRezume">
-        <div class="box" id="bed">
-          <%= image_tag @bed.main_thumb.file.w169.url, align: :left %>
-          <h6><%= t '.bed_model' %></h6>
-          <h5><%= @bed.name %></h5>
-          <h6><%= t '.bed_size' %></h6>
-          <h5>
-            <%= @bed_purchase.bed_price.try(:dimension).try(:name)%>
-          </h5>
-          <span class="clear" />
-        </div><!-- end box -->
-
-        <div class="box" id="linen">
-          <% kit = @bed_purchase.kit_price.try :kit %>
-          <% if @bed.kit_image %>
-            <%= image_tag @bed.kit_image.file.w169.url, align: :left %>
-          <% end %>
-          <h5><%= t '.bed_linen' %></h5>
-          <h6><%= lf(kit, :description) %></h6>
-          <span class="clear" />
-        </div>
-
-        <!-- div class="btn_Remove">
-          <a href="#">REMOVE ITEM from shopping cart</a>
-        </div -->
-
+        <%= render "#{@itemable.class.name.downcase}_resume", itemable: @itemable %>
       </div><!-- end.pirkumaRezume"-->
 
       <span class="clear" />
@@ -49,7 +25,7 @@
       <table width="610" class="inputformTable">
         <tr>
           <td width="122">
-            <label for="purchase-name"><%= BedPurchase.human_attribute_name(:name) %>:</label>
+            <label for="purchase-name"><%= Purchase.human_attribute_name(:name) %>:</label>
           </td>
           <td width="471">
             <%= f.text_field :name, class: 'form-control', placeholder: '', id: 'purchase-name' %>
@@ -57,7 +33,7 @@
         </tr>
         <tr>
           <td width="122">
-            <label for="purchase-email"><%= BedPurchase.human_attribute_name(:email) %>:</label>
+            <label for="purchase-email"><%= Purchase.human_attribute_name(:email) %>:</label>
           </td>
           <td width="471">
             <%= f.text_field :email, class: 'form-control', placeholder: '', id: 'purchase-email' %>
@@ -65,7 +41,7 @@
         </tr>
         <tr>
           <td width="122">
-            <label for="purchase-phone"><%= BedPurchase.human_attribute_name(:phone) %>:</label>
+            <label for="purchase-phone"><%= Purchase.human_attribute_name(:phone) %>:</label>
           </td>
           <td width="471">
             <%= f.text_field :phone, class: 'form-control', placeholder: '', id: 'purchase-phone' %>
@@ -76,7 +52,7 @@
         </tr>
         <tr>
           <td width="122">
-            <label for="purchase-address"><%= BedPurchase.human_attribute_name(:address) %>:</label>
+            <label for="purchase-address"><%= Purchase.human_attribute_name(:address) %>:</label>
           </td>
           <td width="471">
             <%= f.text_field :address, class: 'form-control', placeholder: '', id: 'purchase-address' %>
@@ -84,7 +60,7 @@
         </tr>
         <tr>
           <td width="122">
-            <label for="purchase-zip-code"><%= BedPurchase.human_attribute_name(:zip_code) %>:</label>
+            <label for="purchase-zip-code"><%= Purchase.human_attribute_name(:zip_code) %>:</label>
           </td>
           <td width="471">
             <%= f.text_field :zip_code, class: 'form-control', placeholder: '', id: 'purchase-zip-code' %>
@@ -92,7 +68,7 @@
         </tr>
         <tr>
           <td width="122">
-            <label for="purchase-city"><%= BedPurchase.human_attribute_name(:city) %>:</label>
+            <label for="purchase-city"><%= Purchase.human_attribute_name(:city) %>:</label>
           </td>
           <td width="471">
             <%= f.text_field :city, class: 'form-control', placeholder: '', id: 'purchase-city' %>
@@ -100,7 +76,7 @@
         </tr>
         <tr>
           <td width="122">
-            <label for="purchase-country"><%= BedPurchase.human_attribute_name(:country) %>:</label>
+            <label for="purchase-country"><%= Purchase.human_attribute_name(:country) %>:</label>
           </td>
           <td width="471">
             <%= f.text_field :country, class: 'form-control', placeholder: '', id: 'purchase-country' %>

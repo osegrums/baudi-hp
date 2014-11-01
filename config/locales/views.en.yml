@@ -8,15 +8,16 @@ en:
       linen: linen
       inspiration: inspiration
       about: about
-  bed_purchases:
+  purchases:
     edit:
       title: You are about to complete your order
-      bed_model: 'Bed model:'
-      bed_size: 'Size:'
-      bed_linen: 'Linen:'
       enter_your_data: Enter your data
       field_name: 'Name:'
       complete_order: Complete order
+    bed_resume:
+      bed_model: 'Bed model:'
+      bed_size: 'Size:'
+      bed_linen: 'Linen:'
     show:
       title: You submitted your order
       resume: 'Thank you for your purchase. We will contact you soon. Back to'

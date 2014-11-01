@@ -1,21 +1,21 @@
 <% bed_prices_json        = bed_prices_for_data(@bed) %>
 <% kit_prices_json        = bed_kit_prices_for_data(@bed) %>
 <% decoration_prices_json = decoration_prices_for_data(@bed) %>
-<%= form_for @bed_purchase, url: bed_bed_purchases_path(@bed), data: {bed_prices: bed_prices_json, kit_prices: kit_prices_json, decoration_prices: decoration_prices_json}, html: {id: 'purchase-form'} do |f| %>
-  <% if @bed_purchase.errors.any? %>
+<%= form_for @purchase, url: bed_purchases_path(@bed), data: {bed_prices: bed_prices_json, kit_prices: kit_prices_json, decoration_prices: decoration_prices_json}, html: {id: 'purchase-form'} do |f| %>
+  <% if @purchase.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@bed_purchase.errors.count, "error") %> prohibited this purchase from being saved:</h2>
+      <h2><%= pluralize(@purchase.errors.count, "error") %> prohibited this purchase from being saved:</h2>
 
       <ul>
-      <% @bed_purchase.errors.full_messages.each do |message| %>
+      <% @purchase.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <input type="hidden" id="bp-price-id" class="bp-price-id" name="bed_purchase[bed_price_id]" />
-  <input type="hidden" id="bp-kit-price-id" class="bp-kit-price-id" name="bed_purchase[kit_price_id]" />
+  <input type="hidden" id="bp-price-id" class="bp-price-id" name="price_id" />
+  <input type="hidden" id="bp-kit-price-id" class="bp-kit-price-id" name="purchase[kit_price_id]" />
 
   <div class="main" id="shop-item">
     <div class="leftCol">
@@ -23,12 +23,12 @@
         <h1 class="dynamic"><%= @bed.name %></h1>
         <p style="margin-top:-10px; padding-bottom:13px;"><img src="/images/css/line_dotted.gif" width="497" height="1" /></p>
         <div class="shop_thumbs_img">
-          <input type="hidden" id="bp-color" class="bp-color" name="bed_purchase[color_id]" value="" />
+          <input type="hidden" id="bp-color" class="bp-color" name="purchase[color_id]" value="" />
           <% if @bed.colors.exists? %>
             <% @bed.colors.order(sequence: :asc).each_slice(5) do |colors| %>
               <div>
                 <% colors.each do |color| %>
-                  <a href="<%= color.thumbs.first.file.w200.url %>" data-color-id="<%= color.id %>" data-color-name="<%= lf(color, :name) %>" class="bp-color-changer <%= 'bp-color-selected' if color.id == @bed_purchase.color_id %>"><%- if color.thumbs.first -%><%= image_tag color.thumbs.first.file.w46.url, alt: lf(color, :name) %><%- end -%></a>
+                  <a href="<%= color.thumbs.first.file.w200.url %>" data-color-id="<%= color.id %>" data-color-name="<%= lf(color, :name) %>" class="bp-color-changer <%= 'bp-color-selected' if color.id == @purchase.color_id %>"><%- if color.thumbs.first -%><%= image_tag color.thumbs.first.file.w46.url, alt: lf(color, :name) %><%- end -%></a>
                 <% end %>
               </div>
             <% end %>

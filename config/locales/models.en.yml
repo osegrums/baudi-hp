@@ -2,9 +2,9 @@ en:
   activerecord:
     models:
       bed: Bed
-      bed_purchase: Pasūtījums
+      purchase: Pasūtījums
     attributes:
-      bed_purchase:
+      purchase:
         name: Name
         email: Email
         phone: Phone

@@ -2,9 +2,9 @@ lv:
   activerecord:
     models:
       bed: Gulta
-      bed_purchase: Pasūtījums
+      purchase: Pasūtījums
     attributes:
-      bed_purchase:
+      purchase:
         name: Vārds
         email: E-pasts
         phone: Telefons

@@ -1,0 +1,25 @@
+<div class="box" id="bed">
+  <%= image_tag @itemable.main_thumb.file.w169.url, align: :left %>
+  <h6><%= t '.bed_model' %></h6>
+  <h5><%= itemable.name %></h5>
+  <h6><%= t '.bed_size' %></h6>
+  <h5>
+    <%= @purchase.itemable_price.try(:dimension).try(:name)%>
+  </h5>
+  <span class="clear" />
+</div><!-- end box -->
+
+<div class="box" id="linen">
+  <% kit = @purchase.kit_price.try :kit %>
+  <% if itemable.kit_image %>
+    <%= image_tag itemable.kit_image.file.w169.url, align: :left %>
+  <% end %>
+  <h5><%= t '.bed_linen' %></h5>
+  <h6><%= lf(kit, :description) %></h6>
+  <span class="clear" />
+</div>
+
+<!-- div class="btn_Remove">
+  <a href="#">REMOVE ITEM from shopping cart</a>
+</div -->
+

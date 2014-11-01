@@ -6,7 +6,7 @@ class BedsController < ApplicationController
 
   def show
     @bed = Bed.where(code: params[:id]).first
-    @bed_purchase = @bed.bed_purchases.build
+    @purchase = @bed.purchases.build
     if params[:showme]
       render :show
     else

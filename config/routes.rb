@@ -7,8 +7,14 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :beds, only: [:index, :show] do
-    resources :bed_purchases
+    resources :purchases, only: [:create]
   end
+
+  resources :linens, only: [:index, :show] do
+    resources :purchases, only: [:create]
+  end
+
+  resources :purchases, only: [:edit, :update, :show]
 
   namespace :back_end do
     resources :beds, only: [:index, :new, :create, :edit, :update, :show], concerns: [:thumbs] do
@@ -18,7 +24,7 @@ Rails.application.routes.draw do
       resource  :prices, controller: 'bed_prices', only: [:show, :edit, :update]
       resource  :kit_prices, controller: 'kit_prices', only: [:show, :edit, :update]
     end
-    resources :bed_purchases, only: [:index]
+    resources :purchases, only: [:index]
 
     resources :linens, only: [:index, :new, :create, :edit, :update, :show], concerns: [:thumbs] do
       resources :dimensions

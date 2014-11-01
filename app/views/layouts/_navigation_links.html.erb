@@ -1,7 +1,7 @@
 <%# add navigation links to this file %>
 <li><%= link_to 'Gultas', back_end_beds_path %></li>
 <li><%= link_to 'Komplekti', back_end_linens_path %></li>
-<li><%= link_to 'Pasūtījumi', back_end_bed_purchases_path %></li>
+<li><%= link_to 'Pasūtījumi', back_end_purchases_path %></li>
 <% if user_signed_in? %>
   <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
 <% else %>

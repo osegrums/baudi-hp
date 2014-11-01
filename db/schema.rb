@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141101104815) do
+ActiveRecord::Schema.define(version: 20141101141635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,29 +24,6 @@ ActiveRecord::Schema.define(version: 20141101104815) do
     t.decimal  "price",          precision: 10, scale: 2, default: 0.0
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "bed_purchases", force: true do |t|
-    t.string   "uid"
-    t.integer  "bed_id"
-    t.integer  "bed_price_id"
-    t.integer  "color_id"
-    t.decimal  "price",        precision: 10, scale: 2
-    t.string   "name"
-    t.string   "email"
-    t.string   "phone"
-    t.text     "notes"
-    t.string   "state",                                 default: "new"
-    t.string   "ip_address"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "address"
-    t.string   "zip_code"
-    t.string   "city"
-    t.string   "country"
-    t.integer  "kit_price_id"
-    t.decimal  "price_kit",    precision: 10, scale: 2
-    t.decimal  "price_bed",    precision: 10, scale: 2
   end
 
   create_table "beds", force: true do |t|
@@ -126,6 +103,31 @@ ActiveRecord::Schema.define(version: 20141101104815) do
     t.text     "description_en"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "purchases", force: true do |t|
+    t.string   "uid"
+    t.integer  "itemable_id"
+    t.integer  "itemable_price_id"
+    t.integer  "color_id"
+    t.decimal  "price",               precision: 10, scale: 2
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.text     "notes"
+    t.string   "state",                                        default: "new"
+    t.string   "ip_address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "address"
+    t.string   "zip_code"
+    t.string   "city"
+    t.string   "country"
+    t.integer  "kit_price_id"
+    t.decimal  "price_kit",           precision: 10, scale: 2
+    t.decimal  "price_itemable",      precision: 10, scale: 2
+    t.string   "itemable_type"
+    t.string   "itemable_price_type"
   end
 
   create_table "thumbs", force: true do |t|

@@ -4,7 +4,7 @@ class Bed < ActiveRecord::Base
   has_many :kits, as: :itemable, dependent: :destroy
   has_many :bed_prices, dependent: :destroy
   has_many :kit_prices, dependent: :destroy
-  has_many :bed_purchases, dependent: :nullify
+  has_many :purchases, as: :itemable
   has_many :thumbs, as: :thumbable, dependent: :destroy
 
   validates :code, uniqueness: true

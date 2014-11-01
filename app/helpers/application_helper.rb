@@ -3,6 +3,18 @@ module ApplicationHelper
     "/beds/#{bed.code}"
   end
 
+  def friendly_linen_path(linen)
+    "/linens/#{linen.code}"
+  end
+
+  def friendly_itemable_path(itemable)
+    if itemable.is_a?(Bed)
+      friendly_bed_path(itemable)
+    else
+      friendly_linen_path(itemable)
+    end
+  end
+
   def index_edit_link(link)
     link_to link, class: 'btn btn-default btn-xs' do
       fa_icon('edit') + 'Edit'
