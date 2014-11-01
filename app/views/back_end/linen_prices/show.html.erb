@@ -1,0 +1,20 @@
+<h1>Linen '<%= @linen.name %>' prices</h1>
+
+<%= form_for @linen, url: back_end_linen_prices_path(@linen) do |f| %>
+  <table class="table table-stripped table-bordered table-hover">
+    <tr>
+      <th></th>
+      <% @linen.kits.each do |kit| %>
+        <th>
+          <%= kit.name %>
+        </th>
+      <% end %>
+    </tr>
+    <% @linen.dimensions.each do |dimension| %>
+      <%= render 'edit_prices_row', f: f, dimension: dimension, mode: 'show' %>
+    <% end %>
+  </table>
+<% end %>
+
+<%= link_to 'Edit prices', edit_back_end_linen_prices_path(@linen), class: 'btn btn-primary' %>
+<%= link_to 'Back to linen', back_end_linen_path(@linen), class: 'btn btn-default' %>

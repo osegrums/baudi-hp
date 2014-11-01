@@ -1,0 +1,37 @@
+<h1>Editing linen '<%= @linen.name %>' all prices</h1>
+
+<%= form_for @linen, url: back_end_linen_prices_path(@linen) do |f| %>
+  <% if @linen.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@linen.errors.count, "error") %> prohibited this bed from being saved:</h2>
+
+      <ul>
+      <% @linen.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table class="table table-stripped table-bordered table-hover">
+    <tr>
+      <th></th>
+      <% @linen.kits.each do |kit| %>
+        <th>
+          <%= kit.name %>
+        </th>
+      <% end %>
+    </tr>
+    <% @linen.dimensions.each do |dimension| %>
+      <%= render 'edit_prices_row', f: f, dimension: dimension, mode: 'edit' %>
+    <% end %>
+  </table>
+
+  <div class="actions">
+    <%= f.submit value: 'Save changes', class: "btn btn-success" %>
+    <% if @linen.persisted? %>
+      <%= link_to 'Show', back_end_linen_prices_path(@linen), class: 'btn btn-default' %>
+    <% end %>
+    <%= link_to 'Back to linen', back_end_linen_path(@linen), class: 'btn btn-default' %>
+  </div>
+<% end %>
