@@ -1,0 +1,48 @@
+<h1>Listing linens</h1>
+
+<table class="table table-stripped table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Sequence</th>
+      <th>Description lv</th>
+      <th>Description ru</th>
+      <th>Description en</th>
+      <th>Kits</th>
+      <th>Dimensions</th>
+      <th>Images</th>
+      <th>Bed Prices</th>
+      <th>Main img</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @linens.each do |linen| %>
+      <tr>
+        <td><%= linen.code %></td>
+        <td><%= linen.name %></td>
+        <td><%= linen.sequence %></td>
+        <td><%= "#{linen.description_lv.try(:size) || 0 } characters long" %></td>
+        <td><%= "#{linen.description_ru.try(:size) || 0 } characters long" %></td>
+        <td><%= "#{linen.description_en.try(:size) || 0 } characters long" %></td>
+        <td><%= link_to linen.kits.count, back_end_linen_kits_path(linen) %></td>
+        <td><%= link_to linen.dimensions.count, back_end_linen_dimensions_path(linen) %></td>
+        <td><%= link_to linen.thumbs.count, polymorphic_path([:back_end, linen, :thumbs]) %></td>
+        <td><%= link_to linen.linen_prices.count, back_end_linen_prices_path(linen) %></td>
+        <td>
+          <% if linen.main_thumb %>
+            <%= image_tag(linen.main_thumb.file.mini.url) %>
+          <% end %>
+        </td>
+        <td><%= index_show_link back_end_linen_path(linen) %></td>
+        <td><%= index_edit_link edit_back_end_linen_path(linen) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Linen', new_back_end_linen_path, class: 'btn btn-default' %>

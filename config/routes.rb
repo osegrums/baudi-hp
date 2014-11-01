@@ -19,5 +19,12 @@ Rails.application.routes.draw do
       resource  :kit_prices, controller: 'kit_prices', only: [:show, :edit, :update]
     end
     resources :bed_purchases, only: [:index]
+
+    resources :linens, only: [:index, :new, :create, :edit, :update, :show], concerns: [:thumbs] do
+      resources :dimensions
+      resources :kits, concerns: [:thumbs]
+      resource  :prices, controller: 'linen_prices', only: [:show, :edit, :update]
+    end
+    resources :linen_purchases, only: [:index]
   end
 end

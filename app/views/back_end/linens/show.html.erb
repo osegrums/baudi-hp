@@ -1,0 +1,40 @@
+<%= render 'show_buttons' %>
+
+<p>
+  <strong>Code:</strong>
+  <%= @linen.code %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @linen.name %>
+</p>
+
+<p>
+  <strong>Sequence:</strong>
+  <%= @linen.sequence %>
+</p>
+
+<p>
+  <strong>Description lv:</strong>
+  <%= rich_text @linen.description_lv %>
+</p>
+
+<p>
+  <strong>Description ru:</strong>
+  <%= rich_text @linen.description_ru %>
+</p>
+
+<p>
+  <strong>Description en:</strong>
+  <%= rich_text @linen.description_en %>
+</p>
+
+<% if @linen.main_thumb %>
+  <p>
+    <strong>Lielā bilde:</strong>
+    <%= image_tag @linen.main_thumb.file.w280.url %>
+  </p>
+<% end %>
+
+<%= render 'show_buttons' %>

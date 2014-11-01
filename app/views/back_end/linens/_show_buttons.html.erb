@@ -1,0 +1,8 @@
+<div style="margin: 40px 0;">
+  <%= link_to 'Edit', edit_back_end_linen_path(@linen), class: 'btn btn-primary' %>
+  <%= link_to "Dimensions (#{@linen.dimensions.count})", back_end_linen_dimensions_path(@linen), class: 'btn btn-default' %>
+  <%= link_to "Kits (#{@linen.kits.count})", back_end_linen_kits_path(@linen), class: 'btn btn-default' %>
+  <%= link_to "Linen prices (#{@linen.linen_prices.count})", back_end_linen_prices_path(@linen), class: 'btn btn-default' %>
+  <%= link_to "Images (#{@linen.thumbs.count})", polymorphic_path([:back_end, @itemable, @linen, :thumbs]), class: 'btn btn-default' %>
+  <%= link_to 'Linens list', back_end_linens_path, class: 'btn btn-default' %>
+</div>

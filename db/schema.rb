@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141027095338) do
+ActiveRecord::Schema.define(version: 20141101101948) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,6 +106,17 @@ ActiveRecord::Schema.define(version: 20141027095338) do
     t.text     "description_en"
     t.text     "description_ru"
     t.integer  "sequence",       default: 0
+  end
+
+  create_table "linens", force: true do |t|
+    t.string   "code"
+    t.string   "name"
+    t.integer  "sequence"
+    t.text     "description_lv"
+    t.text     "description_ru"
+    t.text     "description_en"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "thumbs", force: true do |t|

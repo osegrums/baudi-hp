@@ -1,0 +1,45 @@
+<%= form_for @linen, url: url do |f| %>
+  <% if @linen.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@linen.errors.count, "error") %> prohibited this bed from being saved:</h2>
+
+      <ul>
+      <% @linen.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :code %>
+    <%= f.text_field :code, class: 'form-control', placeholder: '' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control', placeholder: '' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :sequence %>
+    <%= f.number_field :sequence, class: 'form-control', placeholder: '' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description_lv %>
+    <%= f.cktext_area :description_lv, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description_en %>
+    <%= f.cktext_area :description_en, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description_ru %>
+    <%= f.cktext_area :description_ru, class: 'form-control' %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "btn btn-success" %>
+    <% if @linen.persisted? %>
+      <%= link_to 'Show', back_end_linen_path(@linen), class: 'btn btn-default' %>
+    <% end %>
+    <%= link_to 'Beds list', back_end_linens_path, class: 'btn btn-default' %>
+  </div>
+<% end %>
