@@ -18,10 +18,22 @@ lv:
       bed_model: 'Gultas modelis:'
       bed_size: 'Izmērs:'
       bed_linen: 'Linen:'
+    linen_resume:
+      linen_model: 'Modelis:'
+      linen_size: 'Izmērs:'
+      linen_kit: 'Linen:'
     show:
       title: You submitted your order
       resume: 'Thank you for your purchase. We will contact you soon. Back to'
       homepage_link: homepage
+  linens:
+    index:
+      title: 2015. gada kolekcijas
+    show:
+      linen_size: "Izmērs:"
+      total_price: Total
+      all_linens: Linens
+      more_info: Click for more info
   beds:
     index:
       title: 2015. gada kolekcijas

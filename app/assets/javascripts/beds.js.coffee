@@ -4,13 +4,13 @@
 
 jQuery ->
   bedPrices = ->
-    $('#purchase-form').data('bed-prices')
+    $('#bed-purchase-form').data('bed-prices')
 
   kitPrices = ->
-    $('#purchase-form').data('kit-prices')
+    $('#bed-purchase-form').data('kit-prices')
 
   decorationPrices = ->
-    $('#purchase-form').data('decoration-prices')
+    $('#bed-purchase-form').data('decoration-prices')
 
   findBedPrice = (hasRack, hasDecoration, dimensionId) ->
     matches = $.grep bedPrices(), (bedPrice) ->
@@ -74,7 +74,7 @@ jQuery ->
     kitDesc = $radio.data('kit-description')
     $('#bp-kit').val(kitId).trigger('change')
 
-  if $('#purchase-form').length > 0
+  if $('#bed-purchase-form').length > 0
     recalculatePrice()
     setDimensionName()
     initColorPreview()

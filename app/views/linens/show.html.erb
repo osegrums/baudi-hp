@@ -1,0 +1,129 @@
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "linens" %>
+<% end %>
+
+<% linen_prices_json = linen_prices_for_data(@linen) %>
+<%= form_for @purchase, url: linen_purchases_path(@linen), data: {linen_prices: linen_prices_json}, html: {id: 'linen-purchase-form'} do |f| %>
+  <% if @purchase.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@purchase.errors.count, "error") %> prohibited this purchase from being saved:</h2>
+
+      <ul>
+      <% @purchase.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <input type="hidden" id="lp-price-id" class="lp-price-id" name="price_id" />
+  <input type="hidden" id="lp-kit-price-id" class="lp-kit-price-id" name="purchase[kit_price_id]" />
+
+  <div class="main" id="shop-item">
+
+    <div class="leftCol">
+      <div class="innerBox">
+        <h1 class="dynamic"><%= @linen.name %></h1>
+        <p><img src="/images/css/line_dotted.gif" width="497" height="1" /></p>
+
+        <div class="shop_size_selector" style="background-color: #fafafa;">
+          <h3>
+            <%= t '.linen_size' %> (<span class="dynamic" id="selected-dimension-name"></span>)
+          </h3>
+
+          <table width="320" border="0">
+            <tr>
+              <% @linen.dimensions.order(sequence: :asc).each do |dim| %>
+                <td>
+                  <input type="radio" id="dim-<%= dim.id %>" class="lp-dimension lp-changer css-checkbox" name="dimension" value="<%= dim.id %>" <%= 'checked="checked"' if dim.is_default? %> data-name="<%= dim.name %>" />
+                  <label for="dim-<%= dim.id %>" class="css-label radGroup2"><%= dim.short_name %></label>
+                </td>
+              <% end %>
+            </tr>
+          </table>
+        </div>
+
+        <p><img src="/images/css/line_dotted.gif" width="497" height="1" /></p>
+
+        <div class="linenSelect">
+          <% default_kit = @linen.kits.order(is_default: :asc, sequence: :asc).first %>
+          <input type="hidden" id="lp-kit" class="lp-kit lp-changer" name="kit" value="<%= default_kit.try(:id) %>" />
+          <% if @linen.kits.count > 0 %>
+            <table class="linenSelect">
+              <% @linen.kits.order(sequence: :asc).each do |kit| %>
+                <tr>
+                <td>
+                  <input type="radio" name="radiog_dark2" id="kit<%= kit.id %>" class="css-checkbox lp-kit-changer" data-kit-id="<%= kit.id %>" data-kit-description="<%= lf(kit, :description) %>" <%= kit == default_kit ? 'checked' : '' %> />
+                  <label for="kit<%= kit.id %>" class="css-label radGroup3"><%= lf(kit, :name) %></label>
+                </td>
+                </tr>
+              <% end %>
+              </table>
+
+              <p id="kit-description">
+                <%= lf(default_kit, :description) %>
+              </p>
+          <% end %>
+        </div><!-- end linenSelect -->
+
+        <p><img src="/images/css/line_dotted.gif" width="497" height="1" /></p>
+
+        <div class="cena">
+          <table width="303" border="0">
+            <tr class="totalCost">
+              <td class="txt" width="52"><%= t '.total_price' %>:</td>
+              <td class="sum" width="273">€ <span id='actual-price-price'></span></td>
+              </tr>
+            </table>
+        </div>
+
+        <%= f.submit value: t('create_purchase'), class: "btn-style" %>
+
+        <div class="subNav">
+          <ul>
+            <li><a href="#"><%= t '.more_info' %></a></li>
+          </ul>
+        </div>
+      </div><!-- end.innerBox -->
+    </div><!-- end.leftCol -->
+
+    <div class="rightCol">
+      <div class="innerBox">
+        <div class="breadcrumbs"><%= link_to t('.all_linens'), linens_path %> / <%= @linen.name %></div>
+
+        <div id="bed-images-container" class="gallery" style="padding: 10px 0 0 0">
+          <div class="gallery_img">
+            <% if @linen.thumbs.any? %>
+              <%= link_to image_tag(@linen.main_thumb.file.w510.url), @linen.main_thumb.file.w800.url, target: '_blank', data: {gallery: '#blueimp-gallery'} %>
+            <% end %>
+          </div>
+          <div class="gallery_th">
+            <% if @linen.thumbs.any? %>
+
+              <% images = @linen.thumbs.to_a - [@linen.main_thumb] %>
+              <% images.each do |thumb| %>
+                <%= link_to image_tag(thumb.file.w60.url), thumb.file.w800.url, target: '_blank', data: {gallery: '#blueimp-gallery'} %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        <div id="blueimp-gallery" class="blueimp-gallery">
+          <div class="slides"></div>
+          <h3 class="title"></h3>
+          <a class="prev">‹</a>
+          <a class="next">›</a>
+          <a class="play-pause"></a>
+          <ol class="indicator"></ol>
+        </div>
+
+        <!-- end gallery-->
+
+
+        <div class="descr">
+          <%= rich_text lf(@linen, :description) %>
+        </div>
+      </div> <!-- end.innerBox -->
+    </div><!-- end.rightCol -->
+    <span class="clear"></span>
+  </div><!-- end.main -->
+<% end %>

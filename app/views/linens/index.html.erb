@@ -1,0 +1,15 @@
+<div class="main" id="shop-grid">
+  <div class="innerBox">
+    <h1><%= t '.title' %></h1>
+    <div class="gridContainer">
+      <% @linens.each do |linen| %>
+        <div class="grid-item">
+          <div class="grid-itemTitle"><%= linen.name %></div>
+          <% link_content = linen.main_thumb ? image_tag(linen.main_thumb.file.w280.url) : linen.name %>
+          <%= link_to link_content, friendly_linen_path(linen) %>
+        </div>
+      <% end %>
+    </div><!-- end.gridContainer -->
+
+  </div><!-- end.innerBox -->
+</div><!-- end.main -->

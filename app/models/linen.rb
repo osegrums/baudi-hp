@@ -2,7 +2,7 @@ class Linen < ActiveRecord::Base
   has_many :dimensions, as: :itemable, dependent: :destroy
   has_many :kits, as: :itemable, dependent: :destroy
   has_many :linen_prices
-  has_many :linen_purchases
+  has_many :purchases, as: :itemable
   has_many :thumbs, as: :thumbable, dependent: :destroy
 
   accepts_nested_attributes_for :linen_prices, reject_if: proc { |attributes| attributes['price'].to_f == 0 }, allow_destroy: true

@@ -1,0 +1,18 @@
+<div class="box" id="linen">
+  <%= image_tag @itemable.main_thumb.file.w169.url, align: :left %>
+  <h6><%= t '.linen_model' %></h6>
+  <h5><%= itemable.name %></h5>
+  <h6><%= t '.linen_size' %></h6>
+  <h5>
+    <%= @purchase.itemable_price.try(:dimension).try(:name)%>
+  </h5>
+  <% kit = @purchase.itemable_price.try :kit %>
+  <h6><%= t '.linen_kit' %></h6>
+  <h5><%= lf(kit, :description) %></h5>
+  <span class="clear" />
+</div><!-- end box -->
+
+<!-- div class="btn_Remove">
+  <a href="#">REMOVE ITEM from shopping cart</a>
+</div -->
+

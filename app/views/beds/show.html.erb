@@ -1,7 +1,11 @@
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "beds" %>
+<% end %>
+
 <% bed_prices_json        = bed_prices_for_data(@bed) %>
 <% kit_prices_json        = bed_kit_prices_for_data(@bed) %>
 <% decoration_prices_json = decoration_prices_for_data(@bed) %>
-<%= form_for @purchase, url: bed_purchases_path(@bed), data: {bed_prices: bed_prices_json, kit_prices: kit_prices_json, decoration_prices: decoration_prices_json}, html: {id: 'purchase-form'} do |f| %>
+<%= form_for @purchase, url: bed_purchases_path(@bed), data: {bed_prices: bed_prices_json, kit_prices: kit_prices_json, decoration_prices: decoration_prices_json}, html: {id: 'bed-purchase-form'} do |f| %>
   <% if @purchase.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@purchase.errors.count, "error") %> prohibited this purchase from being saved:</h2>
@@ -74,7 +78,7 @@
         <p><img src="/images/css/line_dotted.gif" width="497" height="1" /></p>
 
         <div class="linenSelect">
-          <% default_kit = @bed.kits.where(is_default: true).first %>
+          <% default_kit = @bed.kits.order(is_default: :asc, sequence: :asc).first %>
           <input type="hidden" id="bp-kit" class="bp-kit bp-changer" name="kit" value="<%= default_kit.try(:id) %>" />
 
           <% if @bed.kit_image %>
@@ -100,7 +104,7 @@
               <% @bed.kits.order(sequence: :asc).each do |kit| %>
                 <tr>
                 <td>
-                  <input type="radio" name="radiog_dark2" id="kit<%= kit.id %>" class="css-checkbox bp-kit-changer" data-kit-id="<%= kit.id %>" data-kit-description="<%= lf(kit, :description) %>" <%= kit.is_default? ? 'checked' : '' %> />
+                  <input type="radio" name="radiog_dark2" id="kit<%= kit.id %>" class="css-checkbox bp-kit-changer" data-kit-id="<%= kit.id %>" data-kit-description="<%= lf(kit, :description) %>" <%= kit == default_kit ? 'checked' : '' %> />
                   <label for="kit<%= kit.id %>" class="css-label radGroup3"><%= lf(kit, :name) %></label>
                 </td>
                 </tr>
@@ -186,7 +190,9 @@
         <!-- end gallery-->
 
 
-        <%= rich_text lf(@bed, :description) %>
+        <div class="descr">
+          <%= rich_text lf(@bed, :description) %>
+        </div>
       </div>
       <!-- end.innerBox -->
     </div>

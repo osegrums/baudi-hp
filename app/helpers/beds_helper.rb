@@ -31,4 +31,15 @@ module BedsHelper
       }
     end
   end
+
+  def linen_prices_for_data(linen)
+    linen.linen_prices.map do |linen_price|
+      {
+        id:             linen_price.id,
+        kit_id:         linen_price.kit_id,
+        dimension_id:   linen_price.dimension_id,
+        price:          linen_price.price
+      }
+    end
+  end
 end
