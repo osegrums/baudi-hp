@@ -48,7 +48,7 @@ lv:
       all_beds: Beds
       include_decorative_cover: Include decorative bed cover
       and: un
-      decoration_price: Dekoratīvais apvalks
+      decoration_price: Pārvalks
     show_incomplete:
       <<: *beds_show
   pages:
