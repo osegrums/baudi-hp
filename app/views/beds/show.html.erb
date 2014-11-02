@@ -66,10 +66,9 @@
               <% end %>
             </tr>
             <tr>
-              <td colspan="3" class="chekbox">
-
-                <input type="checkbox" class="bp-has-rack bp-changer css-checkbox-off" name="has_rack" value="" id="bp-has-rack" />
-                <label for="bp-has-rack" class="css-label"><%= t '.has_rack' %></label>
+              <td colspan="3" class="checkbox-cell">
+                <input type="checkbox" class="bp-has-rack bp-changer" name="has_rack" value="" id="bp-has-rack" />
+                <label for="bp-has-rack" class="checkbox-label"><%= t '.has_rack' %></label>
               </td>
             </tr>
           </table>
@@ -88,9 +87,9 @@
           <% if @bed.has_decoration? %>
             <table class="linenSelect">
               <tr>
-                <td colspan="3" class="chekbox--Z">
-                  <input type="checkbox" class="bp-has-decoration bp-changer css-checkbox" name="has_decoration" value="" id="bp-has-decoration" />
-                  <label for="bp-has-rack"><%= t('.include_decorative_cover') %></label>
+                <td colspan="3" class="checkbox-cell">
+                  <input type="checkbox" class="bp-has-decoration bp-changer" name="has_decoration" value="" id="bp-has-decoration" />
+                  <label for="bp-has-decoration" class="checkbox-label"><%= t('.include_decorative_cover') %></label>
                 </td>
               </tr>
                 <tr>
