@@ -60,7 +60,7 @@
             <tr>
               <% @bed.dimensions.order(sequence: :asc).each do |dim| %>
                 <td>
-                  <input type="radio" id="dim-<%= dim.id %>" class="bp-dimension bp-changer css-checkbox" name="dimension" value="<%= dim.id %>" <%= 'checked="checked"' if dim.is_default? %> data-name="<%= dim.name %>" />
+                  <input type="radio" id="dim-<%= dim.id %>" class="bp-dimension bp-changer css-checkbox" id="checkboxG4" name="dimension" value="<%= dim.id %>" <%= 'checked="checked"' if dim.is_default? %> data-name="<%= dim.name %>" />
                   <label for="dim-<%= dim.id %>" class="css-label radGroup2"><%= dim.short_name %></label>
                 </td>
               <% end %>
@@ -118,8 +118,8 @@
         <div class="cena">
           <table width="303" border="0">
             <tr class="bed">
-              <td class="txt" width="200"><%= t '.bed_price' %>:</td>
-              <td class="sum" width="100">
+              <td class="txt" width="220"><%= t '.bed_price' %>:</td>
+              <td class="sum" width="auto">
                 € <span id='bed-price'></span>
               </td>
             </tr>
