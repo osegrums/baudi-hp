@@ -10,8 +10,8 @@ lv:
       about: par mums
   purchases:
     edit:
-      title: You are about to complete your order
-      enter_your_data: Enter your data
+      title: Jūsu pasūtījums
+      enter_your_data: Ievadiet prasītos datus
       field_name: 'Name:'
       complete_order: Apstiprināt pasūtījumu
     bed_resume:
@@ -24,7 +24,7 @@ lv:
       linen_kit: 'Linen:'
     show:
       title: You submitted your order
-      resume: 'Thank you for your purchase. We will contact you soon. Back to'
+      resume: 'Jūsu pasūtījums ir nosūtīts. Mēs ar jums sazināsimiem tuvāko darba dienu laikā.'
       homepage_link: homepage
   linens:
     index:
@@ -38,13 +38,13 @@ lv:
     index:
       title: 2015. gada kolekcijas
     show: &beds_show
-      color_scheme: Color scheme
+      color_scheme: Krāsu gamma
       bed_size: Izvēlēties gultas platumu
       has_rack: pievienot redeles
       bed_price: Gulta
       kit_price: Linen
       total_price: Cena kopā
-      more_info: Click for more info
+      more_info: Vairāk informācija par pasūtīšanu
       all_beds: Beds
       include_decorative_cover: Pievienot gulta veļu
       and: un
