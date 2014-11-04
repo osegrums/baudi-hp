@@ -18,8 +18,9 @@
     <div class="gridContainer" id="gridContainer">
       <% %w{01 02 03 04 05 06 07 08 09 10 12}.each do |index| %>
         <div class="grid-item">
-          <% image_url = "/images/inspiration/foto_stila_0#{index}.jpg" %>
-          <%= link_to image_tag(image_url, width: 280, height: 187), image_url, target: '_blank', data: {gallery: '#blueimp-gallery'} %>
+          <% large_url = "/images/inspiration/foto_stila_0#{index}.jpg" %>
+          <% thumb_url = "/images/inspiration/thumbs/foto_stila_0#{index}.jpg" %>
+          <%= link_to image_tag(thumb_url, width: 280, height: 187), large_url, target: '_blank', data: {gallery: '#blueimp-gallery'} %>
         </div>
       <% end %>
     </div>
