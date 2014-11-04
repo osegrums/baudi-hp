@@ -17,11 +17,11 @@ lv:
     bed_resume:
       bed_model: 'Gultas modelis:'
       bed_size: 'Izmērs:'
-      bed_linen: 'Linen:'
+      bed_linen: 'Linen bed:'
     linen_resume:
       linen_model: 'Modelis:'
       linen_size: 'Izmērs:'
-      linen_kit: 'Linen:'
+      linen_kit: 'Linen kit:'
     show:
       title: You submitted your order
       resume: 'Jūsu pasūtījums ir nosūtīts. Mēs ar jums sazināsimiem tuvāko darba dienu laikā.'
@@ -42,13 +42,13 @@ lv:
       bed_size: Izvēlēties gultas platumu
       has_rack: pievienot redeles
       bed_price: Gulta
-      kit_price: Linen
+      kit_price: Gultas veļa
       total_price: Cena kopā
       more_info: Vairāk informācija par pasūtīšanu
       all_beds: Beds
       include_decorative_cover: Pievienot dekoratīvo gultas pārvalku
       and: un
-      decoration_price: Pārvalks
+      decoration_price: Dekoratīvais pārvalks
     show_incomplete:
       <<: *beds_show
   pages:
