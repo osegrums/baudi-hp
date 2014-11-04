@@ -10,6 +10,7 @@
       <link href='http://fonts.googleapis.com/css?family=Dosis:500,700|Oswald:400,300|Open+Sans&subset=latin-ext' rel='stylesheet' type='text/css'>
     <% end %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= yield :additional_css %>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Baudi design beds and linens" %>">

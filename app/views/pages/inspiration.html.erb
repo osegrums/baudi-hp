@@ -1,15 +1,36 @@
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "inspiration" %>
+<% end %>
+
+<% content_for :additional_css do %>
+  <style type="text/css">
+    #blueimp-gallery img.slide-content { display:block; height:85%; width:auto }
+  </style>
+<% end %>
+
 <% @active_nav_tab = :inspiration %>
 <% content_for :title do %>BAUDI DESIGN inspiration<% end %>
 
 <div class="main" id="inspiration">
-  <div class="innerBox" style="borderz:1px solid red">
-    <img src="/images/foto_stila_012.jpg" width="890" height="593" />
-    <img src="/images/foto_stila_002.jpg" width="890" height="593" />
+  <div class="innerBox">
+    <iframe style="margin-bottom:40px" src="//player.vimeo.com/video/110141522?title=0&amp;portrait=0&amp;color=ffffff" width="888" height="500" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-    <img src="/images/foto_stila_008.jpg" width="890" height="593" />
-    <img src="/images/foto_stila_003.jpg" width="890" height="593" />
+    <div class="gridContainer" id="gridContainer">
+      <% %w{01 02 03 04 05 06 07 08 09 10 12}.each do |index| %>
+        <div class="grid-item">
+          <% image_url = "/images/inspiration/foto_stila_0#{index}.jpg" %>
+          <%= link_to image_tag(image_url, width: 280, height: 187), image_url, target: '_blank', data: {gallery: '#blueimp-gallery'} %>
+        </div>
+      <% end %>
+    </div>
+    <div id="blueimp-gallery" class="blueimp-gallery">
+      <div class="slides"></div>
+      <h3 class="title"></h3>
+      <a class="prev">‹</a>
+      <a class="next">›</a>
+      <a class="play-pause"></a>
+      <ol class="indicator"></ol>
+    </div>
 
-    <img src="/images/foto_stila_005.jpg" width="890" height="593" />
-    <img src="/images/foto_stila_010.jpg" width="890" height="593" />
   </div><!-- end.innerBox -->
 </div><!-- end.main -->
