@@ -6,7 +6,7 @@ lv:
       home: sākums
       beds: gultas
       linen: veļa
-      inspiration: inspiration
+      inspiration: iedvesmai
       about: par mums
   purchases:
     edit:
@@ -33,20 +33,20 @@ lv:
       linen_size: "Izmērs:"
       total_price: Total
       all_linens: Linens
-      more_info: Click for more info
+      more_info: Vairāk informācija par pasūtīšanu
   beds:
     index:
       title: 2015. gada kolekcijas
     show: &beds_show
       color_scheme: Color scheme
-      bed_size: Select your bed size
-      has_rack: bed with slats
-      bed_price: Bed
+      bed_size: Izvēlēties gultas platumu
+      has_rack: pievienot redeles
+      bed_price: Gulta
       kit_price: Linen
-      total_price: Total
+      total_price: Cena kopā
       more_info: Click for more info
       all_beds: Beds
-      include_decorative_cover: Include decorative bed cover
+      include_decorative_cover: Pievienot gulta veļu
       and: un
       decoration_price: Pārvalks
     show_incomplete:
