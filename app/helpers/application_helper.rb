@@ -44,7 +44,9 @@ module ApplicationHelper
   end
 
   def rich_text(text)
-    sanitize text, tags: %w(p div b i strong table tbody thead th tr td br a img), attributes: %w(id class style colspan cellspan href src width height)
+    sanitize text,
+      tags: %w(p div b i strong table tbody thead th tr td br a img span),
+      attributes: %w(id class style colspan cellspan href src width height border cellpadding cellspacing)
   end
 
   def lf(object, field)
