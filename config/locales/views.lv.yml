@@ -31,9 +31,11 @@ lv:
       title: 2015. gada kolekcijas
     show:
       linen_size: "Izmērs:"
-      total_price: Total
+      total_price: Kopā
       all_linens: Linens
       more_info: Vairāk informācija par pasūtīšanu
+      include_decorative_cover: Pievienot dekoratīvo gultas pārvalku
+      decoration_price: Pārvalks
   beds:
     index:
       title: 2015. gada kolekcijas
@@ -48,7 +50,7 @@ lv:
       all_beds: Beds
       include_decorative_cover: Pievienot dekoratīvo gultas pārvalku
       and: un
-      decoration_price: Dekoratīvais pārvalks
+      decoration_price: Pārvalks
     show_incomplete:
       <<: *beds_show
   pages:

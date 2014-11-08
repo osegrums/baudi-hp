@@ -4,13 +4,13 @@
   <table class="table table-stripped table-bordered table-hover">
     <tr>
       <th></th>
-      <% @bed.kits.each do |kit| %>
+      <% @bed.kits.order(sequence: :asc).each do |kit| %>
         <th>
           <%= kit.name %>
         </th>
       <% end %>
     </tr>
-    <% @bed.dimensions.each do |dimension| %>
+    <% @bed.dimensions.order(sequence: :asc).each do |dimension| %>
       <%= render 'edit_prices_row', f: f, dimension: dimension, mode: 'show' %>
     <% end %>
   </table>

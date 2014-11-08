@@ -25,7 +25,6 @@
       .fadeIn("fast");
   },
   function(){
-    console.log('ON HOVER LOST');
     this.title = this.t;
     $("#preview").remove();
   });

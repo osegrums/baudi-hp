@@ -50,7 +50,7 @@ class Bed < ActiveRecord::Base
          AND wo.has_decoration = false
     SQL
 
-    bed_prices = BedPrice.find_by_sql(query)
+    BedPrice.find_by_sql(query)
   end
 
   private

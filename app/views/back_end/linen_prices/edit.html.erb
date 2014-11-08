@@ -16,14 +16,15 @@
   <table class="table table-stripped table-bordered table-hover">
     <tr>
       <th></th>
-      <% @linen.kits.each do |kit| %>
+      <% @linen.kits.order(sequence: :asc).each do |kit| %>
         <th>
           <%= kit.name %>
         </th>
       <% end %>
     </tr>
-    <% @linen.dimensions.each do |dimension| %>
-      <%= render 'edit_prices_row', f: f, dimension: dimension, mode: 'edit' %>
+    <% @linen.dimensions.order(sequence: :asc).each do |dimension| %>
+      <%= render 'edit_prices_row', f: f, dimension: dimension, has_decoration: false, mode: 'edit' %>
+      <%= render 'edit_prices_row', f: f, dimension: dimension, has_decoration: true,  mode: 'edit' %>
     <% end %>
   </table>
 

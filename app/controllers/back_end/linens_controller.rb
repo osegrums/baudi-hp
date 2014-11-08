@@ -53,7 +53,7 @@ class BackEnd::LinensController < BackEndController
 
   def linen_params
     params.require(:linen).permit(
-      :code, :name, :sequence, :description_lv, :description_ru, :description_en
+      :code, :name, :sequence, :has_decoration, :description_lv, :description_ru, :description_en
     )
   end
 end

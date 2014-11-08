@@ -2,8 +2,9 @@
   <%= javascript_include_tag "linens" %>
 <% end %>
 
-<% linen_prices_json = linen_prices_for_data(@linen) %>
-<%= form_for @purchase, url: linen_purchases_path(@linen), data: {linen_prices: linen_prices_json}, html: {id: 'linen-purchase-form'} do |f| %>
+<% linen_prices_json      = linen_prices_for_data(@linen) %>
+<% decoration_prices_json = linen_decoration_prices_for_data(@linen) %>
+<%= form_for @purchase, url: linen_purchases_path(@linen), data: {linen_prices: linen_prices_json, decoration_prices: decoration_prices_json}, html: {id: 'linen-purchase-form'} do |f| %>
   <% if @purchase.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@purchase.errors.count, "error") %> prohibited this purchase from being saved:</h2>
@@ -41,6 +42,17 @@
               <% end %>
             </tr>
           </table>
+
+          <% if @linen.has_decoration? %>
+            <table class="linenSelect">
+              <tr>
+                <td colspan="3" class="checkbox-cell">
+                  <input type="checkbox" class="lp-has-decoration lp-changer" name="has_decoration" value="" id="lp-has-decoration" />
+                  <label for="lp-has-decoration" class="checkbox-label"><%= t('.include_decorative_cover') %></label>
+                </td>
+              </tr>
+            </table> <!---->
+          <% end %>
         </div>
 
         <p><img src="/images/css/line_dotted.gif" width="497" height="1" /></p>
@@ -70,6 +82,14 @@
 
         <div class="cena">
           <table width="303" border="0">
+            <% if @linen.has_decoration? %>
+              <tr class="linen">
+                <td class="txt"><%= t '.decoration_price' %>:</td>
+                <td class="sum">
+                  € <span id='decoration-price'></span>
+                </td>
+              </tr>
+            <% end %>
             <tr class="totalCost">
               <td class="txt" width="52"><%= t '.total_price' %>:</td>
               <td class="sum" width="273">€ <span id='actual-price-price'></span></td>

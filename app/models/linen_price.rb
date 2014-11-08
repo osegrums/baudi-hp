@@ -10,11 +10,12 @@ end
 #
 # Table name: linen_prices
 #
-#  id           :integer          not null, primary key
-#  linen_id     :integer
-#  dimension_id :integer
-#  kit_id       :integer
-#  price        :decimal(10, 2)   default(0.0)
-#  created_at   :datetime
-#  updated_at   :datetime
+#  id             :integer          not null, primary key
+#  linen_id       :integer
+#  dimension_id   :integer
+#  kit_id         :integer
+#  price          :decimal(10, 2)   default(0.0)
+#  created_at     :datetime
+#  updated_at     :datetime
+#  has_decoration :boolean          default(FALSE)
 #

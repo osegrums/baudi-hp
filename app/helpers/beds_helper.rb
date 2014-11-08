@@ -11,12 +11,21 @@ module BedsHelper
     end
   end
 
-  def decoration_prices_for_data(bed)
+  def bed_decoration_prices_for_data(bed)
     bed.decoration_prices.map do |bed_price|
       {
         has_rack:       bed_price.has_rack,
         dimension_id:   bed_price.dimension_id,
         price:          bed_price.price
+      }
+    end
+  end
+
+  def linen_decoration_prices_for_data(linen)
+    linen.decoration_prices.map do |linen_price|
+      {
+        dimension_id:   linen_price.dimension_id,
+        price:          linen_price.price
       }
     end
   end
@@ -36,6 +45,7 @@ module BedsHelper
     linen.linen_prices.map do |linen_price|
       {
         id:             linen_price.id,
+        has_decoration: linen_price.has_decoration,
         kit_id:         linen_price.kit_id,
         dimension_id:   linen_price.dimension_id,
         price:          linen_price.price

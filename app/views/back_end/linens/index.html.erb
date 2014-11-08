@@ -6,6 +6,7 @@
       <th>Code</th>
       <th>Name</th>
       <th>Sequence</th>
+      <th>Has decoration</th>
       <th>Description lv</th>
       <th>Description ru</th>
       <th>Description en</th>
@@ -24,6 +25,7 @@
         <td><%= linen.code %></td>
         <td><%= linen.name %></td>
         <td><%= linen.sequence %></td>
+        <td><%= human_boolean linen.has_decoration %></td>
         <td><%= "#{linen.description_lv.try(:size) || 0 } characters long" %></td>
         <td><%= "#{linen.description_ru.try(:size) || 0 } characters long" %></td>
         <td><%= "#{linen.description_en.try(:size) || 0 } characters long" %></td>

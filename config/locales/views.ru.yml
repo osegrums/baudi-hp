@@ -34,6 +34,8 @@ ru:
       total_price: Total
       all_linens: Linens
       more_info: Click for more info
+      include_decorative_cover: Include decorative bed cover
+      decoration_price: Decorative
   beds:
     index:
       title: Collection of 2015

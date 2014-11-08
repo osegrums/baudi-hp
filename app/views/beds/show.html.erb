@@ -4,7 +4,7 @@
 
 <% bed_prices_json        = bed_prices_for_data(@bed) %>
 <% kit_prices_json        = bed_kit_prices_for_data(@bed) %>
-<% decoration_prices_json = decoration_prices_for_data(@bed) %>
+<% decoration_prices_json = bed_decoration_prices_for_data(@bed) %>
 <%= form_for @purchase, url: bed_purchases_path(@bed), data: {bed_prices: bed_prices_json, kit_prices: kit_prices_json, decoration_prices: decoration_prices_json}, html: {id: 'bed-purchase-form'} do |f| %>
   <% if @purchase.errors.any? %>
     <div id="error_explanation">
@@ -92,9 +92,9 @@
                   <label for="bp-has-decoration" class="checkbox-label"><%= t('.include_decorative_cover') %></label>
                 </td>
               </tr>
-                <tr>
+              <tr>
                 <td class="and"><img src="/images/and_imgL.gif"  height="7" /><%= t('.and') %><img src="/images/and_imgR.gif" width="43" height="7" /></td>
-                </tr>
+              </tr>
             </table> <!---->
           <% end %>
 

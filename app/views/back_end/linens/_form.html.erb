@@ -23,6 +23,10 @@
     <%= f.label :sequence %>
     <%= f.number_field :sequence, class: 'form-control', placeholder: '' %>
   </div>
+  <div>
+    <%= f.label :has_decoration %>
+    <%= f.check_box :has_decoration, class: 'checkbox', placeholder: '' %>
+  </div>
   <div class="form-group">
     <%= f.label :description_lv %>
     <%= f.cktext_area :description_lv, class: 'form-control' %>

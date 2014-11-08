@@ -4,7 +4,7 @@
   <table class="table table-stripped table-bordered table-hover">
     <tr>
       <th></th>
-      <% @bed.dimensions.each do |dimension| %>
+      <% @bed.dimensions.order(sequence: :asc).each do |dimension| %>
         <th>
           <%= dimension.name %>
         </th>

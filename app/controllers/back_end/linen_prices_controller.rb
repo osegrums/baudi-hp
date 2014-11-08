@@ -26,7 +26,7 @@ class BackEnd::LinenPricesController < BackEndController
 
   def linen_params
     params.require(:linen).permit(linen_prices_attributes: [
-      :id, :dimension_id, :kit_id, :price
+      :id, :dimension_id, :has_decoration, :kit_id, :price
     ])
   end
 end
