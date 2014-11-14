@@ -77,7 +77,7 @@
         <p><img src="/images/css/line_dotted.gif" width="497" height="1" /></p>
 
         <div class="linenSelect">
-          <% default_kit = @bed.kits.order(is_default: :asc, sequence: :asc).first %>
+          <% default_kit = @bed.kits.order(is_default: :desc, sequence: :asc).first %>
           <input type="hidden" id="bp-kit" class="bp-kit bp-changer" name="kit" value="<%= default_kit.try(:id) %>" />
 
           <% if @bed.kit_image %>

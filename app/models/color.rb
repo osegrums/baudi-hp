@@ -3,7 +3,7 @@ class Color < ActiveRecord::Base
   has_many   :thumbs, as: :thumbable, dependent: :destroy
 
   def thumb
-    thumbs.order(is_default: :asc).first
+    thumbs.order(is_default: :desc).first
   end
 end
 

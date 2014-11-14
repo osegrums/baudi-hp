@@ -8,7 +8,7 @@ class Linen < ActiveRecord::Base
   accepts_nested_attributes_for :linen_prices, reject_if: proc { |attributes| attributes['price'].to_f == 0 }, allow_destroy: true
 
   def main_thumb
-    thumbs.where(is_kit_image: false).order(is_default: :asc, sequence: :asc).first
+    thumbs.where(is_kit_image: false).order(is_default: :desc, sequence: :asc).first
   end
 
   def price_for_editing(dimension, has_decoration, kit)

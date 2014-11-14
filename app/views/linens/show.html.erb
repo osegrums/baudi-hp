@@ -47,7 +47,7 @@
         <p><img src="/images/css/line_dotted.gif" width="497" height="1" /></p>
 
         <div class="linenSelect">
-          <% default_kit = @linen.kits.order(is_default: :asc, sequence: :asc).first %>
+          <% default_kit = @linen.kits.order(is_default: :desc, sequence: :asc).first %>
           <input type="hidden" id="lp-kit" class="lp-kit lp-changer" name="kit" value="<%= default_kit.try(:id) %>" />
 
           <% if @linen.has_decoration? %>
