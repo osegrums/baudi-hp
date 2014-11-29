@@ -13,7 +13,7 @@ ru:
       title: Ваш заказ
       enter_your_data: Укажите необходимую информацию
       field_name: 'Имя:'
-      complete_order: Complete order
+      complete_order: Подтвердить заказ
     bed_resume:
       bed_model: 'Модель кровати:'
       bed_size: 'Размер:'
