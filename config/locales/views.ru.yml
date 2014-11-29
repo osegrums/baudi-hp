@@ -1,68 +1,68 @@
 ru:
   create_purchase: 'Order now'
-  edit_purchase: 'Confirm order'
+  edit_purchase: 'Подтвердить заказ'
   layouts:
     header:
-      home: домой
-      beds: КРОВАТЬ
+      home: ГЛАВНЫЙ
+      beds: КРОВАТИ
       linen: БЕЛЬЕ
       inspiration: ВДОХНОВЕНИЕ
       about: О НАС
   purchases:
     edit:
-      title: You are about to complete your order
-      enter_your_data: Enter your data
-      field_name: 'Name:'
+      title: Ваш заказ
+      enter_your_data: Укажите необходимую информацию
+      field_name: 'Имя:'
       complete_order: Complete order
     bed_resume:
-      bed_model: 'Gultas modelis:'
-      bed_size: 'Izmērs:'
-      bed_linen: 'Linen:'
+      bed_model: 'Модель кровати:'
+      bed_size: 'Размер:'
+      bed_linen: 'Белье:'
     linen_resume:
-      linen_model: 'Modelis:'
-      linen_size: 'Izmērs:'
-      linen_kit: 'Linen:'
+      linen_model: 'Модель:'
+      linen_size: 'Размер:'
+      linen_kit: 'Белье:'
     show:
-      title: You submitted your order
-      resume: 'Thank you for your purchase. We will contact you soon. Back to'
+      title: Ваш заказ
+      resume: 'Благодарим Вас за покупку. Мы свяжемся с Вами в ближайшее время. Вернуться к'
       homepage_link: homepage
   linens:
     index:
-      title: Collection of 2015
+      title: Коллекция 2015
     show:
-      linen_size: "Izmērs:"
-      total_price: Total
-      all_linens: Linens
-      more_info: Click for more info
-      include_decorative_cover: Include decorative bed cover
-      decoration_price: Decorative
+      linen_size: "Размер:"
+      total_price: Общий
+      all_linens: Белье
+      more_info: Hажмите для получения инфо
+      include_decorative_cover: Декоративное постельное белье
+      decoration_price: Декоративное постельное белье
   beds:
     index:
-      title: Collection of 2015
+      title: Коллекция 2015
     show: &beds_show
-      color_scheme: Color scheme
-      bed_size: Select your bed size
-      has_rack: bed with slats
-      bed_price: Bed
-      kit_price: Linen
-      total_price: Total
-      more_info: Click for more info
-      all_beds: Beds
-      include_decorative_cover: Include decorative bed cover
-      and: and
-      decoration_price: Decorative
+      color_scheme: Выбор цвета
+      bed_size: Выберите размер кровати
+      has_rack: добавить филенки кровати
+      bed_price: Kровать
+      kit_price: Белье
+      total_price: Общий
+      more_info: Hажмите для получения инфо
+      all_beds: Kровати
+      include_decorative_cover: Декоративное постельное белье
+      and: и
+      decoration_price: Декоративное постельное белье
     show_incomplete:
       <<: *beds_show
   pages:
     home:
-      title: Добро пожаловать в BAUDI дизайнерские кровати
-      about_us: 'Мы производим ручной пользовательских кровати, спинки и постельное белье для тех, открытыми. Расположенный в Lettland, Рига , мы предлагаем нашу продукцию для заказа он-лайн.'
-      beds: КРОВАТЬ
+      title: Добро пожаловать в BAUDI design beds
+      about_us: 'Мы изготавливаем кровати ручной работы, уникальные  изголовья и постельное белье. Находясь в Латвии, в Риги, мы предлагаем нашу продукцию для заказа он-лайн.'
+      beds: КРОВАТИ
       linen: БЕЛЬЕ
-      link_to_beds: collection of beds
-      link_to_linen: linen
-      take_a_look: 'Take a look at our %{link_to_beds} and %{link_to_linen}.'
+      link_to_beds: коллекция кровати
+      link_to_linen: белье
+      take_a_look: 'Взгляните на наши %{link_to_beds} и %{link_to_linen}.'
       contacts: контакты
       contact_phone: 'Тел: +371 22-02-08-02 (GT+2)'
-      contact_mail: 'Mail: shop@baudibeds.com'
-      if_any_questions: 'Потребности клиентов находятся на вершине наших приоритетов. Если у вас возникли вопросы, не будьте застенчивы и позвоните нам или отправьте письмо.'
+      contact_mail: 'Mail: baudi@baudidesign.com'
+      if_any_questions: 'Приоритетом для нас являются потребности наших клиентов. Если у вас возникли вопросы, не стесняйтесь, звоните нам или присылайте э-мейл.'
