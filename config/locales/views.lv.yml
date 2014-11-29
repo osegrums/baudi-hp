@@ -11,58 +11,58 @@ lv:
   purchases:
     edit:
       title: Jūsu pasūtījums
-      enter_your_data: Ievadiet prasītos datus
+      enter_your_data: Norādiet nepieciešamo informāciju
       field_name: 'Name:'
       complete_order: Apstiprināt pasūtījumu
     bed_resume:
       bed_model: 'Gultas modelis:'
       bed_size: 'Izmērs:'
-      bed_linen: 'Linen bed:'
+      bed_linen: 'Gultasveļa:'
     linen_resume:
       linen_model: 'Modelis:'
       linen_size: 'Izmērs:'
-      linen_kit: 'Linen kit:'
+      linen_kit: 'Gultasveļas komplektu skaits'
     show:
-      title: You submitted your order
-      resume: 'Jūsu pasūtījums ir nosūtīts. Mēs ar jums sazināsimiem tuvāko darba dienu laikā.'
+      title: Jūsu pasūtījums
+      resume: 'Jūsu pasūtījums ir nosūtīts. Mēs ar Jums sazināsimies tuvāko darba dienu laikā.'
       homepage_link: homepage
   linens:
     index:
-      title: 2015. gada kolekcijas
+      title: 2015. gada kolekcija
     show:
       linen_size: "Izmērs:"
       total_price: Kopā
-      all_linens: Linens
-      more_info: Vairāk informācija par pasūtīšanu
-      include_decorative_cover: Pievienot dekoratīvo gultas pārvalku
-      decoration_price: Pārvalks
+      all_linens: Gultasveļa
+      more_info: Informācija par pirkuma veikšanu
+      include_decorative_cover: Pievienot dekoratīvo gultasveļu
+      decoration_price: Dekoratīvā gultasveļa
   beds:
     index:
-      title: 2015. gada kolekcijas
+      title: 2015. gada kolekcija
     show: &beds_show
       color_scheme: Krāsu gamma
-      bed_size: Izvēlēties gultas platumu
-      has_rack: pievienot redeles
+      bed_size: Izvēlēties gultas izmēru
+      has_rack: pievienot gultas redeles
       bed_price: Gulta
-      kit_price: Gultas veļa
+      kit_price: Gultasveļa
       total_price: Cena kopā
-      more_info: Vairāk informācija par pasūtīšanu
-      all_beds: Beds
-      include_decorative_cover: Pievienot dekoratīvo gultas pārvalku
+      more_info: Informācija par pirkuma veikšanu
+      all_beds: Gultas
+      include_decorative_cover: Pievienot dekoratīvo gultasveļu
       and: un
-      decoration_price: Pārvalks
+      decoration_price: Dekoratīvā gultasveļa
     show_incomplete:
       <<: *beds_show
   pages:
     home:
-      title: Welcome to Baudi design beds
-      about_us: 'We produce hand-made custom beds, headboards and linen for those open minded. Situated in Lettland, Riga we offer our products for ordering on-line.'
-      beds: BEDS
-      linen: LINEN
-      link_to_beds: collection of beds
-      link_to_linen: linen
-      take_a_look: 'Take a look at our %{link_to_beds} and %{link_to_linen}.'
-      contacts: Contacts
+      title: Laipni lūgti Baudi design beds
+      about_us: 'Visas mūsu ražotās gultas, sienas paneļi un gultasveļa ir kvalitatīvs roku darbs, kas ir paredzēts brīvi domājošiem indivīdiem. Mēs strādājam Latvijā – Rīgā, un mūsu produktus ir iespējams pasūtīt internetā.'
+      beds: GULTAS
+      linen: GULTASVEĻA
+      link_to_beds: gultu kolekciju
+      link_to_linen: gultasveļas
+      take_a_look: 'Apskatiet mūsu %{link_to_beds} un %{link_to_linen}.'
+      contacts: Kontakti
       contact_phone: 'Tel: +371 26393580 (GT+2)'
-      contact_mail: 'Mail: baudi@baudidesign.com'
-      if_any_questions: 'Customers needs are at the top of our priorities. If you have any questions, dont be shy and call us or send an email.'
+      contact_mail: 'E-pasts: baudi@baudidesign.com'
+      if_any_questions: 'Jūsu vēlmes ir mūsu prioritāte! Ja rodas kādi jautājumi, droši zvaniet vai rakstiet mums.'
