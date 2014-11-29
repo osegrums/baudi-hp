@@ -19,9 +19,9 @@ en:
       bed_size: 'Size:'
       bed_linen: 'Linen:'
     linen_resume:
-      linen_model: 'Modelis:'
-      linen_size: 'Izmērs:'
-      linen_kit: 'Linen:'
+      linen_model: 'Bed linen model:'
+      linen_size: 'Size:'
+      linen_kit: 'Linen kit:'
     show:
       title: You submitted your order
       resume: 'Thank you for your purchase. We will contact you soon. Back to'
@@ -34,7 +34,7 @@ en:
       total_price: Total
       all_linens: Linens
       more_info: Click for more info
-      include_decorative_cover: Decoration bed linen
+      include_decorative_cover: Decorative bed linen
       decoration_price: Decoration
   beds:
     index:
@@ -42,21 +42,21 @@ en:
     show: &beds_show
       color_scheme: Color scheme
       bed_size: Select your bed size
-      has_rack: bed with slats
+      has_rack: include bed slats
       bed_price: Bed
-      kit_price: Linen
+      kit_price: Bed linen
       total_price: Total
       more_info: Click for more info
       all_beds: Beds
-      include_decorative_cover: Include decorative bed cover
+      include_decorative_cover: Include decorative bed linen
       and: and
-      decoration_price: Decoration
+      decoration_price: Decorative bed linen
     show_incomplete:
       <<: *beds_show
   pages:
     home:
       title: Welcome to Baudi design beds
-      about_us: 'We produce hand-made custom beds, headboards and linen for those open minded. Situated in Lettland, Riga we offer our products for ordering on-line.'
+      about_us: 'We produce hand-made custom beds, headboards and linen for those open minded. Situated in Latvia, Riga we offer our products for ordering on-line.'
       beds: BEDS
       linen: LINEN
       link_to_beds: collection of beds
