@@ -13,9 +13,9 @@
     <!-- <% allowed_locales.each do |locale| %>
       <%= link_to locale.upcase, root_path(locale: locale), class: "locale-switch-link #{'active' if locale.to_sym == I18n.locale}" %>
     <% end %> -->
-    <%= link_to 'EN', '#', class: "active" %>
-    LV
-    RU
+    <%= link_to 'EN', '/?locale=en', class: (I18n.locale == :en ? 'active' : nil) %>
+    <%= link_to 'LV', '/?locale=lv', class: (I18n.locale == :lv ? 'active' : nil) %>
+    <%= link_to 'RU', '/?locale=ru', class: (I18n.locale == :ru ? 'active' : nil) %>
   </div>
   <img src="/images/css/line_header.gif" width="950" height="1" />
 </div>
