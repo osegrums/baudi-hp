@@ -12,7 +12,7 @@ lv:
     edit:
       title: Jūsu pasūtījums
       enter_your_data: Norādiet nepieciešamo informāciju
-      field_name: 'Name:'
+      field_name: 'Vārds:'
       complete_order: Apstiprināt pasūtījumu
     bed_resume:
       bed_model: 'Gultas modelis:'
