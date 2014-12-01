@@ -22,15 +22,17 @@ jQuery ->
     hasDecoration  = $('#lp-has-decoration').is(':checked')
     dimensionId    = $('input:radio[name=dimension]:checked').val()
     kitId          = $('#lp-kit').val();
-    linenPriceData = findLinenPrice(kitId, hasDecoration, dimensionId)
+    totalPriceData = findLinenPrice(kitId, hasDecoration, dimensionId)
     decPriceData   = findDecorationPrice(dimensionId)
-    linenPrice     = parseFloat(if linenPriceData then linenPriceData['price'] else 0)
+    totalPrice     = parseFloat(if totalPriceData then totalPriceData['price'] else 0)
     decPrice       = if hasDecoration then parseFloat(if decPriceData then decPriceData['price'] else 0) else 0
+    linenPrice     = totalPrice - decPrice
 
     $('#decoration-price').html(decPrice)
+    $('#linen-price').html(linenPrice)
 
-    $('#lp-price-id').val(linenPriceData['id']) if linenPriceData
-    $('#actual-price-price').html(linenPrice)
+    $('#lp-price-id').val(totalPriceData['id']) if totalPriceData
+    $('#actual-price-price').html(totalPrice)
 
 
   setDimensionName = ->
@@ -42,7 +44,6 @@ jQuery ->
     kitId = $radio.data('kit-id')
     kitDesc = $radio.data('kit-description')
     $('#lp-kit').val(kitId).trigger('change')
-    $('#kit-description').text(kitDesc)
 
   if $('#linen-purchase-form').length > 0
     recalculatePrice()

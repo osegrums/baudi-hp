@@ -50,17 +50,6 @@
           <% default_kit = @linen.kits.order(is_default: :desc, sequence: :asc).first %>
           <input type="hidden" id="lp-kit" class="lp-kit lp-changer" name="kit" value="<%= default_kit.try(:id) %>" />
 
-          <% if @linen.has_decoration? %>
-            <table class="linenSelect">
-              <tr>
-                <td class="checkbox-cell">
-                  <input type="checkbox" class="lp-has-decoration lp-changer" name="has_decoration" value="" id="lp-has-decoration" />
-                  <label for="lp-has-decoration" class="checkbox-label"><%= t('.include_decorative_cover') %></label>
-                </td>
-              </tr>
-            </table> <!---->
-          <% end %>
-
           <% if @linen.kits.count > 0 %>
             <table class="linenSelect">
               <% @linen.kits.order(sequence: :asc).each do |kit| %>
@@ -71,11 +60,18 @@
                 </td>
                 </tr>
               <% end %>
-              </table>
+            </table>
+          <% end %>
 
-              <p id="kit-description">
-                <%= lf(default_kit, :description) %>
-              </p>
+          <% if @linen.has_decoration? %>
+            <table class="linenSelect">
+              <tr>
+                <td class="checkbox-cell">
+                  <input type="checkbox" class="lp-has-decoration lp-changer" name="has_decoration" value="" id="lp-has-decoration" />
+                  <label for="lp-has-decoration" class="checkbox-label"><%= t('.include_decorative_cover') %></label>
+                </td>
+              </tr>
+            </table> <!---->
           <% end %>
         </div><!-- end linenSelect -->
 
@@ -83,6 +79,12 @@
 
         <div class="cena">
           <table width="303" border="0">
+            <tr>
+              <td class="txt"><%= t '.linen_price' %>:</td>
+              <td class="sum">
+                € <span id='linen-price'></span>
+              </td>
+            </tr>
             <% if @linen.has_decoration? %>
               <tr class="linen">
                 <td class="txt"><%= t '.decoration_price' %>:</td>

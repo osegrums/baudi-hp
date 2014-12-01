@@ -23,8 +23,9 @@ class Linen < ActiveRecord::Base
     query = <<-SQL.squish
       SELECT w.linen_id, w.dimension_id, w.price - wo.price AS price
         FROM linen_prices w
-        JOIN linen_prices wo ON w.linen_id = wo.linen_id
+        JOIN linen_prices wo ON w.linen_id     = wo.linen_id
                             AND w.dimension_id = wo.dimension_id
+                            AND w.kit_id       = wo.kit_id
        WHERE w.linen_id = #{id}
          AND w.has_decoration = true
          AND wo.has_decoration = false
