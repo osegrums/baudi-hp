@@ -64,6 +64,6 @@ en:
       link_to_linen: linen
       take_a_look: 'Take a look at our %{link_to_beds} and %{link_to_linen}.'
       contacts: Contacts
-      contact_phone: 'Tel: +371 26393580 (GT+2)'
+      contact_phone: 'Tel: +371 26393580'
       contact_mail: 'Mail: baudi@baudidesign.com'
       if_any_questions: 'Customers needs are at the top of our priorities. If you have any questions, dont be shy and call us or send an email.'
