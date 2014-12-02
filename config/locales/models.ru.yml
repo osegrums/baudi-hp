@@ -1,14 +1,14 @@
 ru:
   activerecord:
     models:
-      bed: Bed
-      purchase: Pasūtījums
+      bed: Kровать
+      purchase: Заказ
     attributes:
       purchase:
-        name: Name
-        email: Email
-        phone: Phone
-        address: Street address
-        zip_code: Post Code
-        city: City
-        country: Country
+        name: Имя
+        email: Mail
+        phone: Номер телефона
+        address: Улица
+        zip_code: Почтовый индекс
+        city: Город
+        country: Страна
