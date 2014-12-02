@@ -64,6 +64,6 @@ lv:
       link_to_linen: gultasveļu kolekciju
       take_a_look: 'Apskatiet mūsu %{link_to_beds} un %{link_to_linen}.'
       contacts: Kontakti
-      contact_phone: 'Tel: +371 26393580 (GT+2)'
+      contact_phone: 'Tel: +371 26393580'
       contact_mail: 'E-pasts: baudi@baudidesign.com'
       if_any_questions: 'Jūsu vēlmes ir mūsu prioritāte! Ja rodas kādi jautājumi, droši zvaniet vai rakstiet mums.'
