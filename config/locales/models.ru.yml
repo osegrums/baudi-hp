@@ -8,7 +8,7 @@ ru:
         name: Имя
         email: Mail
         phone: Номер телефона
-        address: Улица
+        address: Адрес
         zip_code: Почтовый индекс
         city: Город
         country: Страна
