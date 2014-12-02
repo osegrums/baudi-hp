@@ -60,8 +60,8 @@ lv:
       about_us: 'Visas mūsu ražotās gultas, sienas paneļi un gultasveļa ir kvalitatīvs roku darbs, kas ir paredzēts brīvi domājošiem indivīdiem. Mēs strādājam Latvijā – Rīgā, un mūsu produktus ir iespējams pasūtīt internetā.'
       beds: GULTAS
       linen: GULTASVEĻA
-      link_to_beds: gultu kolekciju
-      link_to_linen: gultasveļas
+      link_to_beds: gultu 
+      link_to_linen: gultasveļu kolekciju
       take_a_look: 'Apskatiet mūsu %{link_to_beds} un %{link_to_linen}.'
       contacts: Kontakti
       contact_phone: 'Tel: +371 26393580 (GT+2)'
