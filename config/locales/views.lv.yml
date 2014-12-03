@@ -30,7 +30,7 @@ lv:
     index:
       title: 2015. gada kolekcija
     show:
-      linen_size: "Izmērs:"
+      linen_size: "Gultas izmērs:"
       linen_price: Gultasveļa
       total_price: Kopā
       all_linens: Gultasveļa
