@@ -30,7 +30,7 @@ en:
     index:
       title: Collection of 2015
     show:
-      linen_size: "Size:"
+      linen_size: "Bed size:"
       linen_price: Linen
       total_price: Total
       all_linens: Linens
