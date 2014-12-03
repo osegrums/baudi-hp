@@ -147,7 +147,9 @@
         <%= f.submit value: t('create_purchase'), class: "btn-style" %>
         <div class="subNav">
           <ul>
-            <li><a href="#"><%= t '.more_info' %></a></li>
+            <li>
+              <%= link_to t('.more_info'), page_path(id: 'about') %>
+            </li>
           </ul>
         </div>
       </div>
