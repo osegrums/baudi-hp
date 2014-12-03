@@ -30,7 +30,7 @@ ru:
     index:
       title: Коллекция 2015
     show:
-      linen_size: "Размер:"
+      linen_size: "Размер кровати"
       linen_price: Белье
       total_price: Общий
       all_linens: Белье
