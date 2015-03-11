@@ -52,6 +52,7 @@ en:
       include_decorative_cover: Include decorative bed linen
       and: and
       decoration_price: Decorative bed linen
+      not_included: "* Mattress are sold separately."
     show_incomplete:
       <<: *beds_show
   pages:

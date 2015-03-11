@@ -142,6 +142,9 @@
                 € <span id='actual-price-price'></span>
               </td>
             </tr>
+            <tr class="price-hint">
+              <td colspan="3"><%= t '.not_included' %></td>
+            </tr>
           </table>
         </div>
         <%= f.submit value: t('create_purchase'), class: "btn-style" %>

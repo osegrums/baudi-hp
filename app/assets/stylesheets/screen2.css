@@ -337,12 +337,7 @@ table.inputformTable { color:#666; margin-left:10px }
 
 .dotted { display:block; border-bottom:1px dotted #ccc }
 
-
-
-
-
-
-
-/* to be removed */
-
-
+tr.price-hint td {
+  padding: 0 0 0 10px;
+  font-size: 12px;
+}

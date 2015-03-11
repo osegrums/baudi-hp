@@ -52,6 +52,7 @@ ru:
       include_decorative_cover: Декоративное постельное белье
       and: и
       decoration_price: Декоративное постельное белье
+      not_included: "* Матрас продаются отдельно."
     show_incomplete:
       <<: *beds_show
   pages:

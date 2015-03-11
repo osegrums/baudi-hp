@@ -52,6 +52,7 @@ lv:
       include_decorative_cover: Pievienot dekoratīvo gultasveļu
       and: un
       decoration_price: Dekoratīvā gultasveļa
+      not_included: "* Matracis nav iekļauts gultas cenā."
     show_incomplete:
       <<: *beds_show
   pages:
@@ -60,7 +61,7 @@ lv:
       about_us: 'Visas mūsu ražotās gultas, sienas paneļi un gultasveļa ir kvalitatīvs roku darbs, kas ir paredzēts brīvi domājošiem indivīdiem. Mēs strādājam Latvijā – Rīgā, un mūsu produktus ir iespējams pasūtīt internetā.'
       beds: GULTAS
       linen: GULTASVEĻA
-      link_to_beds: gultu 
+      link_to_beds: gultu
       link_to_linen: gultasveļu kolekciju
       take_a_look: 'Apskatiet mūsu %{link_to_beds} un %{link_to_linen}.'
       contacts: Kontakti
