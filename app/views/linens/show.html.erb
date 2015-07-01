@@ -75,30 +75,33 @@
           <% end %>
         </div><!-- end linenSelect -->
 
-        <p><img src="/images/css/line_dotted.gif" width="497" height="1" /></p>
+        <% if false %>
+          <!-- Always hide this block - Girls requested this -->
+          <p><img src="/images/css/line_dotted.gif" width="497" height="1" /></p>
 
-        <div class="cena">
-          <table width="303" border="0">
-            <tr>
-              <td class="txt"><%= t '.linen_price' %>:</td>
-              <td class="sum">
-                € <span id='linen-price'></span>
-              </td>
-            </tr>
-            <% if @linen.has_decoration? %>
-              <tr class="linen">
-                <td class="txt"><%= t '.decoration_price' %>:</td>
+          <div class="cena">
+            <table width="303" border="0">
+              <tr>
+                <td class="txt"><%= t '.linen_price' %>:</td>
                 <td class="sum">
-                  € <span id='decoration-price'></span>
+                  € <span id='linen-price'></span>
                 </td>
               </tr>
-            <% end %>
-            <tr class="totalCost">
-              <td class="txt" width="52"><%= t '.total_price' %>:</td>
-              <td class="sum" width="273">€ <span id='actual-price-price'></span></td>
-              </tr>
-            </table>
-        </div>
+              <% if @linen.has_decoration? %>
+                <tr class="linen">
+                  <td class="txt"><%= t '.decoration_price' %>:</td>
+                  <td class="sum">
+                    € <span id='decoration-price'></span>
+                  </td>
+                </tr>
+              <% end %>
+              <tr class="totalCost">
+                <td class="txt" width="52"><%= t '.total_price' %>:</td>
+                <td class="sum" width="273">€ <span id='actual-price-price'></span></td>
+                </tr>
+              </table>
+          </div>
+        <% end %>
 
         <%= f.submit value: t('create_purchase'), class: "btn-style" %>
 

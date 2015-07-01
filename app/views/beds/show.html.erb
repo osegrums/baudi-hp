@@ -114,39 +114,43 @@
 
         <p><img src="/images/css/line_dotted.gif" width="497" height="1" /></p>
 
-        <div class="cena">
-          <table width="303" border="0">
-            <tr class="bed">
-              <td class="txt" width="220"><%= t '.bed_price' %>:</td>
-              <td class="sum" width="auto">
-                € <span id='bed-price'></span>
-              </td>
-            </tr>
-            <% if @bed.has_decoration? %>
+        <% if false %>
+          <!-- Always hide this block - Girls requested this -->
+          <div class="cena">
+            <table width="303" border="0">
               <tr class="bed">
-                <td class="txt"><%= t '.decoration_price' %>:</td>
-                <td class="sum">
-                  € <span id='decoration-price'></span>
+                <td class="txt" width="220"><%= t '.bed_price' %>:</td>
+                <td class="sum" width="auto">
+                  € <span id='bed-price'></span>
                 </td>
               </tr>
-            <% end %>
-            <tr class="linen">
-              <td class="txt"><%= t '.kit_price' %>:</td>
-              <td class="sum">
-                € <span id='kit-price'></span>
-              </td>
-            </tr>
-            <tr class="totalCost">
-              <td class="txt"><%= t '.total_price' %>:</td>
-              <td class="sum">
-                € <span id='actual-price-price'></span>
-              </td>
-            </tr>
-            <tr class="price-hint">
-              <td colspan="3"><%= t '.not_included' %></td>
-            </tr>
-          </table>
-        </div>
+              <% if @bed.has_decoration? %>
+                <tr class="bed">
+                  <td class="txt"><%= t '.decoration_price' %>:</td>
+                  <td class="sum">
+                    € <span id='decoration-price'></span>
+                  </td>
+                </tr>
+              <% end %>
+              <tr class="linen">
+                <td class="txt"><%= t '.kit_price' %>:</td>
+                <td class="sum">
+                  € <span id='kit-price'></span>
+                </td>
+              </tr>
+              <tr class="totalCost">
+                <td class="txt"><%= t '.total_price' %>:</td>
+                <td class="sum">
+                  € <span id='actual-price-price'></span>
+                </td>
+              </tr>
+              <tr class="price-hint">
+                <td colspan="3"><%= t '.not_included' %></td>
+              </tr>
+            </table>
+          </div>
+        <% end %>
+
         <%= f.submit value: t('create_purchase'), class: "btn-style" %>
         <div class="subNav">
           <ul>

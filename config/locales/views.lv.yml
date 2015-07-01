@@ -1,6 +1,6 @@
 lv:
-  create_purchase: 'Pasūtīt'
-  edit_purchase: 'Apstiprināt pasūtījumu'
+  create_purchase: 'Cena'
+  edit_purchase: 'Apstiprināt pieprasījumu'
   layouts:
     header:
       home: sākums
@@ -10,10 +10,10 @@ lv:
       about: par mums
   purchases:
     edit:
-      title: Jūsu pasūtījums
+      title: Jūsu pieprasījums
       enter_your_data: Norādiet nepieciešamo informāciju
       field_name: 'Vārds:'
-      complete_order: Apstiprināt pasūtījumu
+      complete_order: Apstiprināt pieprasījumu
     bed_resume:
       bed_model: 'Gultas modelis:'
       bed_size: 'Izmērs:'
@@ -23,8 +23,8 @@ lv:
       linen_size: 'Izmērs:'
       linen_kit: 'Gultasveļas komplektu skaits'
     show:
-      title: Jūsu pasūtījums
-      resume: 'Jūsu pasūtījums ir nosūtīts. Mēs ar Jums sazināsimies tuvāko darba dienu laikā.'
+      title: Jūsu pieprasījums
+      resume: 'Jūsu pieprasījums ir nosūtīts. Mēs ar Jums sazināsimies tuvāko darba dienu laikā.'
       homepage_link: homepage
   linens:
     index:

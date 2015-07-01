@@ -32,7 +32,7 @@ jQuery ->
     matches[0]
 
   recalculatePrice = ->
-    return unless $('#actual-price-price').length > 0
+    # return unless $('#actual-price-price').length > 0
     hasRack       = $('#bp-has-rack').is(':checked')
     hasDecoration = $('#bp-has-decoration').is(':checked')
     dimensionId   = $('input:radio[name=dimension]:checked').val()

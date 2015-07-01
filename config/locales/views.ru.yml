@@ -1,6 +1,6 @@
 ru:
-  create_purchase: 'Заказать'
-  edit_purchase: 'Подтвердить заказ'
+  create_purchase: 'Цена'
+  edit_purchase: 'Подтвердить запрос'
   layouts:
     header:
       home: ГЛАВНЫЙ
@@ -10,10 +10,10 @@ ru:
       about: О НАС
   purchases:
     edit:
-      title: Ваш заказ
+      title: Ваш запрос
       enter_your_data: Укажите необходимую информацию
       field_name: 'Имя:'
-      complete_order: Подтвердить заказ
+      complete_order: Подтвердить запрос
     bed_resume:
       bed_model: 'Модель кровати:'
       bed_size: 'Размер:'
@@ -23,8 +23,8 @@ ru:
       linen_size: 'Размер:'
       linen_kit: 'Белье:'
     show:
-      title: Ваш заказ
-      resume: 'Благодарим Вас за покупку. Мы свяжемся с Вами в ближайшее время. Вернуться к'
+      title: Ваш запрос
+      resume: 'Благодарим Вас за запрос. Мы свяжемся с Вами в ближайшее время. Вернуться к'
       homepage_link: homepage
   linens:
     index:

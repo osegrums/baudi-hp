@@ -1,6 +1,6 @@
 en:
-  create_purchase: 'Order now'
-  edit_purchase: 'Confirm order'
+  create_purchase: 'Price'
+  edit_purchase: 'Confirm request'
   layouts:
     header:
       home: home
@@ -10,10 +10,10 @@ en:
       about: about
   purchases:
     edit:
-      title: You are about to complete your order
+      title: You are about to complete your request
       enter_your_data: Enter your data
       field_name: 'Name:'
-      complete_order: Complete order
+      complete_order: Complete request
     bed_resume:
       bed_model: 'Bed model:'
       bed_size: 'Size:'
@@ -23,7 +23,7 @@ en:
       linen_size: 'Size:'
       linen_kit: 'Linen kit:'
     show:
-      title: You submitted your order
+      title: You submitted your request
       resume: 'Thank you for your purchase. We will contact you soon. Back to'
       homepage_link: homepage
   linens:

@@ -18,7 +18,7 @@ jQuery ->
     matches[0]
 
   recalculatePrice = ->
-    return unless $('#actual-price-price').length > 0
+    # return unless $('#actual-price-price').length > 0
     hasDecoration  = $('#lp-has-decoration').is(':checked')
     dimensionId    = $('input:radio[name=dimension]:checked').val()
     kitId          = $('#lp-kit').val();
