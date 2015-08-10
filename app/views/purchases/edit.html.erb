@@ -33,53 +33,10 @@
         </tr>
         <tr>
           <td width="122">
-            <label for="purchase-email"><%= Purchase.human_attribute_name(:email) %>:</label>
+            <label for="purchase-email"><%= Purchase.human_attribute_name(:email) %> *:</label>
           </td>
           <td width="471">
-            <%= f.text_field :email, class: 'form-control', placeholder: '', id: 'purchase-email' %>
-          </td>
-        </tr>
-        <tr>
-          <td width="122">
-            <label for="purchase-phone"><%= Purchase.human_attribute_name(:phone) %>:</label>
-          </td>
-          <td width="471">
-            <%= f.text_field :phone, class: 'form-control', placeholder: '', id: 'purchase-phone' %>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2"><img src="/images/css/line_dotted.gif" alt="" width="497" height="1" style="padding: 5px 0" /></td>
-        </tr>
-        <tr>
-          <td width="122">
-            <label for="purchase-address"><%= Purchase.human_attribute_name(:address) %>:</label>
-          </td>
-          <td width="471">
-            <%= f.text_field :address, class: 'form-control', placeholder: '', id: 'purchase-address' %>
-          </td>
-        </tr>
-        <tr>
-          <td width="122">
-            <label for="purchase-zip-code"><%= Purchase.human_attribute_name(:zip_code) %>:</label>
-          </td>
-          <td width="471">
-            <%= f.text_field :zip_code, class: 'form-control', placeholder: '', id: 'purchase-zip-code' %>
-          </td>
-        </tr>
-        <tr>
-          <td width="122">
-            <label for="purchase-city"><%= Purchase.human_attribute_name(:city) %>:</label>
-          </td>
-          <td width="471">
-            <%= f.text_field :city, class: 'form-control', placeholder: '', id: 'purchase-city' %>
-          </td>
-        </tr>
-        <tr>
-          <td width="122">
-            <label for="purchase-country"><%= Purchase.human_attribute_name(:country) %>:</label>
-          </td>
-          <td width="471">
-            <%= f.text_field :country, class: 'form-control', placeholder: '', id: 'purchase-country' %>
+            <%= f.email_field :email, class: 'form-control', placeholder: '', id: 'purchase-email', required: true %>
           </td>
         </tr>
         <tr>
