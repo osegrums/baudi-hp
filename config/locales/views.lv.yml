@@ -27,8 +27,6 @@ lv:
       resume: 'Jūsu pieprasījums ir nosūtīts. Mēs ar Jums sazināsimies tuvāko darba dienu laikā.'
       homepage_link: homepage
   linens:
-    index:
-      title: 2015. gada kolekcija
     show:
       linen_size: "Gultas izmērs:"
       linen_price: Gultasveļa
@@ -38,8 +36,6 @@ lv:
       include_decorative_cover: Pievienot dekoratīvo gultasveļu
       decoration_price: Dekoratīvā gultasveļa
   beds:
-    index:
-      title: 2015. gada kolekcija
     show: &beds_show
       color_scheme: Krāsu gamma
       bed_size: Izvēlēties gultas izmēru

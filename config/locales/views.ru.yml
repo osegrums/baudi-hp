@@ -27,8 +27,6 @@ ru:
       resume: 'Благодарим Вас за запрос. Мы свяжемся с Вами в ближайшее время. Вернуться к'
       homepage_link: homepage
   linens:
-    index:
-      title: Коллекция 2015
     show:
       linen_size: "Размер кровати"
       linen_price: Белье
@@ -38,8 +36,6 @@ ru:
       include_decorative_cover: Декоративное постельное белье
       decoration_price: Декоративное постельное белье
   beds:
-    index:
-      title: Коллекция 2015
     show: &beds_show
       color_scheme: Выбор цвета
       bed_size: Выберите размер кровати

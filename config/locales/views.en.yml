@@ -27,8 +27,6 @@ en:
       resume: 'Thank you for your purchase. We will contact you soon. Back to'
       homepage_link: homepage
   linens:
-    index:
-      title: Collection of 2015
     show:
       linen_size: "Bed size:"
       linen_price: Linen
@@ -38,8 +36,6 @@ en:
       include_decorative_cover: Decorative bed linen
       decoration_price: Decoration
   beds:
-    index:
-      title: Collection of 2015
     show: &beds_show
       color_scheme: Color scheme
       bed_size: Select your bed size
